@@ -14,115 +14,146 @@ header {
     text-align:justify;
   }
   .menu-btn {
-    width:20px;
     @include position-center-top;
     left: 2%;
+    width:20px;
+    height:90px;
     line-height:1.4;
-    &:before {
-      content:'';
-      display: block;
-      width:20px;
-      height:1px;
-      background:$default-color-lighten;
-      @include position-center-left;
-      top:0px;
-      @include transition;
-    }
-    &:after {
-      content:'';
-      display: block;
-      width:20px;
-      height:1px;
-      background:$default-color-lighten;
-      @include position-center-left;
-      bottom:0px;
-      @include transition;
-    }
+    z-index:30;
     button {
+      width:100%;
+      height:100%;
+      vertical-align: middle;
       word-break: break-all;
       font-size:rem(14);
       color:$default-color-lighten;
       text-align: center;
-      padding:8px 0 12px;
       transition: text-indent 0s ease;
-      @include transition;
-    }
-    &:hover {
-      width:34px;
-      height:34px;
-      background:#ececec;
-      border-radius:100%;
       &:before {
-        top:8px;
+        content:'';
+        display: block;
+        width:20px;
+        height:1px;
+        background:$default-color-lighten;
+        @include position-center-left;
+        top:0px;
         @include transition;
       }
       &:after {
-        bottom:8px;
+        content:'';
+        display: block;
+        width:20px;
+        height:1px;
+        background:$default-color-lighten;
+        @include position-center-left;
+        bottom:0px;
         @include transition;
       }
+    }
+    &:hover {
+      &:after {
+        content:'';
+        width:15px;
+        height:1px;
+        background:$default-color-lighten;
+        @include position-center-top;
+      }
       button {
-        width:100%;
-        height:100%;
-        padding:0;
+        @include position-center;
         position: relative;
-        text-indent: -9999px;
-        overflow: hidden;
+        width:34px;
+        height:34px;
+        background:#ececec;
+        border-radius:100%;
+        @include text-hidden;
         transition: text-indent 0s ease;
-        @include transition;
+        &:before {
+          top:8px;
+          @include transition;
+        }
         &:after {
-          content:'';
-          width:15px;
-          height:1px;
-          background:$default-color-lighten;
-          @include position-center-top;
-          left:7px;
+          bottom:8px;
+          @include transition;
         }
       }
     }
     &.close-btn {
-      width:34px;
-      height:34px;
-      background:#ececec;
-      border-radius:100%;
-      &:before {
-        top:50%;
-        left:7px;
-        @include transition;
-        -webkit-transform: rotate(45deg) translate(0,-50%);
-        -moz-transform: rotate(45deg) translate(0,-50%);
-        -o-transform: rotate(45deg) translate(0,-50%);
-        -ms-transform: rotate(45deg) translate(0,-50%);
-        transform: rotate(45deg) translate(0,-50%);
-      }
       &:after {
-        bottom:50%;
-        left:7px;
-        @include transition;
-        transform: rotate(-45deg) translate(0,-50%);
-        -moz-transform: rotate(45deg) translate(0,-50%);
-        -o-transform: rotate(45deg) translate(0,-50%);
-        -ms-transform: rotate(45deg) translate(0,-50%);
-        transform: rotate(45deg) translate(0,-50%);
+        display:none;
       }
       button {
-        width:100%;
-        height:100%;
-        padding:0;
+        @include position-center;
         position: relative;
-        text-indent: -9999px;
-        overflow: hidden;
+        width:34px;
+        height:34px;
+        background:#ececec;
+        border-radius:100%;
+        @include text-hidden;
         transition: text-indent 0s ease;
         @include transition;
+        &:before {
+          top:50%;
+          left:7px;
+          @include transition;
+          -webkit-transform: rotate(45deg) translate(0,-50%);
+          -moz-transform: rotate(45deg) translate(0,-50%);
+          -o-transform: rotate(45deg) translate(0,-50%);
+          -ms-transform: rotate(45deg) translate(0,-50%);
+          transform: rotate(45deg) translate(0,-50%);
+        }
         &:after {
-          display:none;
+          bottom:50%;
+          left:7px;
+          @include transition;
+          transform: rotate(-45deg) translate(0,-50%);
+          -moz-transform: rotate(-45deg) translate(0,-50%);
+          -o-transform: rotate(-45deg) translate(0,-50%);
+          -ms-transform: rotate(-45deg) translate(0,-50%);
+          transform: rotate(-45deg) translate(0,-50%);
         }
       }
     }
   }
   .menu-wrap {
-    position:absolute;
     display:none;
+    position:fixed;
+    z-index:20;
     top:0;
     left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(255,255,255,.9);
+    &.on {
+      display:block;
+    }
+    nav {
+      @include position-center;
+      li {
+        width:60vw;
+        padding:26px 0;
+        >a {
+          font-size:rem(48);
+          color:#a6a6a6;
+          font-weight: 700;
+        }
+        .text {
+          @include position-center-top;
+          right:0;
+          opacity:0;
+          text-align:center;
+          line-height:1.6;
+        }
+        &.hover {
+          > a {
+            margin-left:36px;
+            border-bottom: 1px solid #000;
+            color:#000;
+          }
+          .text {
+            opacity:1;
+          }
+        }
+      }
+    }
   }
 }
