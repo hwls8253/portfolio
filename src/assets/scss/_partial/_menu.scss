@@ -1,0 +1,128 @@
+header {
+  width:90%;
+  max-width:1620px;
+  height:15vh;
+  margin:0 auto;
+  vertical-align: bottom;
+  padding-top: 5vh;
+  box-sizing: border-box;
+  .logo {
+    display:inline-block;
+    font-size:rem(23);
+    line-height:1.2;
+    font-weight:700;
+    text-align:justify;
+  }
+  .menu-btn {
+    width:20px;
+    @include position-center-top;
+    left: 2%;
+    line-height:1.4;
+    &:before {
+      content:'';
+      display: block;
+      width:20px;
+      height:1px;
+      background:$default-color-lighten;
+      @include position-center-left;
+      top:0px;
+      @include transition;
+    }
+    &:after {
+      content:'';
+      display: block;
+      width:20px;
+      height:1px;
+      background:$default-color-lighten;
+      @include position-center-left;
+      bottom:0px;
+      @include transition;
+    }
+    button {
+      word-break: break-all;
+      font-size:rem(14);
+      color:$default-color-lighten;
+      text-align: center;
+      padding:8px 0 12px;
+      transition: text-indent 0s ease;
+      @include transition;
+    }
+    &:hover {
+      width:34px;
+      height:34px;
+      background:#ececec;
+      border-radius:100%;
+      &:before {
+        top:8px;
+        @include transition;
+      }
+      &:after {
+        bottom:8px;
+        @include transition;
+      }
+      button {
+        width:100%;
+        height:100%;
+        padding:0;
+        position: relative;
+        text-indent: -9999px;
+        overflow: hidden;
+        transition: text-indent 0s ease;
+        @include transition;
+        &:after {
+          content:'';
+          width:15px;
+          height:1px;
+          background:$default-color-lighten;
+          @include position-center-top;
+          left:7px;
+        }
+      }
+    }
+    &.close-btn {
+      width:34px;
+      height:34px;
+      background:#ececec;
+      border-radius:100%;
+      &:before {
+        top:50%;
+        left:7px;
+        @include transition;
+        -webkit-transform: rotate(45deg) translate(0,-50%);
+        -moz-transform: rotate(45deg) translate(0,-50%);
+        -o-transform: rotate(45deg) translate(0,-50%);
+        -ms-transform: rotate(45deg) translate(0,-50%);
+        transform: rotate(45deg) translate(0,-50%);
+      }
+      &:after {
+        bottom:50%;
+        left:7px;
+        @include transition;
+        transform: rotate(-45deg) translate(0,-50%);
+        -moz-transform: rotate(45deg) translate(0,-50%);
+        -o-transform: rotate(45deg) translate(0,-50%);
+        -ms-transform: rotate(45deg) translate(0,-50%);
+        transform: rotate(45deg) translate(0,-50%);
+      }
+      button {
+        width:100%;
+        height:100%;
+        padding:0;
+        position: relative;
+        text-indent: -9999px;
+        overflow: hidden;
+        transition: text-indent 0s ease;
+        @include transition;
+        &:after {
+          display:none;
+        }
+      }
+    }
+  }
+  .menu-wrap {
+    position:absolute;
+    display:none;
+    top:0;
+    left:0;
+  }
+}

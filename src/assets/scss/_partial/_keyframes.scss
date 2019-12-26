@@ -1,0 +1,261 @@
+@keyframes bottomright {
+  0% {
+    width: 0;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  25% {
+    width: 100%;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  50% {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+  }
+  75% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-moz-keyframes bottomright {
+  0% {
+    width: 0;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  25% {
+    width: 100%;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  50% {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+  }
+  75% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes bottomright {
+  0% {
+    width: 0;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  25% {
+    width: 100%;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  50% {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+  }
+  75% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-o-keyframes fadein bottomright {
+  0% {
+    width: 0;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  25% {
+    width: 100%;
+    height: 0;
+    padding-top: 0;
+    visibility: visible;
+  }
+  50% {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+  }
+  75% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes topleft {
+  0% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  25% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  50% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  75% {
+    width: 100%;
+    height: 0;
+    padding-bottom: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@-moz-keyframes topleft {
+  0% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  25% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  50% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  75% {
+    width: 100%;
+    height: 0;
+    padding-bottom: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@-webkit-keyframes topleft {
+  0% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  25% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  50% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  75% {
+    width: 100%;
+    height: 0;
+    padding-bottom: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@-o-keyframes topleft {
+  0% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  25% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  50% {
+    width: 0;
+    height: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+  }
+  75% {
+    width: 100%;
+    height: 0;
+    padding-bottom: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}

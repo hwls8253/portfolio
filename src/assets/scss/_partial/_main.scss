@@ -1,0 +1,47 @@
+.main-wrap {
+  position: relative;
+  height: 77vh;
+  width: 90%;
+  margin: 0 auto;
+  border: 10px solid #fff;
+  box-sizing:border-box;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    padding-right: 10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 10px solid #e8e8e8;
+    border-right: 10px solid #e8e8e8;
+    visibility: hidden;
+    animation: topleft 1s ease-in-out forwards;
+    -moz-animation: topleft 1s ease-in-out forwards; /* Firefox */
+    -webkit-animation: topleft 1s ease-in-out forwards; /* Safari and Chrome */
+    -o-animation: topleft 1s ease-in-out forwards; /* Opera */
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+    border-top: 10px solid #e8e8e8;
+    border-left: 10px solid #e8e8e8;
+    visibility: hidden;
+    animation: bottomright 1s ease-in-out forwards;
+    -moz-animation: bottomright 1s ease-in-out forwards; /* Firefox */
+    -webkit-animation: bottomright 1s ease-in-out forwards; /* Safari and Chrome */
+    -o-animation: bottomright 1s ease-in-out forwards; /* Opera */
+  }
+  .main {
+    opacity:0;
+    animation: fadein 2s .7s forwards;
+    -moz-animation: fadein 2s .7s forwards; /* Firefox */
+    -webkit-animation: fadein 2s .7s forwards; /* Safari and Chrome */
+    -o-animation: fadein 2s .7s forwards; /* Opera */
+  }
+}
