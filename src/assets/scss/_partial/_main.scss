@@ -16,10 +16,10 @@
     border-bottom: 10px solid #e8e8e8;
     border-right: 10px solid #e8e8e8;
     visibility: hidden;
-    animation: topleft 1s ease-in-out forwards;
-    -moz-animation: topleft 1s ease-in-out forwards; /* Firefox */
-    -webkit-animation: topleft 1s ease-in-out forwards; /* Safari and Chrome */
-    -o-animation: topleft 1s ease-in-out forwards; /* Opera */
+    animation: topleft 1.5s ease-in-out forwards;
+    -moz-animation: topleft 1.5s ease-in-out forwards; /* Firefox */
+    -webkit-animation: topleft 1.5s ease-in-out forwards; /* Safari and Chrome */
+    -o-animation: topleft 1.5s ease-in-out forwards; /* Opera */
     z-index:0;
   }
   &:before {
@@ -33,10 +33,10 @@
     border-top: 10px solid #e8e8e8;
     border-left: 10px solid #e8e8e8;
     visibility: hidden;
-    animation: bottomright 1s ease-in-out forwards;
-    -moz-animation: bottomright 1s ease-in-out forwards; /* Firefox */
-    -webkit-animation: bottomright 1s ease-in-out forwards; /* Safari and Chrome */
-    -o-animation: bottomright 1s ease-in-out forwards; /* Opera */
+    animation: bottomright 1.5s ease-in-out forwards;
+    -moz-animation: bottomright 1.5s ease-in-out forwards; /* Firefox */
+    -webkit-animation: bottomright 1.5s ease-in-out forwards; /* Safari and Chrome */
+    -o-animation: bottomright 1.5s ease-in-out forwards; /* Opera */
     z-index:0;
   }
   .main {
@@ -72,6 +72,7 @@
         padding-top: 50px;
         a {
           display: inline-block;
+          position: relative;
           width: 350px;
           max-width:48%;
           padding: 25px 0;
@@ -83,6 +84,34 @@
           &:first-child {
             margin-right:2%;
           }
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            bottom:0px;
+            z-index:-1;
+            width: 0%;
+            height:100%;
+            background: rgba(0,0,0,0.5);
+            display: block;
+            -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+            transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+          }
+          &:after {
+            content:'';
+            display:inline-block;
+            @include transition;
+          }
+          &:hover{
+            color: #fff;
+            &:before {
+              width:100%;
+            }
+            &:after {
+              content:'>';
+              padding-left:100px;
+            }
+          } 
         }
       }
     }

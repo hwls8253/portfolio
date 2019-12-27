@@ -5,5 +5,9 @@ function menu(){
     $(this).addClass('hover').siblings('li').removeClass('hover');
   });
 }
+
+function contact(){
+  $('.contact-box').toggleClass('open');
+}
 // $(function(){
 // })

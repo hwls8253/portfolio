@@ -115,16 +115,17 @@ header {
     }
   }
   .menu-wrap {
-    display:none;
     position:fixed;
     z-index:20;
     top:0;
     left:0;
-    width:100vw;
+    width:0;
+    overflow: hidden;
     height:100vh;
     background:rgba(255,255,255,.9);
+    @include transition;
     &.on {
-      display:block;
+      width:100vw;
     }
     nav {
       @include position-center;
@@ -135,13 +136,15 @@ header {
           font-size:rem(48);
           color:#a6a6a6;
           font-weight: 700;
+          @include transition;
         }
         .text {
+          width:400px;
           @include position-center-top;
           right:0;
           opacity:0;
           text-align:center;
-          line-height:1.6;
+          line-height:1.6;      
         }
         &.hover {
           > a {
@@ -151,6 +154,10 @@ header {
           }
           .text {
             opacity:1;
+            animation: fadein 1s forwards;
+            -moz-animation: fadein 1s forwards; /* Firefox */
+            -webkit-animation: fadein 1s forwards; /* Safari and Chrome */
+            -o-animation: fadein 1s forwards; /* Opera */
           }
         }
       }
