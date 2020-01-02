@@ -29,6 +29,15 @@
   -ms-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
 }
+// position static
+@mixin position-static {
+  position: static;
+  -webkit-transform: translate(0%, 0%);
+  -moz-transform: translate(0%, 0%);
+  -o-transform: translate(0%, 0%);
+  -ms-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+}
 // background 이미지 기본
 @mixin bg-img-basic {
   background-repeat: no-repeat;
