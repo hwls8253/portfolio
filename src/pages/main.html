@@ -11,7 +11,7 @@
 </head>
 <body>
   <header>
-    <h1 class="logo"><a href="/">Kim Hye Jin<br>PORTFOLIO</a></h1>
+    <h1 class="logo"><a href="main.html">Kim Hye Jin<br>PORTFOLIO</a></h1>
     <div class="menu-btn">
       <button onclick="menu()">M E N U</button>
     </div>
@@ -19,7 +19,7 @@
       <nav>
         <ul>
           <li class="hover">
-            <a href="/">Home</a>
+            <a href="main.html">Home</a>
             <div class="text">
               안녕하세요 :)<br>
               웹퍼블리셔 김혜진의 포트폴리오 사이트 입니다.</br>
@@ -62,25 +62,28 @@
     </div>
     <button onclick="contact();" class="contact-btn">Contact</button>
     <div class="contact-box">
-      <h2>Contact</h2>
-      <div class="form-box">
-        <div class="input-box">
-          <label for="" class="impor">Name</label>
-          <input type="text">
-        </div>
-        <div class="input-box">
-          <label for="">Company</label>
-          <input type="text">
-        </div>
-        <div class="input-box">
-          <label for="" class="impor">E-mail</label>
-          <input type="text">
-        </div>
-        <div class="input-box">
-          <label for="" class="impor">Message</label>
-          <textarea></textarea>
+      <div class="box">
+        <h2>Contact</h2>
+        <div class="form-box">
+          <div class="input-box f-wrap">
+            <label for="" class="impor">Name</label>
+            <input type="text">
+          </div>
+          <div class="input-box">
+            <label for="">Company</label>
+            <input type="text">
+          </div>
+          <div class="input-box">
+            <label for="" class="impor">E-mail</label>
+            <input type="text">
+          </div>
+          <div class="input-box">
+            <label for="" class="impor">Message</label>
+            <textarea  rows="5"></textarea>
+          </div>
         </div>
         <button class="send-btn">SEND</button>
+        <button onclick="closeBtn();" class="close-btn">닫기</button>
       </div>
     </div>
   </section>

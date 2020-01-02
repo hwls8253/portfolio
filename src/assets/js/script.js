@@ -9,5 +9,15 @@ function menu(){
 function contact(){
   $('.contact-box').toggleClass('open');
 }
+function closeBtn(){
+  $('.contact-box').removeClass('open');
+  
+  $('.contact-box').click(function(e){
+    if (!$(e.target).closest('.box').length) {
+      $(".contact-box").removeClass("open");
+    }
+  });
+}
+
 // $(function(){
 // })

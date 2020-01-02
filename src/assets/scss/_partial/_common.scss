@@ -7,6 +7,12 @@ html {
 button {
   cursor: pointer;
 }
+textarea,input {
+  font-family:  NotoSansKR, sans-serif;
+  font-weight:400;
+  font-size:$small-txt;
+  color:$default-color;
+}
 footer {
   display: table;
   width:100%;
@@ -32,13 +38,105 @@ footer {
   @include text-hidden;
 }
 .contact-box {
-  display:none;
   position:fixed;
-  right:0;
-  bottom:0;
+  width:100vw;
+  height:100vh;
+  opacity: 0;
+  visibility: hidden;
+  left:0;
+  top:0;
+  background:rgba(0,0,0,0.2);
   z-index:40;
+  @include transition;  
+  .box {
+    position:absolute;
+    right:25px;
+    bottom:-525px;
+    width:500px;
+    max-width:40%;
+    box-sizing: border-box;
+    border-radius: 40px;
+    background:#fff;
+    text-align: center;
+    padding:38px;
+    @include transition;
+    h2 {
+      font-size:rem(28);
+      padding-bottom:18px;
+    }
+    .form-box {
+      width:100%;
+      .input-box {
+        display: flex;
+        margin:15px 0;
+        align-items: center;
+        label {
+          width:100px;
+          color:#5b5b5b;
+          text-align: left;
+        }
+        input,textarea {
+          width: calc(100% - 100px);
+          min-height:30px;
+          background:#e2e2e2;
+          border:0;
+          box-shadow: none;
+          padding:0 5px;
+          resize: none;
+        }
+      }
+    }
+    .send-btn {
+      width:260px;
+      margin-top:20px;
+      max-width:80%;
+      background:#000;
+      color:#fff;
+      padding:15px 0;
+    }
+    .close-btn {
+      @include text-hidden;
+      width:30px;
+      height:30px;
+      position: absolute;
+      right:30px;
+      top:25px;
+      &:before,&:after {
+        position: absolute;
+        left: 15px;
+        top:0px;
+        content: ' ';
+        height: 25px;
+        width: 2px;
+        background:#ccc;
+      }
+      &:before{
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      &:hover {
+        &:before,&:after {
+          background:#666;
+        }
+      }
+    }
+  }
   &.open {
-    display:block;
+    opacity: 1;
+    visibility: visible;
+    .box {
+      bottom:25px;
+    }
   }
 }
 
