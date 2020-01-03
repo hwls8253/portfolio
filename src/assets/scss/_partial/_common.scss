@@ -22,6 +22,7 @@ footer {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    color:#999;
   }
 }
 .contact-btn {
@@ -29,10 +30,8 @@ footer {
   z-index:10;
   right:25px;
   bottom:25px;
-  width:90px;
-  height:90px;
-  max-width:5vw;
-  max-height:5vw;
+  width:70px;
+  height:70px;
   background:url(../img/send.svg) no-repeat center center;
   background-size:100%;
   @include text-hidden;
@@ -53,7 +52,6 @@ footer {
     right:25px;
     bottom:-525px;
     width:500px;
-    max-width:40%;
     box-sizing: border-box;
     border-radius: 40px;
     background:#fff;
@@ -142,10 +140,104 @@ footer {
 
 // 태블릿
 @media (min-width: 768px) and (max-width: 1024px) { 
+  footer {
+    display: block;
+    width:100%;
+    height:auto;
+    padding:20px 0;
+    text-align: center;
+    p {
+      display: block;
+      text-align: center;
+    }
+  }
+  .contact-btn {
+    bottom:20px;
+  }
+  
   
 }
 
 // 모바일
 @media (max-width: 767px) { 
-  
+  html {
+    font-size: rem(14);
+  }
+  footer {
+    display: block;
+    height:auto;
+    padding:20px 0;
+    text-align: center;
+    line-height:1.4;
+    font-size:rem(12);
+    p {
+      display: block;
+      span {
+        display: block;
+      }
+    }
+  }
+  .contact-btn {
+    position: absolute;
+    right:15px;
+    bottom:85px;
+    width:55px;
+    height:55px;
+  }
+  .contact-box {
+    .box {
+      @include position-center;
+      top:100%;
+      bottom: auto;
+      width:90%;
+      box-sizing: border-box;
+      border-radius: 20px;
+      padding:30px;
+      h2 {
+        font-size:rem(20);
+      }
+      .form-box {
+        width:100%;
+        .input-box {
+          display: flex;
+          margin:15px 0;
+          align-items: center;
+          label {
+            width:80px;
+          }
+          input,textarea {
+            width: calc(100% - 80px);
+          }
+        }
+      }
+      .send-btn {
+        width:200px;
+        margin-top:10px;
+        max-width:80%;
+        padding:10px 0;
+      }
+      .close-btn {
+        @include text-hidden;
+        width:20px;
+        height:20px;
+        right:20px;
+        top:15px;
+        &:before,&:after {
+          position: absolute;
+          left: 10px;
+          top:0px;
+          content: ' ';
+          height: 20px;
+          width: 2px;
+          background:#ccc;
+        }
+      }
+    }
+    &.open {
+      .box {
+        top:50%;
+        bottom: auto;
+      }
+    }
+  }
 }
