@@ -32,7 +32,7 @@ header {
       &:before {
         content:'';
         display: block;
-        width:20px;
+        width:19px;
         height:1px;
         background:$default-color-lighten;
         @include position-center-left;
@@ -42,7 +42,7 @@ header {
       &:after {
         content:'';
         display: block;
-        width:20px;
+        width:19px;
         height:1px;
         background:$default-color-lighten;
         @include position-center-left;
@@ -158,6 +158,167 @@ header {
             -moz-animation: fadein 1s forwards; /* Firefox */
             -webkit-animation: fadein 1s forwards; /* Safari and Chrome */
             -o-animation: fadein 1s forwards; /* Opera */
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 태블릿
+@media (min-width: 768px) and (max-width: 1025px) { 
+  header {
+    height:auto;
+    padding: 30px 0 20px;
+    .menu-btn {
+      left: 10px;
+    }
+    .menu-wrap {
+      nav {
+        li {
+          width:70vw;
+          padding:26px 0;
+          >a {
+            font-size:rem(48);
+          }
+          .text {
+            width:auto;
+            min-width:250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 모바일
+@media (max-width: 767px) { 
+  header {
+    position: relative;
+    width:96%;
+    height:auto;
+    padding: 20px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      display:inline-block;
+      font-size:rem(18);
+      line-height:1.2;
+      font-weight:700;
+      text-align:justify;
+    }
+    .menu-btn {
+      @include position-static;
+      position: relative;
+      left:auto;
+      top:auto;
+      width:40px;
+      height:40px;
+      transition: none;
+      &:after {
+        content:'';
+        width:15px;
+        height:1px;
+        background:$default-color-lighten;
+        @include position-center-top;
+        left:10px;
+      }
+      button {
+        width:100%;
+        height:100%;
+        background:#ececec;
+        border-radius:100%;
+        vertical-align: middle;
+        word-break: break-all;
+        font-size:rem(14);
+        color:$default-color-lighten;
+        text-align: center;
+        @include text-hidden;
+        &:before {
+          content:'';
+          display: block;
+          width:19px;
+          height:1px;
+          background:$default-color-lighten;
+          @include position-center-left;
+          top:12px;
+          @include transition;
+        }
+        &:after {
+          content:'';
+          display: block;
+          width:19px;
+          height:1px;
+          background:$default-color-lighten;
+          @include position-center-left;
+          bottom:12px;
+          @include transition;
+        }
+      }
+      &:hover {
+        button {
+          @include position-static;
+          left:auto;
+          top:auto;
+          width:100%;
+          height:100%;
+          transition: none;
+          &:before {
+            top:12px;
+          }
+          &:after {
+            bottom:12px;
+          }
+        }
+      }
+      &.close-btn {
+        button {
+          width:100%;
+          height:100%;
+          &:before {
+            top:50%;
+            left:10px;
+          }
+          &:after {
+            bottom:50%;
+            left:10px;
+          }
+        }
+      }
+    }
+    .menu-wrap {
+      position:fixed;
+      z-index:20;
+      top:0;
+      left:0;
+      width:100vw;
+      overflow: hidden;
+      height:0vh;
+      background:rgba(255,255,255,.9);
+      @include transition;
+      &.on {
+        height:100vh;
+      }
+      nav {
+        @include position-center;
+        li {
+          width:100vw;
+          padding:26px 0;
+          text-align:center;
+          >a {
+            font-size:rem(48);
+          }
+          .text {
+            display:none;    
+          }
+          &.hover {
+            > a,
+            > a:active {
+              margin-left:0;
+              border-bottom: 1px solid #000;
+              color:#000;
+            }
           }
         }
       }

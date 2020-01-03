@@ -74,7 +74,7 @@
           display: inline-block;
           position: relative;
           width: 350px;
-          max-width:48%;
+          max-width:49%;
           padding: 25px 0;
           font-size: 20px;
           color: $default-color-lighten;
@@ -121,7 +121,7 @@
 
 
 // 태블릿
-@media (min-width: 768px) and (max-width: 1024px) { 
+@media (min-width: 768px) and (max-width: 1025px) { 
   .main-wrap {
     .main {
       .img-box {
@@ -151,6 +151,7 @@
   .main-wrap {
     height: auto;
     width: 96%;
+    border: 5px solid #fff;
     &:after {
       bottom: -5px;
       padding-right: 5px;
@@ -173,35 +174,35 @@
         @include position-center-left;
         top:0;
         width:100%;
-        height:55vh;
+        height:70vh;
         background:url(../img/main_img.jpg) no-repeat left top;
-        background-size:auto 55vh;
+        background-size:cover;
       }
       .text-box {
         @include position-static;
         position: relative;
         right:auto;
         top:auto;
-        text-align:center;
         width:100%;
         .text {
-          @include position-center-top;
-          width:100%;
+          position:absolute;
+          bottom:100px;
+          left:10px;
           margin-top:-50px;
-          font-size:rem(30);
+          font-size:rem(35);
           color:#fff;
           text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
           font-weight:700;
-          line-height:1.6;
+          line-height:1.2;
           .name {
             display:block;
           }
         }
         .btn-wrap {
-          padding-top: calc(55vh + 20px);
-          padding-bottom:15px;
+          padding-top: calc(70vh + 10px);
+          padding-bottom:5px;
           a {
-            width:48%;  
+            width:49%;  
             padding: 20px 0;
             font-size: $basic-txt;
             &:before {
