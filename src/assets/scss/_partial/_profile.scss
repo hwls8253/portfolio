@@ -1,0 +1,197 @@
+.profile-wrap {
+  display:flex;
+  -ms-display: flexbox;
+  padding:80px 0px;
+  .sub-btn {
+    background:url(../img/monitor.svg) no-repeat left center;
+    background-size:70px 70px;
+    .name {
+      display:inline-block;
+      max-width:0px;
+      line-height:70px;
+      padding-left:0px;
+      box-sizing: border-box;
+      overflow: hidden;
+      @include transition;
+    }
+    &:hover {
+      .name {
+        max-width:400px;
+        padding-left:80px;
+      }
+    }
+  }
+  .box {
+    width:50%;
+    box-sizing: border-box;
+  }
+  &:after {
+    content:'';
+    @include position-center;
+    width:1px;
+    height: calc(100% - 160px);
+    background:#ccc;
+  }
+  .profile {
+    display:flex;
+    -ms-display: flexbox;
+    padding:0 30px;
+    .profile-img {
+      max-width: 35%;
+      img{
+        width:100%;
+      }
+    }
+    .con {
+      padding-left:10%;
+      ul {
+        padding:40px 0px 0 15px;
+      }
+      li {
+        padding-bottom: 20px;
+        line-height:1.6;
+        h4 {
+          color:#000;
+        }
+      }
+    }
+  }
+  .skill{
+    padding:0 60px;
+    .con {
+      padding:40px 0px 0 15px;
+      li {
+        display:flex;
+        -ms-display: flexbox;
+        align-items: center;
+        margin: 0 0 30px;
+        h4 {
+          width: 100px;
+        }
+        .bar-wrap {
+          position: relative;
+          width: calc(100% - 100px);
+          height: 30px;
+          background:#f1f1f1;
+          span {
+            position: absolute;
+            width:0px;
+            height:100%;
+            background:#333;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+            @include text-hidden;
+          }
+        }
+      }
+    }
+  } 
+}
+// 태블릿
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profile-wrap {
+    display:block;
+    .box {
+      width:100%;
+      box-sizing: border-box;
+      padding:0 30px;
+    }
+    &:after {
+      display:none;
+    }
+    .profile {
+      display:flex;
+      -ms-display: flexbox;
+      justify-content: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #ccc;
+      .profile-img {
+        max-width: 30%;
+      }
+    }
+    .skill{
+      padding-top:40px;
+      max-width:700px;
+      margin:0 auto;
+    } 
+  }
+}
+
+// 모바일
+@media (max-width: 767px) {
+  .profile-wrap {
+    display:block;
+    padding:40px 0px;
+    .sub-btn {
+      background:url(../img/monitor.svg) no-repeat left center;
+      background-size:55px 55px;
+      .name {
+        display:none;
+      }
+    }
+    .box {
+      width:100%;
+      box-sizing: border-box;
+      padding:0 20px;
+    }
+    &:after {
+      display:none;
+    }
+    .profile {
+      display:block;
+      text-align:center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #ccc;
+      .profile-img {
+        max-width: 40%;
+        margin:0 auto 40px;
+      }
+      .con {
+        padding-left:0;
+        ul {
+          padding:40px 0px 0 15px;
+        }
+        li {
+          padding-bottom: 20px;
+          line-height:1.6;
+          h4 {
+            color:#000;
+          }
+        }
+      }
+    }
+    .skill{
+      padding-top:40px;
+      max-width:700px;
+      margin:0 auto;
+      .con {
+        padding:40px 0px 0 15px;
+        li {
+          display:flex;
+          -ms-display: flexbox;
+          align-items: center;
+          margin: 0 0 30px;
+          h4 {
+            width: 100px;
+          }
+          .bar-wrap {
+            position: relative;
+            width: calc(100% - 100px);
+            height: 30px;
+            background:#f1f1f1;
+            span {
+              position: absolute;
+              width:10px;
+              height:100%;
+              background:#333;
+              @include text-hidden;
+            }
+          }
+        }
+      }
+    } 
+  }
+}

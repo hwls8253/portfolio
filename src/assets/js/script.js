@@ -18,6 +18,12 @@ function closeBtn(){
     }
   });
 }
+function skillEffect(){
+  $('.bar-wrap span').each(function(){
+    var percent = $(this).text();
+    $(this).css('width',percent + '%');
+  });
+}
 
 // $(function(){
 // })
