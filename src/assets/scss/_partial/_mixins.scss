@@ -57,4 +57,5 @@
 @mixin text-hidden {
   text-indent: -9999px;
   overflow: hidden;
+  font-size:0;
 }

@@ -13,10 +13,33 @@ textarea,input {
   font-size:$small-txt;
   color:$default-color;
 }
+.hidden {
+  @include text-hidden;
+}
 section {
   position: relative;
   width: 90%;
   margin: 0 auto;
+  &.sub-wrap {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    h3 {
+      position: relative;
+      font-size:rem(24);
+      color:#000;
+      font-weight:bold;
+      padding:40px 0 0;
+      &:before {
+        content:'';
+        position:absolute;
+        left:0;
+        top:0;
+        width:22px;
+        height:3px;
+        background:#000;
+      }
+    }
+  }
 }
 footer {
   display: table;
@@ -30,7 +53,7 @@ footer {
     color:#999;
   }
 }
-.contact-btn,.sub-btn {
+.contact-btn {
   position: fixed;
   z-index:10;
   right:25px;
@@ -40,6 +63,15 @@ footer {
   background:url(../img/send.svg) no-repeat center center;
   background-size:100%;
   @include text-hidden;
+}
+.sub-btn {
+  position: fixed;
+  display: block;
+  z-index:10;
+  right:25px;
+  bottom:25px;
+  min-width:70px;
+  height:70px;
 }
 .contact-box {
   position:fixed;
@@ -71,9 +103,11 @@ footer {
       width:100%;
       .input-box {
         display: flex;
+        -ms-display: flexbox;
         margin:15px 0;
         align-items: center;
         label {
+          display:block;
           width:100px;
           color:#5b5b5b;
           text-align: left;
@@ -156,7 +190,7 @@ footer {
       text-align: center;
     }
   }
-  .contact-btn {
+  .contact-btn, .sub-btn {
     bottom:20px;
   }
   
@@ -171,6 +205,22 @@ footer {
   section {
     width: 96%;
     margin: 0 auto;
+    &.sub-wrap {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      h3 {
+        text-align:center;
+        font-size:rem(20);
+        padding:20px 0 0;
+        &:before {
+          content:'';
+          @include position-center-left;
+          width:22px;
+          height:3px;
+          background:#000;
+        }
+      }
+    }
   }
   footer {
     display: block;
@@ -193,6 +243,12 @@ footer {
     width:55px;
     height:55px;
   }
+  .sub-btn {
+    min-width:55px;
+    height:55px;
+    right: 8px;
+    bottom: 8px;
+  }
   .contact-box {
     .box {
       @include position-center;
@@ -209,6 +265,7 @@ footer {
         width:100%;
         .input-box {
           display: flex;
+          -ms-display: flexbox;
           margin:15px 0;
           align-items: center;
           label {
