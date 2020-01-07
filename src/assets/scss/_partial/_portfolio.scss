@@ -1,0 +1,132 @@
+.portfolio-wrap {
+  position: relative;
+  padding:40px 0px 0;
+  box-sizing:border-box;
+  .sub-btn {
+    background:url(../img/user.svg) no-repeat left center;
+    background-size:70px 70px;
+    .name {
+      display:inline-block;
+      max-width:0px;
+      line-height:70px;
+      padding-left:0px;
+      box-sizing: border-box;
+      overflow: hidden;
+      @include transition;
+    }
+    &:hover {
+      .name {
+        max-width:400px;
+        padding-left:80px;
+      }
+    }
+  }
+  .portfolio {
+    .tab-btns {
+      position:absolute;
+      top:80px;
+      right:0;
+      text-align: right;
+      button {
+        display:inline-block;
+        padding-left: 50px;
+        color:#999;
+        font-size: rem(12);
+        &.all {
+          font-weight:bold;
+          color:#000;
+        }
+      }
+    }
+    .con{
+      width:100%;
+      padding: 30px;
+      box-sizing:border-box;
+      img {
+        width:100%;
+      }
+      ul {
+        display:flex;
+        -ms-display: flexbox;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li {
+          position: relative;
+          width:25vw;
+          height:18vw;
+          margin-bottom:40px;
+          overflow: hidden;
+          border: 1px solid #eee;
+          box-sizing:border-box;
+          cursor: pointer;
+          a {
+            position:absolute;
+            left:0;
+            display: block;
+            top:100%;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.5);
+            color:#fff;
+            box-sizing: border-box;
+            @include transition;
+            .txt-box {
+              position:absolute;
+              width: calc(100% - 50px);
+              left:25px;
+              bottom:4%;
+              font-size: rem(14);
+              line-height:1.6;
+              h5 {
+                padding-bottom:10px;
+                border-bottom: 1px solid #fff;
+                font-size:rem(16);
+                margin-bottom: 10px;
+              }
+            }
+          }
+          &:hover {
+            a {
+              top:0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 태블릿
+@media (min-width: 768px) and (max-width: 1024px) {
+  .portfolio-wrap {
+    .portfolio {
+      .con{
+        padding: 10px;
+        ul {
+          li {
+            position: relative;
+            margin-bottom:40px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            box-sizing:border-box;
+            cursor: pointer;
+            a {
+              .txt-box {
+                h5 {
+                  padding-bottom:10px;
+                  font-size:rem(14);
+                }
+                font-size: rem(12);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 모바일
+@media (max-width: 767px) {
+
+}
