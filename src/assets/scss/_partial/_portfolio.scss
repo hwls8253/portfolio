@@ -29,10 +29,10 @@
       text-align: right;
       button {
         display:inline-block;
-        padding-left: 50px;
+        margin-left: 50px;
         color:#999;
         font-size: rem(12);
-        &.all {
+        &.active {
           font-weight:bold;
           color:#000;
         }
@@ -43,7 +43,13 @@
       padding: 30px;
       box-sizing:border-box;
       img {
+        @include position-center-left;
+        top:0;
         width:100%;
+        &.h100 {
+          width:auto;
+          height:100%;
+        }
       }
       ul {
         display:flex;
@@ -51,6 +57,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         li {
+          display:none;
           position: relative;
           width:25vw;
           height:18vw;
@@ -59,7 +66,13 @@
           border: 1px solid #eee;
           box-sizing:border-box;
           cursor: pointer;
-          a {
+          > a {
+            position: relative;
+            display:block;
+            width:100%;
+            height:100%;
+          }
+          .txt-wrap {
             position:absolute;
             left:0;
             display: block;
@@ -70,7 +83,7 @@
             color:#fff;
             box-sizing: border-box;
             @include transition;
-            .txt-box {
+            .txt {
               position:absolute;
               width: calc(100% - 50px);
               left:25px;
@@ -86,7 +99,7 @@
             }
           }
           &:hover {
-            a {
+            .txt-wrap {
               top:0;
             }
           }
@@ -111,7 +124,7 @@
             box-sizing:border-box;
             cursor: pointer;
             a {
-              .txt-box {
+              .txt {
                 h5 {
                   padding-bottom:10px;
                   font-size:rem(14);
@@ -140,15 +153,17 @@
       .tab-btns {
         position:static;
         text-align: center;
+        padding:10px 0 0;
         button {
           display:inline-block;
-          padding: 30px 20px 0;
+          margin:0;
+          padding:20px;
           font-size: rem(14);
         }
       }
       .con{
         width:100%;
-        padding: 30px;
+        padding: 10px 10px;
         box-sizing:border-box;
         img {
           width:100%;
@@ -171,7 +186,7 @@
               width:45%;
               border:1px solid #eee;
             }
-            a {
+            .txt-wrap {
               position:absolute;
               left:0;
               top:0;
@@ -179,7 +194,7 @@
               background:transparent;
               color:#333;
               box-sizing: border-box;
-              .txt-box {
+              .txt {
                 position:static;
                 width:49%;
                 margin-left:51%;
@@ -192,11 +207,6 @@
                   font-size:rem(16);
                   margin-bottom: 10px;
                 }
-              }
-            }
-            &:hover {
-              a {
-                top:0;
               }
             }
           }

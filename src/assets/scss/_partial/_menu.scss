@@ -1,6 +1,7 @@
 header {
   width:90%;
   height:15vh;
+  min-height:75px;
   margin:0 auto;
   vertical-align: bottom;
   padding-top: 5vh;
@@ -199,6 +200,7 @@ header {
     position: relative;
     width:96%;
     height:auto;
+    min-height:auto;
     padding: 20px 0 10px;
     display: flex;
     -ms-display: flexbox;
