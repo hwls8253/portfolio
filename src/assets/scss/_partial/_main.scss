@@ -61,19 +61,35 @@
     .text-box {
       @include position-center-top;
       right:0;
+      .typewriter p{
+        display:inline-block;
+        white-space: nowrap;
+        overflow: hidden; 
+        border-right: 2px solid rgba(255,255,255,.75);
+        padding-right:10px;
+        &:first-child {
+          animation: typewriter 3s steps(33) 1s 1 normal both,
+                    blinkTextCursor 500ms steps(33) infinite normal;
+        }
+        &:last-child {
+          margin-top:-20px;
+          animation: typewriter 3s steps(33) 3s 1 normal both,
+                    blinkTextCursor 500ms steps(33) 2s infinite normal;
+        }
+      }
       .text {
         font-size:rem(70);
         color:#fff;
         text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
         font-weight:700;
-        line-height:1.2;
+        line-height:1.4;
       }
       .btn-wrap {
         padding-top: 50px;
         a {
           display: inline-block;
           position: relative;
-          width: 350px;
+          width: 370px;
           max-width:49%;
           padding: 25px 0;
           font-size: 20px;
@@ -132,6 +148,7 @@
         text-align: center;
         width:100%;
         .text {
+          display:inline-block;
           font-size:rem(50);
         }
         .btn-wrap {
@@ -184,6 +201,26 @@
         right:auto;
         top:auto;
         width:100%;
+        .typewriter {
+
+          border-right: 2px solid rgba(255,255,255,.75);
+          animation: typewriter 4s steps(33) 1s 1 normal both,
+          blinkTextCursor 500ms steps(33) infinite normal;
+        }
+        .typewriter p{
+          display:block;
+          white-space: nowrap;
+          overflow: hidden; 
+          border-right: 0px solid rgba(255,255,255,.75);
+          padding-right:10px;
+          &:first-child {
+            animation: none;
+          }
+          &:last-child {
+            margin-top:0px;
+            animation: none;
+          }
+        }
         .text {
           position:absolute;
           bottom:100px;
