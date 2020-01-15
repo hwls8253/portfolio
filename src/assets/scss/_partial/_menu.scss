@@ -135,10 +135,24 @@ header {
         width:60vw;
         padding:26px 0;
         >a {
+          display:inline-block;
+          position:relative;
           font-size:rem(48);
           color:#a6a6a6;
           font-weight: 700;
           @include transition;
+          &:after {
+            content:'';
+            display:inline-block;
+            position:absolute;
+            left:0;
+            bottom:-10px;
+            width:100%;
+            max-width:0;
+            height:1px;
+            background:transparent;
+            @include transition;
+          }
         }
         .text {
           width:400px;
@@ -151,8 +165,11 @@ header {
         &.hover {
           > a {
             margin-left:36px;
-            border-bottom: 1px solid #000;
             color:#000;
+            &:after {
+              max-width:100%;
+              background:#000;
+            }
           }
           .text {
             opacity:1;

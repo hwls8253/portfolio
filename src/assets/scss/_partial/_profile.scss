@@ -64,25 +64,25 @@
         display:flex;
         -ms-display: flexbox;
         align-items: center;
-        margin: 0 0 30px;
+        margin: 0 0 50px;
         h4 {
           width: 100px;
         }
         .bar-wrap {
           position: relative;
           width: calc(100% - 100px);
-          height: 30px;
+          height: 20px;
           background:#f1f1f1;
           span {
             position: absolute;
             width:0px;
             height:100%;
             background:#333;
-            -webkit-transition: all 1s ease-in-out;
-            -moz-transition: all 1s ease-in-out;
-            -o-transition: all 1s ease-in-out;
-            -ms-transition: all 1s ease-in-out;
-            transition: all 1s ease-in-out;
+            -webkit-transition: all 1s .5s ease-in-out;
+            -moz-transition: all 1s .5s ease-in-out;
+            -o-transition: all 1s .5s ease-in-out;
+            -ms-transition: all 1s .5s ease-in-out;
+            transition: all 1s .5s ease-in-out;
             @include text-hidden;
           }
         }

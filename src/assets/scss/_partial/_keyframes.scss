@@ -260,6 +260,72 @@
   }
 }
 
+@keyframes potop {
+  from {
+    top:100px;
+  }
+  to {
+    top:0;
+  }
+}
+@-moz-keyframes potop { /* Firefox */
+  from {
+    top:100px;
+  }
+  to {
+    top:0;
+  }
+}
+@-webkit-keyframes potop { /* Safari and Chrome */
+  from {
+    top:100px;
+  }
+  to {
+    top:0;
+  }
+}
+@-o-keyframes potop { /* Opera */
+  from {
+    top:100px;
+  }
+  to {
+    top:0;
+  }
+}
+
+
+@keyframes potop2 {
+  from {
+    top:100%
+  }
+  to {
+    top:50%;
+  }
+}
+@-moz-keyframes potop2 { /* Firefox */
+  from {
+    top:100%
+  }
+  to {
+    top:50%;
+  }
+}
+@-webkit-keyframes potop2 { /* Safari and Chrome */
+  from {
+    top:100%
+  }
+  to {
+    top:50%;
+  }
+}
+@-o-keyframes potop2 { /* Opera */
+  from {
+    top:100%
+  }
+  to {
+    top:50%;
+  }
+}
 
 @keyframes typewriter{
   from{
@@ -267,6 +333,7 @@
   }
   to{
     max-width: 1000px;
+    padding-right:10px;
   }
 }
 @keyframes blinkTextCursor{

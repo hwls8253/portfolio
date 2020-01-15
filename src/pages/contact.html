@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/jquery/jquery-1.12.4.min.js"></script>
   <script src="../assets/js/script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init("user_o8bkmWMmqCOX5fgexe1OY");
+     })();
+  </script>
+  <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate the contact number value
+            this.contact_number.value = Math.random() * 100000 | 0;
+            emailjs.sendForm('gmail', 'template_vdwX4joC', this);
+        });
+      }
+  </script>
 </head>
 <body>
   <header>
@@ -56,21 +72,19 @@
           E-mail. khwls8253@gmail.com<br>
           address. 경기도 김포시 돌문로
         </div>
-        <div class="form-box">
+        <form class="form-box" id="contact-form">
+          <input type="hidden" name="contact_number">
           <div class="input-box flex">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Company">
+            <input type="text" placeholder="Name" name="from_name">
+            <input type="text" placeholder="Company" name="from_company">
           </div>
           <div class="input-box">
-            <input type="text" placeholder="E-mail">
+            <input type="email" placeholder="E-mail"  name="from_email">
           </div>
-          <textarea placeholder="Message"></textarea>
-          <div class="check-box">
-            <input type="checkbox" id="chk01">
-            <label for="chk01">수신동의</label>
-          </div>
-          <button>SEND</button>
-        </div>
+          <textarea name="message_html" placeholder="Message"></textarea>
+          <input class="btn" onclick="alert('준비중입니다')" value="Send">
+          <!-- type="submit" -->
+        </form>
       </div>
     </div>
   </section>
