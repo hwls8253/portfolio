@@ -117,19 +117,18 @@
         padding: 30px 10px;
         ul {
           li {
-            position: relative;
-            margin-bottom:40px;
-            overflow: hidden;
-            border: 1px solid #eee;
-            box-sizing:border-box;
-            cursor: pointer;
-            a {
+            .txt-wrap {
               .txt {
+                width: calc(100% - 30px);
+                left:15px;
+                bottom:4%;
+                font-size: rem(13);
                 h5 {
-                  padding-bottom:10px;
-                  font-size:rem(14);
+                  padding-bottom:6px;
+                  font-size:rem(15);
+                  margin-bottom: 6px;
+                  white-space: nowrap;
                 }
-                font-size: rem(12);
               }
             }
           }
@@ -137,6 +136,7 @@
       }
     }
   }
+  
 }
 
 // 모바일
@@ -163,7 +163,7 @@
       }
       .con{
         width:100%;
-        padding: 10px 10px;
+        padding: 0px 0px 10px;
         box-sizing:border-box;
         img {
           width:100%;
@@ -171,20 +171,32 @@
         ul {
           display:block;
           li {
-            display:flex;
-            -ms-display:flexbox;
-            justify-content: space-between;
-            align-items: center;
             width:100%;
             height:auto;
-            margin-bottom:40px;
+            margin-bottom:20px;
             overflow: hidden;
             border: 0px;
             box-sizing:border-box;
             cursor: pointer;
-            img {
-              width:45%;
-              border:1px solid #eee;
+            > a{
+              min-height:150px;
+              img {
+                width:45%;
+                height:auto;
+                -webkit-transform: translate(0%, 0%);
+                -moz-transform: translate(0%, 0%);
+                -o-transform: translate(0%, 0%);
+                -ms-transform: translate(0%, 0%);
+                transform: translate(0%, 0%);
+                top:0;
+                left:0;
+                border:1px solid #eee;
+                &.h100 {
+                  width:45%;
+                  height:auto;
+                  @include position-center-top;
+                }
+              }
             }
             .txt-wrap {
               position:absolute;
@@ -195,16 +207,15 @@
               color:#333;
               box-sizing: border-box;
               .txt {
-                position:static;
-                width:49%;
-                margin-left:51%;
-                padding-top: 15px;
-                font-size: rem(14);
-                line-height:1.6;
+                width:50%;
+                left:50%;
+                @include position-center-top;
+                bottom:auto;
+                font-size: rem(13);
                 h5 {
                   padding-bottom:10px;
                   border-bottom: 1px solid #aaa;
-                  font-size:rem(16);
+                  font-size:rem(15);
                   margin-bottom: 10px;
                 }
               }
