@@ -180,6 +180,17 @@
             cursor: pointer;
             > a{
               min-height:150px;
+              &:after {
+                content:'';
+                position:absolute;
+                left:0;
+                top:0;
+                width:45%;
+                height:100%;
+                box-sizing: border-box;
+                border:1px solid #aaa;
+                z-index:2;
+              }
               img {
                 width:45%;
                 height:auto;
@@ -190,7 +201,7 @@
                 transform: translate(0%, 0%);
                 top:0;
                 left:0;
-                border:1px solid #eee;
+                border:0;
                 &.h100 {
                   width:45%;
                   height:auto;
