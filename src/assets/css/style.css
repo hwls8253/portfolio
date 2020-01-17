@@ -842,6 +842,7 @@ header {
     margin: 10px;
     width: calc(100% - 20px);
     height: calc(100% - 20px);
+    overflow: hidden;
     position: relative;
     z-index: 4;
     opacity: 0;
@@ -916,6 +917,9 @@ header {
             background: rgba(0, 0, 0, 0.5);
             display: block;
             -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
+            -moz-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
+            -o-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
+            -ms-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
             transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1); }
           .main-wrap .main .text-box .btn-wrap a:after {
             content: '';
@@ -1471,7 +1475,7 @@ header {
       .contact-wrap .contact .box .check-box {
         font-size: 13px;
         padding: 5px 0; }
-      .contact-wrap .contact .box input.btn {
+      .contact-wrap .contact .box button.btn {
         display: block;
         margin: 30px auto 0;
         width: 260px;
@@ -1542,7 +1546,7 @@ header {
         box-sizing: border-box;
         border: 1px solid #ccc;
         resize: none; }
-    .contact-wrap .contact .box input.btn {
+    .contact-wrap .contact .box button.btn {
       width: 200px;
       margin-top: 10px;
       max-width: 80%;
