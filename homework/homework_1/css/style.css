@@ -74,6 +74,9 @@ main > .title span {
     height:100%;
     z-index:20;
 }
+main > .title .drop {
+    overflow:visible;
+}
 main > .title .drop .img {
     background:url(../images/title_drop.png) no-repeat center center;
     background-size:100%;
@@ -90,10 +93,11 @@ main > .title .drop:before {
     position:absolute;
     top:-3.73vw;
     left:15.733vw;
-    width:45.06vw;
-    height:41.32vw;
-    background:url(../images/title_drop_point.png) no-repeat right bottom;
-    background-size:100%;
+    width:22.53vw;
+    height:20.66vw;
+    padding:0 22.53vw 20.66vw 0;
+    background:url(../images/title_drop_point.png) no-repeat left top;
+    background-size:50%;
     -webkit-animation: 1.5s ease-in 0s normal forwards 1 fire;
     animation: 1.5s ease-in 0s normal forwards 1 fire;
 }
@@ -152,20 +156,22 @@ main > .money .txt:after {
     position:absolute;
     top:0;
     display:block;
-    width:29.06vw;
-    height:31.46vw;
+    width:14.53vw;
+    height:15.73vw;
 }
 main > .money .txt:before {
     left:-14.53vw;
-    background:url(../images/hands_left.png) no-repeat right top;
-    background-size:100%;
+    padding:0 0 15.73vw 14.53vw;
+    background:url(../images/hand_left.png) no-repeat right top;
+    background-size:50%;
     -webkit-animation: .3s ease-in-out 0s infinite alternate rotateLeft;
     animation: .3s ease-in-out 0s infinite alternate rotateLeft;
 }
 main > .money .txt:after {
     right:-14.53vw;
-    background:url(../images/hands_right.png) no-repeat center center;
-    background-size:100%;
+    padding:0 14.53vw 15.73vw 0;
+    background:url(../images/hand_right.png) no-repeat left top;
+    background-size:50%;
     -webkit-animation: .3s ease-in-out 0s infinite alternate rotateRight;
     animation: .3s ease-in-out 0s infinite alternate rotateRight;
 }
@@ -196,8 +202,8 @@ main > .sns-box:after {
     opacity:.2;
 }
 .sns-box.on:after {
-    -webkit-animation: 4s ease-in-out 0s normal forwards infinite flicker2;
-    animation: 4s ease-in-out 0s normal forwards infinite flicker2;
+    -webkit-animation: 4s ease-in-out .5s normal forwards infinite flicker2;
+    animation: 4s ease-in-out .5s normal forwards infinite flicker2;
 }
 main > .sns-box button {
     position: absolute;

@@ -109,9 +109,7 @@
         $(window).scroll(function(){
             var snsTop = $(window).height() - $('.sns-box').offset().top
             if($(window).scrollTop() >= snsTop){
-                setTimeout(function(){
-                    $('.sns-box').addClass('on');
-                }, 500);
+                $('.sns-box').addClass('on');
             }
         });
         
