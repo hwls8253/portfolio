@@ -1,0 +1,55 @@
+/* Icon css */
+span[class*="ico-"] {
+    display:inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    @include bg-img-basic;
+    background-size:100%;
+    &.ico-close {
+        width:rem(40);
+        height:rem(40);
+        background-image:url(../images/menu_close.png);
+    }
+    &.ico-scroll {
+        width:rem(100);
+        height:rem(104);
+        background-image: url(../images/ico_scroll.png);
+    }
+    &.ico-more {
+        width:rem(31);
+        height:rem(31);
+        background-image: url(../images/ico_more.png);
+    }
+    &.ico-play {
+        width:rem(130);
+        height:rem(130);
+        background-image: url(../images/ico_play.png);
+    }
+    &.ico-plus {
+        width:rem(51);
+        height:rem(51);
+        background-image: url(../images/ico_plus.png);
+    }
+    &.ico-sch {
+        width:rem(31);
+        height:rem(31);
+        background-image: url(../images/ico_sch.png);
+    }
+    &.ico-file {
+        width:rem(23);
+        height:rem(23);
+        background-image: url(../images/ico_file.png);
+    }
+    &.ico-next {
+        @include arrow;
+    }    
+    &.ico-prev {
+        @include arrow;
+        transform: rotate(-45deg);
+    }
+    &.ico-close-w {
+        width:rem(33);
+        height:rem(33);
+        background-image: url(../images/pop_close.png);
+    }
+}

@@ -1,0 +1,138 @@
+
+// clearfix
+@mixin clearfix{
+    &:after {
+        content:'';
+        display:block;
+        clear:both;
+    }
+}
+// menu bar
+@mixin menubar {
+    position:relative;
+    &:after {
+        content:'';
+        display:block;
+        position:absolute;
+        width:1px;
+        height:100%;
+        background:$border-color-light;
+        top:50%;
+        right:0;
+        -moz-transform:translate(0,-50%);
+        -webkit-transform:translate(0,-50%);
+        -o-transform:translate(0,-50%);
+        -ms-transform:translate(0,-50%);
+        transform:translate(0,-50%);
+    }
+    &:last-of-type:after{
+        display:none;
+    }
+}
+// background 이미지 기본
+@mixin bg-img-basic {
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-color:transparent;
+}
+// position 가운데
+@mixin position-center {
+    position:absolute;
+    left:50%;
+    top:50%;
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+}
+@mixin position-top-center {
+    position:absolute;
+    top:50%;
+    -moz-transform:translate(0,-50%);
+    -webkit-transform:translate(0,-50%);
+    -o-transform:translate(0,-50%);
+    -ms-transform:translate(0,-50%);
+    transform:translate(0,-50%);
+}
+@mixin position-left-center{
+    position:absolute;
+    left:50%;
+    -moz-transform:translate(-50%,0);
+    -webkit-transform:translate(-50%,0);
+    -o-transform:translate(-50%,0);
+    -ms-transform:translate(-50%,0);
+    transform:translate(-50%,0);
+}
+
+// arrow 
+@mixin arrow {
+    display:inline-block;
+    width:rem(16);
+    height:rem(16);
+    border-top:rem(1) solid #b9b9b9;
+    border-left:rem(1) solid #b9b9b9;
+    -moz-transform:rotate(135deg);  
+    -webkit-transform:rotate(135deg);  
+    -o-transform:rotate(135deg);  
+    -ms-transform:rotate(135deg);
+    transform: rotate(135deg);
+}
+
+// transition
+@mixin transition-all {
+    -moz-transition : all .5s;
+    -webkit-transition : all .5s;
+    -o-transition : all .5s;
+    -ms-transition : all .5s;
+    transition : all .5s;
+}
+@mixin scale {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+@mixin scale-active {
+    -moz-transform: scale(1.46);
+    -webkit-transform: scale(1.46);
+    -o-transform: scale(1.46);
+    -ms-transform: scale(1.46);
+    transform: scale(1.46);
+}
+
+// scale + center
+@mixin position-scale {
+    position:absolute;
+    left:50%;
+    top:50%;
+    -moz-transform:translate(-50%,-50%) scale(1);
+    -webkit-transform:translate(-50%,-50%) scale(1);
+    -o-transform:translate(-50%,-50%) scale(1);
+    -ms-transform:translate(-50%,-50%) scale(1);
+    transform:translate(-50%,-50%) scale(1);
+}
+@mixin position-scale-active {
+    -moz-transform:translate(-50%,-50%) scale(1.2);
+    -webkit-transform:translate(-50%,-50%) scale(1.2);
+    -o-transform:translate(-50%,-50%) scale(1.2);
+    -ms-transform:translate(-50%,-50%) scale(1.2);
+    transform:translate(-50%,-50%) scale(1.2);
+}
+
+// mixin 
+// 멀티라인 말줄임 표시
+// $line-cnt : 라인 수
+// $line-height : line-height값
+// 사용법 : @include ellipsis(3, 1.6em);
+@mixin ellipsis($line-cnt, $line-height) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line-cnt; /* 라인수 */
+    -webkit-box-orient: vertical;
+    word-wrap:break-word; 
+    line-height: $line-height;
+    height: $line-height * $line-cnt; /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
+}

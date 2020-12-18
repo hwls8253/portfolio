@@ -1,0 +1,139 @@
+// 글자 생략
+@mixin ellipsis{
+	display:inline-block;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+// clearfix
+@mixin clearfix{
+    &:after {
+        content:'';
+        display:block;
+        clear:both;
+    }
+}
+// menu bar
+@mixin menubar {
+    position:relative;
+    &:after {
+        content:'';
+        display:block;
+        position:absolute;
+        width:1px;
+        height:100%;
+        background:$border-color-light;
+        top:50%;
+        right:0;
+        -moz-transform:translate(0,-50%);
+        -webkit-transform:translate(0,-50%);
+        -o-transform:translate(0,-50%);
+        -ms-transform:translate(0,-50%);
+        transform:translate(0,-50%);
+    }
+    &:last-of-type:after{
+        display:none;
+    }
+}
+// background 이미지 기본
+@mixin bg-img-basic {
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-color:transparent;
+}
+// position 가운데
+@mixin position-center {
+    position:absolute;
+    left:50%;
+    top:50%;
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+}
+@mixin position-top-center {
+    position:absolute;
+    top:50%;
+    -moz-transform:translate(0,-50%);
+    -webkit-transform:translate(0,-50%);
+    -o-transform:translate(0,-50%);
+    -ms-transform:translate(0,-50%);
+    transform:translate(0,-50%);
+}
+@mixin position-left-center{
+    position:absolute;
+    left:50%;
+    -moz-transform:translate(-50%,0);
+    -webkit-transform:translate(-50%,0);
+    -o-transform:translate(-50%,0);
+    -ms-transform:translate(-50%,0);
+    transform:translate(-50%,0);
+}
+
+// arrow 
+@mixin arrow {
+    display:inline-block;
+    margin-left:16px;
+    width:rem(8);
+    height:rem(8);
+    border-top:2px solid #222;
+    border-left:2px solid #222;
+    -moz-transform:rotate(135deg);  
+    -webkit-transform:rotate(135deg);  
+    -o-transform:rotate(135deg);  
+    -ms-transform:rotate(135deg);
+    transform: rotate(135deg);
+    &:after {
+        content:'';
+        display:block;
+        width:16px;
+        height:2px;
+        margin:5px 0 0 -2px;
+        background:#222;
+        transform: rotate(-135deg);
+    }
+}
+
+// transition
+@mixin transition-all {
+    -moz-transition : all .4s;
+    -webkit-transition : all .4s;
+    -o-transition : all .4s;
+    -ms-transition : all .4s;
+    transition : all .4s;
+}
+@mixin scale {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+@mixin scale-active {
+    -moz-transform: scale(1.46);
+    -webkit-transform: scale(1.46);
+    -o-transform: scale(1.46);
+    -ms-transform: scale(1.46);
+    transform: scale(1.46);
+}
+
+// scale + center
+@mixin position-scale {
+    position:absolute;
+    left:50%;
+    top:50%;
+    -moz-transform:translate(-50%,-50%) scale(1);
+    -webkit-transform:translate(-50%,-50%) scale(1);
+    -o-transform:translate(-50%,-50%) scale(1);
+    -ms-transform:translate(-50%,-50%) scale(1);
+    transform:translate(-50%,-50%) scale(1);
+}
+@mixin position-scale-active {
+    -moz-transform:translate(-50%,-50%) scale(1.2);
+    -webkit-transform:translate(-50%,-50%) scale(1.2);
+    -o-transform:translate(-50%,-50%) scale(1.2);
+    -ms-transform:translate(-50%,-50%) scale(1.2);
+    transform:translate(-50%,-50%) scale(1.2);
+}
+

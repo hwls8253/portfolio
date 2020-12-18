@@ -1,0 +1,35 @@
+.btn {
+    display:inline-block;
+    text-align:center;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size:rem(24);
+    border:rem(2) solid;
+    &.basic {
+        color:#fff;
+        line-height:rem(46);
+    }
+    &.round {
+        padding:0 rem(70);
+        border-radius: rem(30);
+    }
+    &.primary {
+        background:$primary-color;
+        border-color:$primary-color;
+        color:#333;
+    }
+    &.round2 {
+        font-weight:bold;
+        line-height:rem(64);
+        border-radius: rem(35);
+        padding:0 rem(84);
+    }
+    &.gray {
+        width:rem(160);
+        line-height:rem(50);
+        background:#b4b3b3;
+        color:#333333;
+        font-weight:bold;
+        font-size:$basic-txt;
+    }
+}

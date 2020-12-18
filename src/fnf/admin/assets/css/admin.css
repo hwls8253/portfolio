@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400&display=swap");
+
+/* font */
+@font-face {
+  font-family: 'NotoSansKR';
+  font-weight: 200;
+  src: url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot) format("embedded-opentype"), url(../fonts/NotoSans-Light.woff) format("woff"); }
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-weight: 300;
+  src: url(../fonts/NotoSans-DemiLight.eot);
+  src: url(../fonts/NotoSans-DemiLight.eot) format("embedded-opentype"), url(../fonts/NotoSans-DemiLight.woff) format("woff"); }
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-weight: 400;
+  src: url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot) format("embedded-opentype"), url(../fonts/NotoSans-Regular.woff) format("woff"); }
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-weight: 500;
+  src: url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot) format("embedded-opentype"), url(../fonts/NotoSans-Medium.woff) format("woff"); }
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-weight: 600;
+  src: url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot) format("embedded-opentype"), url(../fonts/NotoSans-Medium.woff) format("woff"); }
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-weight: 700;
+  src: url(../fonts/NotoSans-Bold.eot);
+  src: url(../fonts/NotoSans-Bold.eot) format("embedded-opentype"), url(../fonts/NotoSans-Bold.woff) format("woff"); }
+
+*{font-family: 'Montserrat','NotoSansKR', Arial, sans-serif;}
+h2{display:block; font-size:30px; line-height:30px; font-weight:700; text-align:center; margin-bottom:40px}
+input[type=text],
+input[type=password]{height:36px; font-size:14px; line-height:34px; border:1px solid #ddd; padding:0 10px;}
+input[type=password]{font-family:Sans-serif;}
+input[type=file]{width:600px; height:36px; line-height:36px; background:#f3f3f3; border:1px solid #ddd}
+select{width:155px; height:36px; border:1px solid #ddd; font-size:14px; color:#5e5e5e; line-height:34px; padding-left:20px; background:url(../../assets/images/ico_select.gif) right no-repeat #fff}
+select{-webkit-appearance:none; -moz-appearance:none; appearance:none}
+select::-ms-expand{display: none}
+.mg_r5{margin-right:5px}
+.mg_l5{margin-left:5px}
+.mg_b5{margin-bottom:5px}
+.mg_b15{margin-bottom:15px}
+.t_c{text-align:center !important}
+.flt_l{float:left}
+.flt_r{float:right}
+.w40{width:40px}
+.w60{width:60px}
+.w90{width:90px}
+.w522{width:522px}
+.w600{width:600px}
+.w760{width:760px}
+.file_name{display:inline-block; margin-left:5px; vertical-align:middle; font-size:14px}
+.file_name a{color:#5e5e5e}
+.file_name img{vertical-align:middle; margin-bottom:3px}
+.msg{display:block;color:#10ccb4; line-height:36px; margin-left:5px; font-size:14px}
+.dot_line{width:100%; height:1px; background:url(../../assets/images/dot_line.png) repeat-x; margin:34px 0 70px}
+.ipt_cal{width:140px; border-right:0 !important}
+textarea{width:100%; height:150px; border:1px solid #b5b5b5; padding:10px}
+
+
+/* button */
+.btns{width:100%; margin-top:30px}
+.btns:after{content:''; display:block; clear:both}
+.btn{display:inline-block; width:90px; line-height:36px; background:#232323; font-size:14px; color:#fff; text-align:center}
+.btn.long{width:140px;}
+.btn.red{background:#10ccb4}
+.btn.black{background:#232323}
+.btn_item_add{display:inline-block; width:36px; height:36px; border:1px solid #ddd; background:url(../../assets/images/ico_plus.png) center no-repeat #f3f3f3; text-indent:-9999em}
+.btn_item_minus{display:inline-block; width:36px; height:36px; border:1px solid #ddd; background:url(../../assets/images/ico_minus.png) center no-repeat #f3f3f3; text-indent:-9999em}
+
+
+
+/* table */
+table.tbl{width:100%; border-top:2px solid #232323}
+table.tbl th{font-weight:700; text-align:center; background:#f3f3f3; border-bottom:1px solid #232323}
+table.tbl th,
+table.tbl td{padding:13px 0; border-left:1px solid #ddd; text-align:center; vertical-align:middle}
+table.tbl th:first-child,
+table.tbl td:first-child{border-left:0}
+table.tbl td{border-bottom:1px solid #ddd}
+table.tbl td input[type=text]{height:30px; line-height:28px}
+table.tbl .t_l{text-align:left; padding-left:30px; padding-right:30px}
+table.tbl.row{border-top:1px solid #ddd}
+table.tbl.row th{border-bottom:1px solid #ddd; text-align:left; padding-left:30px; font-weight:400}
+table.tbl.row th span.es{color:#10ccb4}
+table.tbl.row td{font-size:14px; text-align:left; padding-left:20px; padding-right:20px}
+table.tbl.row th,
+table.tbl.row td{padding-top:7px; padding-bottom:7px}
+table.tbl.row td ul.file_list li{margin-top:7px}
+table.tbl.row td ul.file_list li:first-child{margin-top:0}
+table.tbl.row td input[type=text]{height:36px; line-height:34px}
+table.tbl.row.view{table-layout: fixed;white-space:normal;word-break:break-all;}
+table.tbl.row.view th,
+table.tbl.row.view td{line-height:24px; padding-top:12px; padding-bottom:12px}
+table.tbl.row.view td ul.file_list li{margin-top:0}
+table.tbl.row.view td img {max-width:700px;}
+
+/* header */
+#header{width:100%}
+#header .top{width:100%; height:100px; background:#10ccb4; padding-top:32px}
+#header .top .inner{width:1280px; margin:0 auto}
+#header .top .inner:after{content:''; display:block; clear:both}
+#header .top h1{float:left}
+#header .top h1 a{display:inline-block;width:auto;height:42px;}
+#header .top h1 a img{display:block;width:auto;height:42px;}
+#header .top .etc{float:right}
+#header .top .etc p.user{display:inline-block; font-size:16px; color:#fff; line-height:40px; color:#fff; margin-right:23px}
+#header .top .etc a{display:inline-block; width:100px; font-size:16px; text-align:center; color:#fff; line-height:40px; background:#5e5e5e}
+#header .nav{width:100%; border-bottom:1px solid #ddd}
+#header .nav ul{width:1280px; margin:0 auto}
+#header .nav ul:after{content:''; display:block; clear:both}
+#header .nav ul li{float:left; width:20%; border-right:1px solid #ddd}
+#header .nav ul li:first-child{border-left:1px solid #ddd}
+#header .nav ul li a{display:block; font-size:18px; font-weight:700; line-height:69px; text-align:center}
+#header .nav ul li a.on{background:#232323; color:#fff}
+#header .sub{width:100%; border-bottom:1px solid #ddd; text-align:center; background:#f3f3f3;display:none;}
+#header .sub ul{display:inline-block}
+#header .sub ul:after{content:''; display:block; clear:both}
+#header .sub ul li{float:left; margin:0 15px}
+#header .sub ul li a{position:relative; display:block; font-size:16px; line-height:50px; padding:0 10px}
+#header .sub ul li a.on{font-weight:700; color:#10ccb4}
+#header .sub ul li a.on:after{position:absolute; left:0; bottom:-1px; width:100%; height:2px; background:#10ccb4; content:""}
+#header .sub.sub01 ul{margin-left:-960px;}
+#header .sub.sub02 ul{margin-left:-500px;}
+#header .sub.sub03 ul{margin-left:0px;}
+#header .sub.sub04 ul{margin-left:500px;}
+#header .sub.sub05 ul{margin-left:1030px;}
+
+/* container */
+#container{width:1280px; margin:0 auto; padding:70px 0 100px}
+
+.search_box{border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#f3f3f3; padding:15px 0 15px 30px; margin-bottom:65px}
+.search_box table{width:100%}
+.search_box table th,
+.search_box table td{vertical-align:middle; line-height:36px; padding:10px 0}
+.search_box table th{font-size:16px}
+.search_box select{margin-right:5px}
+.search_box input[type=text].ipt_cal{width:140px; border-right:0 !important;margin-right:0}
+.search_box input[type=text]{width:753px; margin-right:5px}
+.list_top{margin-bottom:25px}
+.paginate{width:100%; text-align:center; margin-top:30px}
+.paginate a{display:inline-block; width:40px; height:40px; border:1px solid #ddd; font-size:16px; line-height:38px; text-align:center}
+.paginate a.first{background:url(../../assets/images/ico_paginate_first.png) center no-repeat; text-indent:-9999em}
+.paginate a.prev{background:url(../../assets/images/ico_paginate_prev.png) center no-repeat; text-indent:-9999em}
+.paginate a.next{background:url(../../assets/images/ico_paginate_next.png) center no-repeat; text-indent:-9999em}
+.paginate a.last{background:url(../../assets/images/ico_paginate_last.png) center no-repeat; text-indent:-9999em}
+.paginate a.curr{background:#10ccb4; color:#fff; font-weight:700; border:1px solid #10ccb4}
+
+
+
+/* pop */
+.pop{display:none; position:fixed; left:50%; top:50%; width:430px; margin-left:-215px; transform:translateY(-50.5%); z-index:11000}
+.pop.w505{width:505px; margin-left:-252.5px}
+.pop.on{display:block}
+.pop .top{position:relative; width:100%; height:60px; background:#10ccb4; padding:0 30px}
+.pop .top h3{line-height:60px; color:#fff}
+.pop .top a.btn_close{position:absolute; right:8px; top:0; display:block; width:60px; height:60px; background:url(../../assets/images/ico_close.png) center no-repeat; text-indent:-9999em}
+.pop .con{background:#fff; padding:25px 30px 30px}
+.pop .con table{width:100%}
+.pop .con table th,
+.pop .con table td{vertical-align:top; padding:4px 0}
+.pop .con table th{padding-top:8px}
+.pop .con input[type=text],
+.pop .con input[type=file]{width:100%; height:36px; line-height:34px}
+.pop .con .file_name{display:inline-block; margin-left:0; vertical-align:middle; font-size:14px}
+.pop .con .file_name a{color:#5e5e5e}
+.pop .con .file_name img{vertical-align:middle; margin-bottom:3px}
+.pop .con .msg{color:#10ccb4; line-height:28px; margin-left:5px; font-size:14px}
+.pop .con .btns{margin-top:20px}
+
+.pop .con input[name="ri_info_color"] {width:16px;height:16px;}
+.pop .con span.ri_info_color {display:inline-block;margin:5px 3px 0 2px;width:16px;height:16px;}
+
+/* posting */
+/* .posting{width:100%}
+.posting:after{content:''; display:block; clear:both}
+.posting .dpt{width:615px}
+.posting .dpt1{float:left}
+.posting .dpt2{float:right}
+.posting .dpt h3{display:block; height:64px; font-size:24px; font-weight:700; line-height:64px; border:1px solid #ddd; background:#f3f3f3; padding-left:50px}
+.posting .dpt ul{padding:10px 0; height:396px; overflow-y:auto; border:1px solid #ddd; border-top:0}
+.posting .dpt ul li{margin:10px 0}
+.posting .dpt ul li a{position:relative; display:block; line-height:63px; padding-left:50px; z-index:10}
+.posting .dpt ul li a .ico{position:absolute; right:50px; top:18px}
+.posting .dpt ul li a.on{background:#f3f3f3} */
+
+.posting{width:100%}
+.posting:after{content:''; display:block; clear:both}
+.posting .dpt{width:615px}
+.posting .dpt1{float:left}
+.posting .dpt2{float:right}
+.posting .dpt h3{display:block; height:64px; font-size:24px; font-weight:700; line-height:64px; border:1px solid #ddd; background:#f3f3f3; padding-left:50px}
+.posting .dpt ul{padding:10px 0; height:396px; overflow-y:auto; border:1px solid #ddd; border-top:0}
+.posting .dpt ul li{margin:10px 0}
+.posting .dpt ul li.on{background:#f3f3f3}
+.posting .dpt ul li a{position:relative; display:inline-block; line-height:51px; padding-left:50px; z-index:10;width:533px}
+.posting .dpt ul li a .ico{position:absolute; right:50px; top:18px}
+
+
+
+
+/* app_status */
+.app_status{width:100%}
+.app_status:after{content:''; display:block; clear:both}
+.app_status .calendar_box{position:relative; float:left; width:409px; height:424px; border:1px solid #ddd; padding-top:45px}
+.app_status .calendar_box:after{content:''; display:block; clear:both}
+.app_status .calendar_box .ui-datepicker{width:100% !important}
+.app_status .calendar_box .ui-datepicker:after{content:''; display:block; clear:both}
+.app_status .calendar_box .ui-datepicker-title{display:block; font-size:24px; font-weight:800; text-align:center}
+.app_status .calendar_box .ui-datepicker-prev{position:absolute; left:36px; top:39px; display:block; width:40px; height:40px; background:url(../../assets/images/btn_cal_prev.png) center no-repeat; text-indent:-9999em; cursor:pointer}
+.app_status .calendar_box .ui-datepicker-prev:hover{background:url(/images/app/btn_cal_prev_on.png) center no-repeat}
+.app_status .calendar_box .ui-datepicker-next{position:absolute; right:36px; top:39px; display:block; width:40px; height:40px; background:url(../../assets/images/btn_cal_next.png) center no-repeat; text-indent:-9999em; cursor:pointer}
+.app_status .calendar_box .ui-datepicker-next:hover{background:url(/images/app/btn_cal_next_on.png) center no-repeat}
+.app_status .calendar_box .calendar table{margin:35px auto 0}
+.app_status .calendar_box .calendar table th,
+.app_status .calendar_box .calendar table td{width:49px; font-size:16px; line-height:42px; text-align:center; vertical-align:middle}
+.app_status .calendar_box .calendar table th{padding-bottom:10px}
+.app_status .calendar_box .calendar table td{color:#bdbcbc}
+.app_status .calendar_box .calendar table th:first-child{color:#10ccb4}
+.app_status .calendar_box .calendar table td:first-child a{color:#10ccb4}
+.app_status .calendar_box .calendar table td a{display:inline-block; width:40px; line-height:40px}
+.app_status .calendar_box .calendar table td a:hover{background:#10ccb4; color:#fff}
+.app_status .calendar_box .calendar table td a.ui-state-active{background:#10ccb4; color:#fff}
+.app_status .list_box{float:right; width:822px}
+.app_status .list_box h3{display:block; width:100%; height:59px; font-size:24px; font-weight:700; text-align:center; line-height:57px; background:#f3f3f3; border-top:1px solid #ddd; border-bottom:1px solid #ddd}
+.app_status .list_box h4{display:block; font-size:16px; font-weight:700; margin:45px 0 15px}
+.app_status .list_box table{width:100%; border-top:3px solid #232323}
+.app_status .list_box table th,
+.app_status .list_box table td{vertical-align:middle; font-size:16px; text-align:center; border-bottom:1px solid #ddd; border-left:1px solid #ddd}
+.app_status .list_box table th:first-child,
+.app_status .list_box table td:first-child{border-left:0}
+.app_status .list_box table th{line-height:50px; background:#f3f3f3; font-weight:700; border-bottom:1px solid #232323}
+.app_status .list_box table td{padding:13px 0}
+.app_status .list_box table td:first-child{text-align:left; padding-left:30px}
+
+.app_request ul {display:block;height:36px;font-size:16px; font-weight:700; line-height:32px; margin-bottom:10px;border-bottom:2px solid #10ccb4;}
+.app_request ul li{width:130px;float:left;text-align:center;margin-right:2px;background-color:#f3f3f3;}
+.app_request ul li.on{background-color:#10ccb4;}
+.app_request ul li.on a{color:#fff;}
+.app_request select[name=KeyOrder] {width:202px;}
+.app_request .tbl {margin-bottom:15px;}
+.app_request .point{color:#10ccb4; margin-left:5px; font-size:16px;}
+.app_request .point2{text-decoration:underline}
+
+/* dim */
+.dim_all{display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:#000; opacity:0.6; z-index:10000}
+.dim_all.on{display:block}

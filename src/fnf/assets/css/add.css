@@ -1,0 +1,16 @@
+@media screen and (max-width: 1450px) {
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.kr{top:262px;left:785px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.cn{top:280px;left:765px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.hk{top:300px;left:746px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.vt{top:340px;left:725px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.it{top:230px;left:465px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.us{top:280px;left:245px;}
+}
+@media screen and (max-width: 1080px)  {
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.kr{top:235px;left:715px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.cn{top:260px;left:700px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.hk{top:275px;left:685px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.vt{top:310px;left:660px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.it{top:210px;left:425px;}
+	.investors .investors02 .investors-tab-lists .investors-tab-list .company .subsidiary > div ul li.us{top:260px;left:225px;}
+}

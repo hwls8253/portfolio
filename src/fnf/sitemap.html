@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sitemap</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        iframe body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: 0; /* Firefox */
+        }
+        iframe  body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera*/
+        }
+        .sitemap-menu {
+            position: absolute;
+            display: inline-block;
+            overflow-y: scroll;
+            padding-top: 18px;
+            width: 270px;
+            box-sizing: border-box;
+            height: 100%;
+            padding-top:50px;
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .sitemap-menu.mobile {
+            display: none;
+        }
+
+        .viewersize {
+            position: fixed;
+            padding: 10px 0px;
+            background: #333;
+            border-radius: 5px;
+            width: 230px;
+            margin: 10px;
+            left: 0;
+            top: 0;
+            color: #fff;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .sitemap-menu .tabs-btn {
+            padding: 0 10px 10px;
+            ;
+        }
+
+        .sitemap-menu .tabs-btn li {
+            display: inline-block;
+            margin: 0 5px 5px 0;
+            text-align: center;
+            padding: 5px 10px;
+            background: #aaa;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .sitemap-menu .tabs-btn li:last-child {
+            margin-right: 0;
+        }
+
+        .sitemap-menu .tabs-btn li.on {
+            background: #328ff6;
+        }
+
+        .sitemap-menu .tabs-btn li a {
+            display: block;
+        }
+
+        .range-wrap {
+            display: none;
+        }
+
+        .range-wrap.on {
+            display: block;
+        }
+
+        .range-wrap .range {
+            margin-bottom: 20px;
+        }
+
+        .range-wrap .range h4 {
+            padding: 10px;
+            font-size: 15px;
+            padding: 10px 10px 20px;
+            color: #6363ab;
+        }
+
+        .range-wrap .range>ul {
+            border-top: 1px solid #ddd;
+            background: #fcffee;
+            margin-bottom: 20px;
+        }
+
+        .range-wrap:nth-of-type(2) .range>ul {
+            background: #fff2f2
+        }
+
+        .range-wrap:nth-of-type(3) .range>ul {
+            background: #f4efff;
+        }
+
+        .range-wrap .range li {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .range-wrap .range li:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .range-wrap .range li .sub-title {
+            display: block;
+        }
+
+        .range-wrap .range li .btn-wrap {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .range-wrap .range li .btn-wrap .new-win {
+            display: inline-block;
+            border: 1px solid #666;
+            padding: 3px;
+            font-size: 11px;
+        }
+
+        .range-wrap .range li .btn-wrap a.on {
+            color: #f00;
+        }
+
+        iframe {
+            position: absolute;
+            top:0;
+            left: 270px;
+            width: calc(100% - 280px);
+            height: 100vh;
+            padding: 0;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        iframe.mobile {
+            position: absolute;
+            top:0;
+            left: 270px;
+            width: 392px; 
+            height: 667px;
+            padding: 0;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        ul.tab { padding: 5px;  }
+		ul.tab > li { display: inline-block; border: 0; padding: 0; margin:0 0 5px; }
+		.tab > li a { display: block; background-color: gray; padding: 5px; color: #ffffff; border-radius: 3px; margin: 0 2px; text-align: center; }
+		.tab > li a.on { background-color: #ab9bec; }
+    </style>
+</head>
+
+<body>
+    <div class="sitemap-menu">
+		<button class="viewersize">모바일size보기</button>
+		<ul class="tabs-btn">
+			<li><a href="javascript:void(0);">PC</a></li>
+			<li><a href="javascript:void(0);">mobile</a></li>
+			<li class="on"><a href="javascript:void(0);">admin</a></li>
+			<!-- <li><a href="javascript:void(0);">style guide</a></li> -->
+		</ul>
+        <div class="range-wrap">
+            <div class="range">
+                <h4 class="title">메인</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">메인</span>
+                        <div class="btn-wrap">
+                            <a href="pages/main/main.html" target="viewer">main.html</a>
+                            <a href="pages/main/main.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">메인 - 전체 메뉴 활성화</span>
+                        <div class="btn-wrap">
+                            <a href="pages/main/main2.html" target="viewer">main2.html</a>
+                            <a href="pages/main/main2.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">Follow F&F</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">F&F LIFE STYLE</span>
+                        <div class="btn-wrap">
+                            <a href="pages/follow/life.html" target="viewer">life.html</a>
+                            <a href="pages/follow/life.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">F&F LIFE STYLE - 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/follow/life_view.html" target="viewer">life_view.html</a>
+                            <a href="pages/follow/life_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <span class="sub-title">PEOPLE STORY</span>
+                        <div class="btn-wrap">
+                            <a href="pages/follow/story.html" target="viewer">story.html</a>
+                            <a href="pages/follow/story.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">TREND BY F&F</span>
+                        <div class="btn-wrap">
+                            <a href="pages/follow/trend.html" target="viewer">trend.html</a>
+                            <a href="pages/follow/trend.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">NEWS ROOM</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">NOTICE</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/notice.html" target="viewer">notice.html</a>
+                            <a href="pages/news/notice.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NOTICE 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/notice_view.html" target="viewer">notice_view.html</a>
+                            <a href="pages/news/notice_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">PRESS RELEASE</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/press.html" target="viewer">press.html</a>
+                            <a href="pages/news/press.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">PRESS RELEASE 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/press_view.html" target="viewer">press_view.html</a>
+                            <a href="pages/news/press_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NEWS</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/news.html" target="viewer">news.html</a>
+                            <a href="pages/news/news.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NEWS 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/news_view.html" target="viewer">news_view.html</a>
+                            <a href="pages/news/news_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">MEDIA ROOM</span>
+                        <div class="btn-wrap">
+                            <a href="pages/news/media.html" target="viewer">media.html</a>
+                            <a href="pages/news/media.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">ABOUT US</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">CEO MESSAGE</span>
+                        <div class="btn-wrap">
+                            <a href="pages/about/ceo.html" target="viewer">ceo.html</a>
+                            <a href="pages/about/ceo.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">HERITAGE</span>
+                        <div class="btn-wrap">
+                            <a href="pages/about/heritage.html" target="viewer">heritage.html</a>
+                            <a href="pages/about/heritage.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">HISTORY</span>
+                        <div class="btn-wrap">
+                            <a href="pages/about/history.html" target="viewer">history.html</a>
+                            <a href="pages/about/history.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NEO PARADIGM</span>
+                        <div class="btn-wrap">
+                            <a href="pages/about/neo.html" target="viewer">neo.html</a>
+                            <a href="pages/about/neo.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">BRANDS</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">FASHION</span>
+                        <div class="btn-wrap">
+                            <a href="pages/brands/fashion.html" target="viewer">fashion.html</a>
+                            <a href="pages/brands/fashion.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">BEAUTY</span>
+                        <div class="btn-wrap">
+                            <a href="pages/brands/beauty.html" target="viewer">beauty.html</a>
+                            <a href="pages/brands/beauty.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">RETAIL</span>
+                        <div class="btn-wrap">
+                            <a href="pages/brands/retail.html" target="viewer">retail.html</a>
+                            <a href="pages/brands/retail.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">RETAIL - 공지사항 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/brands/retail_view.html" target="viewer">retail_view.html</a>
+                            <a href="pages/brands/retail_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <span class="sub-title">LOGISTICS</span>
+                        <div class="btn-wrap">
+                            <a href="pages/brands/logistics.html" target="viewer">logistics.html</a>
+                            <a href="pages/brands/logistics.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li> -->
+                    <li>
+                        <span class="sub-title">F&B</span>
+                        <div class="btn-wrap">
+                            <a href="pages/brands/fnb.html" target="viewer">fnb.html</a>
+                            <a href="pages/brands/fnb.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">CAREER</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">채용공고</span>
+                        <div class="btn-wrap">
+                            <a href="pages/career/career01.html" target="viewer">career01.html</a>
+                            <a href="pages/career/career01.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">채용공고 - 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/career/career01_view.html" target="viewer">career01_view.html</a>
+                            <a href="pages/career/career01_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">인재상</span>
+                        <div class="btn-wrap">
+                            <a href="pages/career/career02.html" target="viewer">career02.html</a>
+                            <a href="pages/career/career02.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">복리후생</span>
+                        <div class="btn-wrap">
+                            <a href="pages/career/career03.html" target="viewer">career03.html</a>
+                            <a href="pages/career/career03.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">INVESTORS</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">F&F 현재와 미래</span>
+                        <div class="btn-wrap">
+                            <a href="pages/investors/investors01.html" target="viewer">investors01.html</a>
+                            <a href="pages/investors/investors01.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">F&F 현재와 미래 - 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/investors/investors01_view.html" target="viewer">investors01_view.html</a>
+                            <a href="pages/investors/investors01_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">경영정보</span>
+                        <div class="btn-wrap">
+                            <a href="pages/investors/investors02.html" target="viewer">investors02.html</a>
+                            <a href="pages/investors/investors02.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">경영정보 - 공고 상세</span>
+                        <div class="btn-wrap">
+                            <a href="pages/investors/investors02_view.html" target="viewer">investors02_view.html</a>
+                            <a href="pages/investors/investors02_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <span class="sub-title">주가정보</span>
+                        <div class="btn-wrap">
+                            <a href="pages/investors/investors03.html" target="viewer">investors03.html</a>
+                            <a href="pages/investors/investors03.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li> -->
+                    <li>
+                        <span class="sub-title">투자문의</span>
+                        <div class="btn-wrap">
+                            <a href="pages/investors/investors04.html" target="viewer">investors04.html</a>
+                            <a href="pages/investors/investors04.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">footer</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">고객센터</span>
+                        <div class="btn-wrap">
+                            <a href="pages/footer/cs.html" target="viewer">cs.html</a>
+                            <a href="pages/footer/cs.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">오시는 길</span>
+                        <div class="btn-wrap">
+                            <a href="pages/footer/location.html" target="viewer">location.html</a>
+                            <a href="pages/footer/location.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">개인정보처리방침</span>
+                        <div class="btn-wrap">
+                            <a href="pages/footer/privacy.html" target="viewer">privacy.html</a>
+                            <a href="pages/footer/privacy.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="range-wrap">
+            <div class="range">
+                <h4 class="title">메인</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">메인</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/main/main.html" target="viewer">main.html</a>
+                            <a href="m/pages/main/main.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">메인 - 전체 메뉴 활성화</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/main/main2.html" target="viewer">main2.html</a>
+                            <a href="m/pages/main/main2.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">Follow F&F</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">TREND BY F&F</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/follow/life.html" target="viewer">life.html</a>
+                            <a href="m/pages/follow/life.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">TREND BY F&F - 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/follow/life_view.html" target="viewer">life_view.html</a>
+                            <a href="m/pages/follow/life_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <span class="sub-title">PEOPLE STORY</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/follow/story.html" target="viewer">story.html</a>
+                            <a href="m/pages/follow/story.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">TREND BY F&F</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/follow/trend.html" target="viewer">trend.html</a>
+                            <a href="m/pages/follow/trend.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">NEWS ROOM</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">NOTICE</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/notice.html" target="viewer">notice.html</a>
+                            <a href="m/pages/news/notice.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NOTICE 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/notice_view.html" target="viewer">notice_view.html</a>
+                            <a href="m/pages/news/notice_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">PRESS RELEASE</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/press.html" target="viewer">press.html</a>
+                            <a href="m/pages/news/press.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">PRESS RELEASE 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/press_view.html" target="viewer">press_view.html</a>
+                            <a href="m/pages/news/press_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NEWS</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/news.html" target="viewer">news.html</a>
+                            <a href="m/pages/news/news.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NEWS 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/news_view.html" target="viewer">news_view.html</a>
+                            <a href="m/pages/news/news_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">MEDIA ROOM</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/news/media.html" target="viewer">media.html</a>
+                            <a href="m/pages/news/media.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">ABOUT US</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">CEO MESSAGE</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/about/ceo.html" target="viewer">ceo.html</a>
+                            <a href="m/pages/about/ceo.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">HERITAGE</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/about/heritage.html" target="viewer">heritage.html</a>
+                            <a href="m/pages/about/heritage.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">HISTORY</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/about/history.html" target="viewer">history.html</a>
+                            <a href="m/pages/about/history.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">NEO PARADIGM</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/about/neo.html" target="viewer">neo.html</a>
+                            <a href="m/pages/about/neo.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">BRANDS</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">FASHION</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/brands/fashion.html" target="viewer">fashion.html</a>
+                            <a href="m/pages/brands/fashion.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">BEAUTY</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/brands/beauty.html" target="viewer">beauty.html</a>
+                            <a href="m/pages/brands/beauty.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">RETAIL</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/brands/retail.html" target="viewer">retail.html</a>
+                            <a href="m/pages/brands/retail.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">RETAIL-공지사항 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/brands/retail_view.html" target="viewer">retail_view.html</a>
+                            <a href="m/pages/brands/retail_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <span class="sub-title">LOGISTICS</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/brands/logistics.html" target="viewer">logistics.html</a>
+                            <a href="m/pages/brands/logistics.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li> -->
+                    <li>
+                        <span class="sub-title">F&B</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/brands/fnb.html" target="viewer">fnb.html</a>
+                            <a href="m/pages/brands/fnb.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">CAREER</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">채용공고</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/career/career01.html" target="viewer">career01.html</a>
+                            <a href="m/pages/career/career01.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">채용공고 - 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/career/career01_view.html" target="viewer">career01_view.html</a>
+                            <a href="m/pages/career/career01_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">인재상</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/career/career02.html" target="viewer">career02.html</a>
+                            <a href="m/pages/career/career02.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">복리후생</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/career/career03.html" target="viewer">career03.html</a>
+                            <a href="m/pages/career/career03.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">INVESTORS</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">F&F 현재와 미래</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/investors/investors01.html" target="viewer">investors01.html</a>
+                            <a href="m/pages/investors/investors01.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">F&F 현재와 미래 - 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/investors/investors01_view.html" target="viewer">investors01_view.html</a>
+                            <a href="m/pages/investors/investors01_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">경영정보</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/investors/investors02.html" target="viewer">investors02.html</a>
+                            <a href="m/pages/investors/investors02.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">경영정보 - 공고 상세</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/investors/investors02_view.html" target="viewer">investors02_view.html</a>
+                            <a href="m/pages/investors/investors02_view.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <span class="sub-title">주가정보</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/investors/investors03.html" target="viewer">investors03.html</a>
+                            <a href="m/pages/investors/investors03.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li> -->
+                    <li>
+                        <span class="sub-title">투자문의</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/investors/investors04.html" target="viewer">investors04.html</a>
+                            <a href="m/pages/investors/investors04.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="range">
+                <h4 class="title">footer</h4>
+                <ul>
+                    <li>
+                        <span class="sub-title">고객센터</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/footer/cs.html" target="viewer">cs.html</a>
+                            <a href="m/pages/footer/cs.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">오시는 길</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/footer/location.html" target="viewer">location.html</a>
+                            <a href="m/pages/footer/location.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sub-title">개인정보처리방침</span>
+                        <div class="btn-wrap">
+                            <a href="m/pages/footer/privacy.html" target="viewer">privacy.html</a>
+                            <a href="m/pages/footer/privacy.html" target="_blank" class="new-win">새창</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="range-wrap on">
+            <div class="range">
+              <h4 class="title">로그인</h4>
+              <ul>
+                <li>
+                  <span class="sub-title">로그인</span>
+                  <div class="btn-wrap">
+                    <a href="admin/pages/login/login.html" target="viewer">login.html</a>
+                    <a href="admin/pages/login/login.html" target="_blank" class="new-win">새창</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="sub-title">비밀번호찾기</span>
+                  <div class="btn-wrap">
+                    <a href="admin/pages/login/find_pw.html" target="viewer">find_pw.html</a>
+                    <a href="admin/pages/login/find_pw.html" target="_blank" class="new-win">새창</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="sub-title">비밀번호변경</span>
+                  <div class="btn-wrap">
+                    <a href="admin/pages/login/change_pw.html" target="viewer">change_pw.html</a>
+                    <a href="admin/pages/login/change_pw.html" target="_blank" class="new-win">새창</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="sub-title">임시비밀번호 안내(메일)</span>
+                  <div class="btn-wrap">
+                    <a href="admin/pages/login/pw_mail.html" target="viewer">pw_mail.html</a>
+                    <a href="admin/pages/login/pw_mail.html" target="_blank" class="new-win">새창</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          <div class="range">
+            <h4 class="title">main</h4>
+            <ul>
+              <li>
+                <span class="sub-title">배너관리 - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/banner_list.html" target="viewer">banner_list.html</a>
+                  <a href="admin/pages/main/banner_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">배너관리 - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/banner_register.html" target="viewer">banner_register.html</a>
+                  <a href="admin/pages/main/banner_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">팝업관리 - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/popup_list.html" target="viewer">popup_list.html</a>
+                  <a href="admin/pages/main/popup_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">팝업관리 - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/popup_register.html" target="viewer">popup_register.html</a>
+                  <a href="admin/pages/main/popup_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">HOT ISSUES - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/hotissues_list.html" target="viewer">hotissues_list.html</a>
+                  <a href="admin/pages/main/hotissues_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">HOT ISSUES - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/hotissues_register.html" target="viewer">hotissues_register.html</a>
+                  <a href="admin/pages/main/hotissues_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">3MIN STORY - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/minstory_list.html" target="viewer">minstory_list.html</a>
+                  <a href="admin/pages/main/minstory_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">3MIN STORY - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/main/minstory_register.html" target="viewer">minstory_register.html</a>
+                  <a href="admin/pages/main/minstory_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="range">
+            <h4 class="title">F&F LIFE STYLE</h4>
+            <ul>
+              <li>
+                <span class="sub-title">F&F LIFE STYLE - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/lifestyle/lifestyle_list.html" target="viewer">lifestyle_list.html</a>
+                  <a href="admin/pages/lifestyle/lifestyle_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">F&F LIFE STYLE - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/lifestyle/lifestyle_register.html" target="viewer">lifestyle_register.html</a>
+                  <a href="admin/pages/lifestyle/lifestyle_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">PEOPLE STORY - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/lifestyle/peoplestory_list.html" target="viewer">peoplestory_list.html</a>
+                  <a href="admin/pages/lifestyle/peoplestory_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">PEOPLE STORY - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/lifestyle/peoplestory_register.html" target="viewer">peoplestory_register.html</a>
+                  <a href="admin/pages/lifestyle/peoplestory_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">TREND BY F&F - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/lifestyle/trend_list.html" target="viewer">trend_list.html</a>
+                  <a href="admin/pages/lifestyle/trend_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">TREND BY F&F - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/lifestyle/trend_register.html" target="viewer">trend_register.html</a>
+                  <a href="admin/pages/lifestyle/trend_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="range">
+            <h4 class="title">NEWS ROOM</h4>
+            <ul>
+              <li>
+                <span class="sub-title">NOTICE - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/notice_list.html" target="viewer">notice_list.html</a>
+                  <a href="admin/pages/news/notice_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">NOTICE - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/notice_register.html" target="viewer">notice_register.html</a>
+                  <a href="admin/pages/news/notice_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">PRESS RELEASE - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/press_list.html" target="viewer">press_list.html</a>
+                  <a href="admin/pages/news/press_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">PRESS RELEASE - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/press_register.html" target="viewer">press_register.html</a>
+                  <a href="admin/pages/news/press_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">NEWS - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/news_list.html" target="viewer">news_list.html</a>
+                  <a href="admin/pages/news/news_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">NEWS - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/news_register.html" target="viewer">news_register.html</a>
+                  <a href="admin/pages/news/news_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">MEDIA ROOM - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/media_list.html" target="viewer">media_list.html</a>
+                  <a href="admin/pages/news/media_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">MEDIA ROOM - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/news/media_register.html" target="viewer">media_register.html</a>
+                  <a href="admin/pages/news/media_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="range">
+            <h4 class="title">INVESTORS</h4>
+            <ul>
+              <li>
+                <span class="sub-title">F&F의 현재와 미래 - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/investers/investers01_list.html" target="viewer">investers01_list.html</a>
+                  <a href="admin/pages/investers/investers01_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">F&F의 현재와 미래 - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/investers/investers01_register.html" target="viewer">investers01_register.html</a>
+                  <a href="admin/pages/investers/investers01_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">경영정보(공고) - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/investers/investers02_list.html" target="viewer">investers02_list.html</a>
+                  <a href="admin/pages/investers/investers02_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">경영정보(공고) - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/investers/investers02_register.html" target="viewer">investers02_register.html</a>
+                  <a href="admin/pages/investers/investers02_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">경영정보(공시) - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/investers/investers02_list2.html" target="viewer">investers02_list2.html</a>
+                  <a href="admin/pages/investers/investers02_list2.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">경영정보(공시) - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/investers/investers02_register2.html" target="viewer">investers02_register2.html</a>
+                  <a href="admin/pages/investers/investers02_register2.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="range">
+            <h4 class="title">관리자관리</h4>
+            <ul>
+              <li>
+                <span class="sub-title">관리자관리 - list</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/manager/manager_list.html" target="viewer">manager_list.html</a>
+                  <a href="admin/pages/manager/manager_list.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">관리자관리 - register</span>
+                <div class="btn-wrap">
+                  <a href="admin/pages/manager/manager_register.html" target="viewer">manager_register.html</a>
+                  <a href="admin/pages/manager/manager_register.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="range-wrap">
+          <div class="range">
+            <h4 class="title">스타일가이드</h4>
+            <ul>
+              <li>
+                <span class="sub-title">스타일가이드-PC</span>
+                <div class="btn-wrap">
+                  <a href="styleguide/styleguide_pc.html" target="viewer">styleguide_pc.html</a>
+                  <a href="styleguide/styleguide_pc.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+              <li>
+                <span class="sub-title">스타일가이드-mobile</span>
+                <div class="btn-wrap">
+                  <a href="styleguide/styleguide_m.html" target="viewer">styleguide_m.html</a>
+                  <a href="styleguide/styleguide_m.html" target="_blank" class="new-win">새창</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <iframe src="" name="viewer" class="" style="overflow:hidden;"></iframe>
+
+    <script>
+        // link
+        var links = $('.range a');
+        for (i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function () {
+                for (i = 0; i < links.length; i++) {
+                    links[i].classList.remove('on');
+
+                }
+                this.classList.add('on');
+            })
+
+        }
+        // tab
+        $('.tabs-btn a').click(function () {
+            $(this).parent('li').addClass('on').siblings().removeClass('on');
+            var index = $(this).parent('li').index();
+            $('.range-wrap').eq(index).addClass('on').siblings().removeClass('on');;
+        });
+
+        $('.viewersize').click(function () {
+            $('iframe').toggleClass('mobile');
+        });
+
+        $('.title.lg').click(function () {
+            $(this).toggleClass('on');
+            $(this).next("div.range").slideToggle();
+        });
+        $('.title.lg').click();
+    </script>
+</body>
+
+</html>
+
+

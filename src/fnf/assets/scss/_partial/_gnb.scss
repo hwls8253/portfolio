@@ -1,0 +1,193 @@
+/* Gnb S */
+header {
+    position: fixed;
+    width:100%;
+    height:rem(101);
+    border-bottom:rem(1) solid rgba(255,255,255,.2);
+    background:$bg-sub;
+    z-index:12;
+    .logo {
+        float:left;
+        padding:rem(33) 0 rem(39) rem(39)
+    }
+    .right-menu {
+        position: relative;
+        float:right;
+        padding:rem(37) rem(42) rem(38) 0;
+        .lang {
+            display:inline-block;
+            vertical-align: top;
+            padding-right:rem(80);
+            a {
+                display:block;
+                float:left;
+                color:#fff;
+                opacity: .5;
+                font-size:$nav-txt;
+                padding:0 rem(19);
+                @include menubar;
+                &.on {
+                    opacity: 1;
+                }
+                line-height: rem(26);
+            }
+        }
+        .menu-btn {
+            display:inline-block;
+            vertical-align: top;
+            width:rem(24);
+            height:rem(24);
+            background:url(../images/menu_bar.png) no-repeat center center;
+            background-size:100%;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+    }
+    > .nav-wrap {
+        @include position-left-center;
+        width:rem(990);
+        color:#fff;
+        > li {
+            display:inline-block;
+            vertical-align: top;
+            padding:0 rem(30);
+            position: relative;
+            z-index:3;
+            a {
+                position:relative;
+                display:block;
+                font-weight:700;
+                font-size:$nav-txt;
+                padding:rem(42) 0 rem(43);
+                height:rem(101);
+                box-sizing: border-box;
+            }
+            .s-nav {
+                position:absolute;
+                display:none;
+                left:calc(50% + #{rem(15)});
+                transform: translate(-50% , 0);
+                li {
+                    display:inline-block;
+                    margin-right:rem(40);
+                    color:#999999;
+                    font-weight:500; 
+                    a {
+                        display:block;
+                        padding:rem(30) 0 0;
+                        &:hover {
+                            color:$primary-color;
+                            font-weight:700;
+                        }
+                    }
+                    &.on a{
+                        color:$primary-color;
+                        font-weight:700;
+                        &.no-line:after {
+                            display:none;
+                        }
+                    }
+                    &:last-child {
+                        margin:0;
+                    }
+                }
+            }
+            &:nth-of-type(1) {
+                .s-nav {
+                    left:0;
+                    transform:translate(0,0);
+                }
+            }
+            &:nth-last-of-type(1) {
+                .s-nav {
+                    left:auto;
+                    right:0;
+                    transform:translate(0,0);
+                }
+            }
+            &:hover,&.on {
+                > a:after {
+                    content:'';
+                    position:absolute;
+                    width:100%;
+                    height:rem(4);
+                    background:$primary-color;
+                    left:0;
+                    bottom:0;
+                }
+                .no-line:after {
+                    display:none;
+                }
+                .s-nav {
+                    display:block;
+                    white-space: nowrap;;
+                }
+            }
+        }
+        &:hover:after, &:not(.main-nav):after {
+            content:'';
+            @include position-left-center;
+            top:rem(102);
+            width:100vw;
+            height:rem(71);
+            background:rgba(29,29,29,.8);
+            z-index:0;
+        }
+    }
+    .all-menu {
+        position: fixed;
+        width:100%;
+        height:100vh;
+        left:0;
+        top:0;
+        z-index:101;
+        background:rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
+        @include transition-all;
+        &.on {
+            opacity: 1;
+            visibility: visible;
+        }
+        > ul {
+            @include position-center;
+            width:rem(1280);
+            height:rem(600);
+            max-width:90%;
+            background:$default-color;
+            box-sizing: border-box;
+            padding:rem(156) 0 0 rem(50);
+            color:#333;
+            > li {
+                float:left;
+                margin-right:rem(70);
+                > a {
+                    display:block;
+                    font-size:rem(24);
+                    font-weight:700;
+                    margin-bottom:rem(30);
+                    &:hover {
+                        color:$primary-color;
+                    }
+                }
+                ul a {
+                    display:inline-block;
+                    font-size:$basic-txt;
+                    font-weight:700;
+                    margin-bottom:rem(18);
+                    &:hover {
+                        color:$primary-color;
+                    }
+                }
+            }
+        }
+        .close-btn {
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin:rem(-270) 0 0 rem(590);
+            z-index:4;
+        }
+    }
+}
+/* Gnb E */

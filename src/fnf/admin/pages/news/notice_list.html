@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>F&F 관리자</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../../assets/images/favicon.ico">
+		<link rel="stylesheet" href="../../assets/js/jquery-ui.min.css">
+		<link rel="stylesheet" href="../../assets/css/common.css">
+		<link rel="stylesheet" href="../../assets/js/swiper5.3.8/swiper.min.css">
+		<link rel="stylesheet" href="../../assets/css/admin.css?ver=5">
+		<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/swiper5.3.8/swiper.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/xGeneric.js"></script>
+		<script type="text/javascript" src="../../assets/js/jquery.tablednd.js"></script>
+		<script type="text/javascript" src="../../assets/js/admin.js"></script>
+		<script type="text/javascript" src="../../assets/js/script.js"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<!-- header  -->
+			<div id="header">
+				<div class="top">
+					<div class="inner">
+						<h1><a href="/" target="_blank"><img src="../../assets/images/fnf_logo.png" alt=""></a></h1>
+						<div class="etc">
+							<p class="user">관리자 님</p>	<a href="" class="btn">로그아웃</a>
+						</div>
+					</div>
+				</div>
+				<div class="nav">
+					<ul>
+						<li><a>MAIN</a>
+						</li>
+						<li><a>F&F LIFE STYLE</a>
+						</li>
+						<li><a class="on">NEWS ROOM</a>
+						</li>
+						<li><a>INVESTORS</a>
+						</li>
+						<li><a>관리자관리</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sub sub01">
+					<ul>
+						<li><a>배너 관리</a></li>
+						<li><a>팝업 관리</a></li>
+						<li><a>HOT ISSUES</a></li>
+						<li><a>3MIN STORY</a></li>
+					</ul>
+				</div>
+				<div class="sub sub02">
+					<ul>
+						<li><a>F&F LIFE STYLE</a></li>
+						<li><a>PEOPLE STORY</a></li>
+						<li><a>TREND BY F&F</a></li>
+					</ul>
+				</div>
+				<div class="sub sub03" style="display:block;">
+					<ul>
+						<li><a class="on">NOTICE</a></li>
+						<li><a>PRESS RELEASE</a></li>
+						<li><a>NEWS</a></li>
+						<li><a>MEDIA ROOM</a></li>
+					</ul>
+				</div>
+				<div class="sub sub04">
+					<ul>
+						<li><a>F&F의 현재와 미래</a></li>
+						<li><a>경영정보</a></li>
+					</ul>
+				</div>
+				<div class="sub sub05">
+					<ul>
+						<li><a>관리자관리</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header  -->
+			<hr>
+			<!-- container -->
+			<div id="container">
+				<h2>NOTICE</h2>
+
+				<!-- 검색폼 -->
+				<div class="search_box">
+					<form name="sform" id="sform" method="post" onsubmit="return false;">
+					<table border="1">
+						<colgroup>
+							<col width="100">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>카테고리별</th>
+								<td>
+									<select name="KeyOrder" id="KeyOrder">
+										<option value="" selected="">선택</option>
+										<option value="">공지사항</option>
+										<option value="">사내소식</option>
+										<option value="">ISSUE REPORT</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>조건별</th>
+								<td>
+									<select name="KeyField" id="KeyField" class="mg_r5">
+										<option value="" selected="">제목</option>
+										<option value="B">내용</option>
+									</select>
+									<input type="text" name="KeyWord" id="KeyWord" value="">
+									<a id="btnSearch" class="btn red mg_r5">검색</a>
+									<a class="btn black">전체목록</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					</form>
+				</div>
+				<!-- //검색폼 -->
+
+
+				<div class="list_top">
+					<p>Total : 총 94건</p>
+				</div>
+				<form name="lform" id="lform" method="post">
+					<input type="hidden" name="ProcType" id="ProcType" value="">
+					<input type="hidden" name="KeyOrderMove" id="KeyOrderMove" value="">
+					<input type="hidden" name="KeyOrderYearMove" id="KeyOrderYearMove" value="">
+				<table border="1" class="tbl">
+					<colgroup>
+						<col width="90">
+						<col width="90">
+						<col width="180">
+						<col width="*">
+						<col width="120">
+						<col width="120">
+						<col width="120">
+						<col width="90">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" id="checkAll" name="checkAll" value=""></th>
+							<th scope="col">번호</th>
+							<th scope="col">카테고리</th>
+							<th scope="col">제목</th>
+							<th scope="col">등록일</th>
+							<th scope="col">게시여부</th>
+							<th scope="col">조회수</th>
+						</tr>
+					</thead>
+					<tbody>	
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>공지사항</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>사내소식</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>ISSUE REPORT</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>공지사항</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>사내소식</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>ISSUE REPORT</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>공지사항</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>사내소식</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="idxGr204" name="b_idx" value="204"></td>
+							<td>48</td>
+							<td>ISSUE REPORT</td>
+							<td class="t_l"><a>알려드립니다.</a></td>
+							<td>2020-02-19</td>
+							<td><img src="../../assets/images/post_on.png" alt="게시" style="cursor:pointer"></td>
+							<td>204</td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+
+				<div class="btns">
+					
+					<div class="flt_l">
+						<a href="javascript:" id="btnRsDel" class="btn black">삭제</a>
+					</div>
+					
+
+					<div class="flt_r">
+						<a href="" class="btn red">등록</a>
+					</div>
+				</div>
+
+
+				<div class="paginate">
+					<a href="#" class="first"><img src="../../assets/images/ico_paginate_first.png" alt="first"></a>
+					<a href="#" class="prev"><img src="../../assets/images/ico_paginate_prev.png" alt="prev"></a>
+					<a href="#" class="link curr">1</a> 
+					<a href="#" class="link">2</a> 
+					<a href="#" class="link">3</a> 
+					<a href="#" class="link">4</a> 
+					<a href="#" class="link">5</a> 
+					<a href="#" class="next"><img src="../../assets/images/ico_paginate_next.png" alt="next"></a>
+					<a href="#" class="last"><img src="../../assets/images/ico_paginate_last.png" alt="last"></a>
+				</div>
+			</div>
+			<!-- // container -->
+		</div>
+		<!-- // wrap -->
+		<div class="dim_all"></div>
+		<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+	</body>
+</html>

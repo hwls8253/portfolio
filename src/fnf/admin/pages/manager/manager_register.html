@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>F&F 관리자</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../../assets/images/favicon.ico">
+		<link rel="stylesheet" href="../../assets/js/jquery-ui.min.css">
+		<link rel="stylesheet" href="../../assets/css/common.css">
+		<link rel="stylesheet" href="../../assets/js/swiper5.3.8/swiper.min.css">
+		<link rel="stylesheet" href="../../assets/css/admin.css?ver=5">
+		<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/swiper5.3.8/swiper.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/xGeneric.js"></script>
+		<script type="text/javascript" src="../../assets/js/jquery.tablednd.js"></script>
+		<script type="text/javascript" src="../../assets/js/admin.js"></script>
+		<script type="text/javascript" src="../../assets/js/script.js"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<!-- header  -->
+			<div id="header">
+				<div class="top">
+					<div class="inner">
+						<h1><a href="/" target="_blank"><img src="../../assets/images/fnf_logo.png" alt=""></a></h1>
+						<div class="etc">
+							<p class="user">관리자 님</p>	<a href="" class="btn">로그아웃</a>
+						</div>
+					</div>
+				</div>
+				<div class="nav">
+					<ul>
+						<li><a>MAIN</a>
+						</li>
+						<li><a>F&F LIFE STYLE</a>
+						</li>
+						<li><a>NEWS ROOM</a>
+						</li>
+						<li><a>INVESTORS</a>
+						</li>
+						<li><a class="on">관리자관리</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sub sub01">
+					<ul>
+						<li><a>배너 관리</a></li>
+						<li><a>팝업 관리</a></li>
+						<li><a>HOT ISSUES</a></li>
+						<li><a>3MIN STORY</a></li>
+					</ul>
+				</div>
+				<div class="sub sub02">
+					<ul>
+						<li><a>F&F LIFE STYLE</a></li>
+						<li><a>PEOPLE STORY</a></li>
+						<li><a>TREND BY F&F</a></li>
+					</ul>
+				</div>
+				<div class="sub sub03">
+					<ul>
+						<li><a>NOTICE</a></li>
+						<li><a>PRESS RELEASE</a></li>
+						<li><a>NEWS</a></li>
+						<li><a>MEDIA ROOM</a></li>
+					</ul>
+				</div>
+				<div class="sub sub04">
+					<ul>
+						<li><a>F&F의 현재와 미래</a></li>
+						<li><a>경영정보</a></li>
+					</ul>
+				</div>
+				<div class="sub sub05" style="display:block;">
+					<ul>
+						<li><a class="on">관리자관리</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header  -->
+			<hr>
+			<!-- container -->
+			<div id="container">
+                <h2>관리자 관리</h2>
+                <form>
+                <table border="1" class="tbl row">
+                    <colgroup>
+                        <col width="180">
+                        <col width="120">
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>이름 <span class="es">*</span></th>
+                            <td colspan="2"><input type="text" name="adm_name" class="w600" value="" maxlength="50"></td>
+                        </tr>                    
+                        <tr>
+                            <th>아이디 <span class="es">*</span></th>
+                            <td colspan="2"><input type="text" name="adm_id" id="adm_id" class="w600" value="" maxlength="20"> <a href="#" class="btn red mg_r5">중복확인</a></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호 <span class="es">*</span></th>
+                            <td colspan="2"><input type="password" name="adm_pwd" class="w600" value="" maxlength="15" placeholder="영문, 숫자, 기호(!@#$%)로 2가지 이상 조합으로 10자 이상"></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호 확인 <span class="es">*</span></th>
+                            <td colspan="2"><input type="password" name="adm_pwd_chk" class="w600" value="" maxlength="15" placeholder="비밀번호와 동일하게 입력"></td>
+                        </tr>
+                        <tr>
+                            <th>이메일 <span class="es">*</span></th>
+                            <td colspan="2"><input type="text" name="adm_email" class="w600" value=""></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5">메뉴설정 <span class="es">*</span>
+                                <br><br>
+                                <input type="checkbox" name="menuRelAllAll" id="menuRelAllAll"><label for="menuRelAllAll">전체선택</label>
+                            </th>
+                            <td>Main</td>
+                            <td>
+                                <input type="checkbox" name="menuRelAll" id="menuRelAll0" class="menuRelAll"><label for="menuRelAll0">전체선택</label>
+                                <input type="checkbox" name="menuRel" id="menuRel0"><label for="menuRel0">배너 관리</label>
+                                <input type="checkbox" name="menuRel" id="menuRel1"><label for="menuRel1">팝업 관리</label>
+                                <input type="checkbox" name="menuRel" id="menuRel2"><label for="menuRel2">HOT ISSUES</label>
+                                <input type="checkbox" name="menuRel" id="menuRel3"><label for="menuRel3">3MIN STORY</label>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="border-left:1px solid #ddd;">Follow F&F</td>
+                            <td>
+                                <input type="checkbox" name="menuRelAll" id="menuRelAll1" class="menuRelAll"><label for="menuRelAll1">전체선택</label>
+                                <input type="checkbox" name="menuRel" id="menuRel4"><label for="menuRel4">F&F LIFE STYLE</label>
+                                <input type="checkbox" name="menuRel" id="menuRel5"><label for="menuRel5">PEOPLE STORY</label>
+                                <input type="checkbox" name="menuRel" id="menuRel6"><label for="menuRel6">TREND BY F&F </label>                                   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left:1px solid #ddd;">NEWS ROOM</td>
+                            <td>
+                                <input type="checkbox" name="menuRelAll" id="menuRelAll2" class="menuRelAll"><label for="menuRelAll2">전체선택</label>
+                                <input type="checkbox" name="menuRel" id="menuRel7"><label for="menuRel7">NOTICE</label>
+                                <input type="checkbox" name="menuRel" id="menuRel8"><label for="menuRel8">PRESS RELEASE</label>
+                                <input type="checkbox" name="menuRel" id="menuRel9"><label for="menuRel9">NEWS</label>
+                                <input type="checkbox" name="menuRel" id="menuRel10"><label for="menuRel10">MEDIA ROOM</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left:1px solid #ddd;">INVESTORS</td>
+                            <td>
+                                <input type="checkbox" name="menuRelAll" id="menuRelAll3" class="menuRelAll"><label for="menuRelAll3">전체선택</label>
+                                <input type="checkbox" name="menuRel" id="menuRel11"><label for="menuRel11">F&F의 현재와 미래</label>   
+                                <input type="checkbox" name="menuRel" id="menuRel12"><label for="menuRel12">경영정보</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left:1px solid #ddd;">관리자 관리</td>
+                            <td>
+                                <input type="checkbox" name="menuRelAll" id="menuRelAll4" class="menuRelAll"><label for="menuRelAll4">전체선택</label>
+                                <input type="checkbox" name="menuRel" id="menuRel13"><label for="menuRel13">관리자관리</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>
+                <div class="btns">
+                    <div class="flt_r">
+                        <a href="#" class="btn red mg_r5">확인</a>
+                        <a href="#" class="btn black">취소</a>
+                    </div>
+                </div>
+			</div>
+			<!-- // container -->
+		</div>
+		<!-- // wrap -->
+	</body>
+</html>

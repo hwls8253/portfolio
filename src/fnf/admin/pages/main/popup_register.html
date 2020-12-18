@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>F&F 관리자</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="../../assets/images/favicon.ico">
+		<link rel="stylesheet" href="../../assets/js/jquery-ui.min.css">
+		<link rel="stylesheet" href="../../assets/css/common.css">
+		<link rel="stylesheet" href="../../assets/js/swiper5.3.8/swiper.min.css">
+		<link rel="stylesheet" href="../../assets/css/admin.css?ver=5">
+		<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/swiper5.3.8/swiper.min.js"></script>
+		<script type="text/javascript" src="../../assets/js/xGeneric.js"></script>
+		<script type="text/javascript" src="../../assets/js/jquery.tablednd.js"></script>
+		<script type="text/javascript" src="../../assets/js/admin.js"></script>
+		<script type="text/javascript" src="../../assets/js/script.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<!-- header  -->
+			<div id="header">
+				<div class="top">
+					<div class="inner">
+						<h1><a href="/" target="_blank"><img src="../../assets/images/fnf_logo.png" alt=""></a></h1>
+						<div class="etc">
+							<p class="user">관리자 님</p>	<a href="" class="btn">로그아웃</a>
+						</div>
+					</div>
+				</div>
+				<div class="nav">
+					<ul>
+						<li><a class="on">MAIN</a>
+						</li>
+						<li><a>F&F LIFE STYLE</a>
+						</li>
+						<li><a>NEWS ROOM</a>
+						</li>
+						<li><a>INVESTORS</a>
+						</li>
+						<li><a>관리자관리</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sub sub01" style="display:block;">
+					<ul>
+						<li><a>배너 관리</a></li>
+						<li><a class="on">팝업 관리</a></li>
+						<li><a>HOT ISSUES</a></li>
+						<li><a>3MIN STORY</a></li>
+					</ul>
+				</div>
+				<div class="sub sub02">
+					<ul>
+						<li><a>F&F LIFE STYLE</a></li>
+						<li><a>PEOPLE STORY</a></li>
+						<li><a>TREND BY F&F</a></li>
+					</ul>
+				</div>
+				<div class="sub sub03">
+					<ul>
+						<li><a>NOTICE</a></li>
+						<li><a>PRESS RELEASE</a></li>
+						<li><a>NEWS</a></li>
+						<li><a>MEDIA ROOM</a></li>
+					</ul>
+				</div>
+				<div class="sub sub04">
+					<ul>
+						<li><a>F&F의 현재와 미래</a></li>
+						<li><a>경영정보</a></li>
+					</ul>
+				</div>
+				<div class="sub sub05">
+					<ul>
+						<li><a>관리자관리</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header  -->
+			<hr>
+			<!-- container -->
+			<div id="container">
+				<h2>팝업 관리</h2>
+
+				<form name="frmReg" id="frmReg" method="post">
+				<table border="1" class="tbl row">
+					<colgroup>
+						<col width="170">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>제목 <span class="es">*</span></th>
+							<td>
+								<input type="text" name="b_subject" id="b_subject" class="w760" value="test2" maxlength="100">
+							</td>
+						</tr>
+						<tr>
+							<th>이미지(PC) <span class="es">*</span></th>
+							<td>
+								<input type="file" id="xUpRObjectID" name="xUpRObject">
+								
+								<div class="file_name">
+									<a target="_blank">testsetset2.jpg</a> <a><img src="../../assets/images/btn_del.gif" alt="삭제"></a>
+								</div>
+								
+								<span class="msg">* 이미지 사이즈 : 000 * 000 (JPG / GIF / PNG만 등록 가능)</span>
+							</td>
+						</tr>
+						<tr>
+							<th>이미지(Mobile) <span class="es">*</span></th>
+							<td>
+								<input type="file" id="xUpRObjectID" name="xUpRObject">							
+								
+								<div class="file_name">
+									<a target="_blank">testsetset.jpg</a> <a><img src="../../assets/images/btn_del.gif" alt="삭제"></a>
+								</div>
+								
+								<span class="msg">* 이미지 사이즈 : 000 * 000 (JPG / GIF / PNG만 등록 가능)</span>
+							</td>
+						</tr>
+						<tr>
+							<th>링크(PC)</th>
+							<td>
+								<div class="mg_b5">
+									<input type="radio" name="b_target_w" id="b_target_w1" value="N" checked=""><label for="b_target_w1">기존창에 연결</label>
+									<input type="radio" name="b_target_w" id="b_target_w2" value="Y"><label for="b_target_w2">새창으로 연결</label>
+								</div>
+								<input type="text" name="b_link_w" value="" class="w760" maxlength="250">
+							</td>
+						</tr>
+						<tr>
+							<th>링크(Mobile)</th>
+							<td>
+								<div class="mg_b5">
+									<input type="radio" name="b_target_m" id="b_target_m1" value="N" checked=""><label for="b_target_m1">기존창에 연결</label>
+									<input type="radio" name="b_target_m" id="b_target_m2" value="Y"><label for="b_target_m2">새창으로 연결</label>
+								</div>
+								<input type="text" name="b_link_m" value="" class="w760" maxlength="250">
+							</td>
+						</tr>
+						<tr>
+							<th>시작일시</th>
+							<td>
+								<input type="text" name="b_sdt" id="b_sdt" value="" class="ipt_cal calendar">
+								&nbsp;&nbsp;
+								<select name="b_sdtH" id="b_sdtH" class="w90">
+									
+									<option value="00">00</option>
+									
+									<option value="01">01</option>
+									
+									<option value="02">02</option>
+									
+									<option value="03">03</option>
+									
+									<option value="04">04</option>
+									
+									<option value="05">05</option>
+									
+									<option value="06">06</option>
+									
+									<option value="07">07</option>
+									
+									<option value="08">08</option>
+									
+									<option value="09">09</option>
+									
+									<option value="10">10</option>
+									
+									<option value="11">11</option>
+									
+									<option value="12">12</option>
+									
+									<option value="13">13</option>
+									
+									<option value="14">14</option>
+									
+									<option value="15">15</option>
+									
+									<option value="16">16</option>
+									
+									<option value="17" selected="">17</option>
+									
+									<option value="18">18</option>
+									
+									<option value="19">19</option>
+									
+									<option value="20">20</option>
+									
+									<option value="21">21</option>
+									
+									<option value="22">22</option>
+									
+									<option value="23">23</option>
+									
+								</select>
+								시
+								&nbsp;
+								<select name="b_sdtMI" id="b_sdtMI" class="w90">
+									
+									<option value="00">00</option>
+									
+									<option value="01">01</option>
+									
+									<option value="02">02</option>
+									
+									<option value="03">03</option>
+									
+									<option value="04">04</option>
+									
+									<option value="05">05</option>
+									
+									<option value="06">06</option>
+									
+									<option value="07">07</option>
+									
+									<option value="08">08</option>
+									
+									<option value="09">09</option>
+									
+									<option value="10">10</option>
+									
+									<option value="11">11</option>
+									
+									<option value="12">12</option>
+									
+									<option value="13">13</option>
+									
+									<option value="14">14</option>
+									
+									<option value="15" selected="">15</option>
+									
+									<option value="16">16</option>
+									
+									<option value="17">17</option>
+									
+									<option value="18">18</option>
+									
+									<option value="19">19</option>
+									
+									<option value="20">20</option>
+									
+									<option value="21">21</option>
+									
+									<option value="22">22</option>
+									
+									<option value="23">23</option>
+									
+									<option value="24">24</option>
+									
+									<option value="25">25</option>
+									
+									<option value="26">26</option>
+									
+									<option value="27">27</option>
+									
+									<option value="28">28</option>
+									
+									<option value="29">29</option>
+									
+									<option value="30">30</option>
+									
+									<option value="31">31</option>
+									
+									<option value="32">32</option>
+									
+									<option value="33">33</option>
+									
+									<option value="34">34</option>
+									
+									<option value="35">35</option>
+									
+									<option value="36">36</option>
+									
+									<option value="37">37</option>
+									
+									<option value="38">38</option>
+									
+									<option value="39">39</option>
+									
+									<option value="40">40</option>
+									
+									<option value="41">41</option>
+									
+									<option value="42">42</option>
+									
+									<option value="43">43</option>
+									
+									<option value="44">44</option>
+									
+									<option value="45">45</option>
+									
+									<option value="46">46</option>
+									
+									<option value="47">47</option>
+									
+									<option value="48">48</option>
+									
+									<option value="49">49</option>
+									
+									<option value="50">50</option>
+									
+									<option value="51">51</option>
+									
+									<option value="52">52</option>
+									
+									<option value="53">53</option>
+									
+									<option value="54">54</option>
+									
+									<option value="55">55</option>
+									
+									<option value="56">56</option>
+									
+									<option value="57">57</option>
+									
+									<option value="58">58</option>
+									
+									<option value="59">59</option>
+									
+								</select>
+								분
+							</td>
+						</tr>
+						<tr>
+							<th>종료일시</th>
+							<td>
+								<input type="text" name="b_edt" id="b_edt" value="" class="ipt_cal calendar">
+								&nbsp;&nbsp;
+								<select name="b_edtH" id="b_edtH" class="w90">
+									
+									<option value="00">00</option>
+									
+									<option value="01">01</option>
+									
+									<option value="02">02</option>
+									
+									<option value="03">03</option>
+									
+									<option value="04">04</option>
+									
+									<option value="05">05</option>
+									
+									<option value="06">06</option>
+									
+									<option value="07">07</option>
+									
+									<option value="08">08</option>
+									
+									<option value="09">09</option>
+									
+									<option value="10">10</option>
+									
+									<option value="11">11</option>
+									
+									<option value="12">12</option>
+									
+									<option value="13">13</option>
+									
+									<option value="14">14</option>
+									
+									<option value="15">15</option>
+									
+									<option value="16">16</option>
+									
+									<option value="17" selected="">17</option>
+									
+									<option value="18">18</option>
+									
+									<option value="19">19</option>
+									
+									<option value="20">20</option>
+									
+									<option value="21">21</option>
+									
+									<option value="22">22</option>
+									
+									<option value="23">23</option>
+									
+								</select>
+								시
+								&nbsp;
+								<select name="b_edtMI" id="b_edtMI" class="w90">
+									
+									<option value="00">00</option>
+									
+									<option value="01">01</option>
+									
+									<option value="02">02</option>
+									
+									<option value="03">03</option>
+									
+									<option value="04">04</option>
+									
+									<option value="05">05</option>
+									
+									<option value="06">06</option>
+									
+									<option value="07">07</option>
+									
+									<option value="08">08</option>
+									
+									<option value="09">09</option>
+									
+									<option value="10">10</option>
+									
+									<option value="11">11</option>
+									
+									<option value="12">12</option>
+									
+									<option value="13">13</option>
+									
+									<option value="14">14</option>
+									
+									<option value="15" selected="">15</option>
+									
+									<option value="16">16</option>
+									
+									<option value="17">17</option>
+									
+									<option value="18">18</option>
+									
+									<option value="19">19</option>
+									
+									<option value="20">20</option>
+									
+									<option value="21">21</option>
+									
+									<option value="22">22</option>
+									
+									<option value="23">23</option>
+									
+									<option value="24">24</option>
+									
+									<option value="25">25</option>
+									
+									<option value="26">26</option>
+									
+									<option value="27">27</option>
+									
+									<option value="28">28</option>
+									
+									<option value="29">29</option>
+									
+									<option value="30">30</option>
+									
+									<option value="31">31</option>
+									
+									<option value="32">32</option>
+									
+									<option value="33">33</option>
+									
+									<option value="34">34</option>
+									
+									<option value="35">35</option>
+									
+									<option value="36">36</option>
+									
+									<option value="37">37</option>
+									
+									<option value="38">38</option>
+									
+									<option value="39">39</option>
+									
+									<option value="40">40</option>
+									
+									<option value="41">41</option>
+									
+									<option value="42">42</option>
+									
+									<option value="43">43</option>
+									
+									<option value="44">44</option>
+									
+									<option value="45">45</option>
+									
+									<option value="46">46</option>
+									
+									<option value="47">47</option>
+									
+									<option value="48">48</option>
+									
+									<option value="49">49</option>
+									
+									<option value="50">50</option>
+									
+									<option value="51">51</option>
+									
+									<option value="52">52</option>
+									
+									<option value="53">53</option>
+									
+									<option value="54">54</option>
+									
+									<option value="55">55</option>
+									
+									<option value="56">56</option>
+									
+									<option value="57">57</option>
+									
+									<option value="58">58</option>
+									
+									<option value="59">59</option>
+									
+								</select>
+								분
+							</td>
+						</tr>
+						<tr>
+							<th>게시여부</th>
+							<td>							
+								<input type="radio" name="b_dsp" id="b_dspY" value="Y" checked=""><label for="b_dspY">게시</label>
+								<input type="radio" name="b_dsp" id="b_dspN" value="N"><label for="b_dspN">미게시</label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+				<div class="btns t_c">
+					<a class="btn red mg_r5">확인</a>
+					<a class="btn black">취소</a>
+				</div>
+			</div>
+			<!-- // container -->
+		</div>
+	<script>
+	datepicker();
+	</script>
+		<!-- // wrap -->
+		<div class="dim_all"></div>
+		<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+	</body>
+</html>

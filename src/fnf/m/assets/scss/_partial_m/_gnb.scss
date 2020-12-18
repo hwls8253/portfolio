@@ -1,0 +1,98 @@
+/* Gnb S */
+header {
+    position: fixed;
+    width:100%;
+    left:0;
+    top:0;
+    z-index:10;
+    box-sizing: border-box;
+    padding:rem(40);
+    border-bottom:rem(1) solid rgba(255,255,255,.1);
+    &.bg {
+        background:$bg-main;
+    }
+    &.sub-header {
+        background:$bg-sub;
+    }
+    .logo {
+        float:left;
+        width:rem(82);
+    }
+    .right-menu {
+        position: absolute;
+        right:rem(40);
+        z-index:11;
+        .menu-btn {
+            display:block;
+            width:rem(50);
+            height:rem(38);
+            text-indent: -9999px;
+            overflow: hidden;
+            background:url(../images/icon_menu.png) no-repeat center center;
+            background-size: 100%;
+        }
+    }
+    .all-menu {
+        position: fixed;
+        top:0;
+        width:100%;
+        height:100vh;
+        background:rgba(0,0,0,.5);
+        opacity: 0;
+        visibility: hidden;
+        right:0;
+        z-index:30;
+        @include transition-all;
+        > ul {
+            position: relative;
+            right:rem(-500);
+            float:right;
+            width:rem(520);
+            height:100%;
+            overflow-y: auto;
+            box-sizing: border-box;
+            padding-top:rem(86);
+            background:#fff;
+            color:#000;
+            text-align:center;
+            font-weight: 700;
+            font-size:$nav-txt;
+            @include transition-all;
+            > li {
+                line-height: rem(96);
+                &.on {
+                    ul {
+                        max-height:rem(500);
+                        padding:rem(20) 0;
+                    }
+                }
+            }
+            ul {
+                max-height: 0;
+                width:100%;
+                padding:rem(0) 0;
+                overflow: hidden;
+                background:#f3f3f3;
+                @include transition-all;
+                li {
+                    line-height:rem(70);
+                    color:#333;
+                    font-size:$small-txt;
+                }
+            }
+        }
+        .close-btn {
+            position: absolute;
+            right:rem(40);
+            top:rem(40);
+        }
+        &.on {
+            opacity: 1;
+            visibility: visible;
+            > ul {
+                right:rem(0);
+            }
+        }
+    }
+}
+/* Gnb E */
