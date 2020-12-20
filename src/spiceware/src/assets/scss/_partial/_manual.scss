@@ -1,0 +1,268 @@
+.manual {
+  text-align: center;
+  .tab-wrap {
+    .tab-btns {
+      display: table;
+      width: 100%;
+      max-width: rem(800);
+      margin: 0 auto;
+      li {
+        display: table-cell;
+        border: rem(1) solid $border-color;
+        border-radius: 0;
+        background: #f9f9f9;
+        color: $title-color;
+        padding: rem(18) 0 rem(16);
+        a {
+          display: block;
+          font-size: rem(20);
+          word-break: keep-all;
+        }
+        &.on {
+          position: relative;
+          background: $primary-color-lighten;
+          color: #fff;
+          font-weight: 500;
+          &:after {
+            content: '';
+            @include position-center-left;
+            bottom: rem(-10);
+            width: rem(12);
+            box-sizing: border-box;
+            border-top: solid rem(10) $primary-color-lighten;
+            border-left: solid rem(6) transparent;
+            border-right: solid rem(6) transparent;
+          }
+        }
+        &:first-child {
+          border-radius: rem(60) 0 0 rem(60);
+        }
+        &:nth-child(2) {
+          border-right: 0;
+          border-left: 0;
+        }
+        &:last-child {
+          border-radius: 0 rem(60) rem(60) 0;
+        }
+      }
+    }
+    .tab-con {
+      max-width: rem(1260);
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0 rem(30) rem(80);
+      .con {
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        text-align: left;
+        font-size: rem(18);
+        color: $default-color-lighten;
+        &.on {
+          visibility: visible;
+          height: auto;
+          opacity: 1;
+        }
+        h3 {
+          padding: rem(80) 0;
+        }
+        p {
+          line-height: 1.6;
+          strong {
+            color: $default-color;
+            font-weight: 500;
+          }
+        }
+        .txt-box {
+          width: 100%;
+          padding-top: rem(30);
+          h4 {
+            font-size: rem(20);
+            color: $title-color;
+            font-weight: 500;
+            padding-bottom: rem(18);
+            &+.txt-box {
+              padding-top: rem(12);
+            }
+          }
+          h5 {
+            font-size: rem(18);
+            padding-bottom: rem(10);
+          }
+          img {
+            max-width: 100%;
+            padding: rem(18) 0;
+          }
+          ul {
+            padding: rem(15) rem(13);
+            line-height: 1.6;
+            font-size: rem(16);
+            .str {
+              color: $default-color;
+              font-weight: 500;
+              padding-bottom: rem(20);
+            }
+          }
+          .table-box {
+            width: 100%;
+            margin: rem(30) 0 rem(45);
+            text-align: center;
+            table {
+              border-top: rem(1) solid $primary-color;
+              width: 100%;
+              vertical-align: middle;
+              &.half {
+                width: rem(600);
+                max-width: 100%;
+              }
+            }
+            th {
+              background: #f8faff;
+              border-left: rem(1) solid $border-color;
+              font-size: rem(18);
+              font-weight: 500;
+              color: $default-color;
+              padding: rem(20) 0;
+              &:nth-child(1) {
+                border-left: 0;
+              }
+            }
+            td {
+              border: rem(1) solid $border-color;
+              font-weight: 400;
+              font-size: rem(16);
+              padding: rem(20);
+              &:nth-child(1) {
+                border-left: 0;
+              }
+              &:last-child {
+                border-right: 0;
+              }
+              &.al-left {
+                text-align: left;
+                .pre {
+                  white-space: pre;
+                }
+              }
+            }
+          }
+          .gray-box {
+            background: #f9f9f9;
+            border: rem(1) solid $border-color;
+            margin: rem(16) 0 rem(30);
+            box-sizing: border-box;
+            padding: rem(22) rem(35);
+            line-height: 1.8;
+            font-size: rem(16);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .manual {
+    .tab-wrap {
+      margin-top: rem(-60);
+      .tab-btns {
+        width: calc(100% - #{rem(60)});
+        max-width: none;
+        li {
+          border: rem(2) solid $border-color;
+          padding: rem(20) rem(20);
+          vertical-align: middle;
+          line-height: 1.4;
+          a {
+            font-size: rem(24);
+          }
+          &.on {
+            &:after {
+              bottom: rem(-18);
+              width: rem(24);
+              border-top: solid rem(20) $primary-color-lighten;
+              border-left: solid rem(12) transparent;
+              border-right: solid rem(12) transparent;
+            }
+          }
+        }
+      }
+      .tab-con {
+        padding: 0 rem(30) rem(150);
+        .con {
+          font-size: rem(30);
+          h3 {
+            padding: rem(45) 0;
+          }
+          .txt-box {
+            padding-top: rem(50);
+            h4 {
+              font-size: rem(32);
+              padding-bottom: rem(30);
+              &+.txt-box {
+                padding-top: rem(24);
+              }
+            }
+            h5 {
+              font-size: rem(30);
+              padding-bottom: rem(20);
+            }
+            img {
+              padding: rem(30) 0;
+            }
+            ul {
+              padding: rem(30) rem(26);
+              line-height: 1.6;
+              font-size: rem(28);
+              .str {
+                padding-bottom: rem(32);
+              }
+            }
+            .table-box {
+              width: 100%;
+              margin: rem(30) 0 rem(45);
+              table.half {
+                width: 100%;
+              }
+              &.scroll {
+                overflow-x: scroll;
+                table {
+                  width: auto;
+                }
+              }
+              th {
+                border-left: rem(2) solid $border-color;
+                font-size: rem(28);
+                padding: rem(20) 0;
+                vertical-align: middle;
+              }
+              td {
+                border: rem(2) solid $border-color;
+                font-size: rem(24);
+                padding: rem(20);
+                &.al-left {
+                  text-align: left;
+                }
+              }
+            }
+            .gray-box {
+              width: 100%;
+              background: #f9f9f9;
+              border: rem(2) solid $border-color;
+              margin: rem(16) 0 rem(30);
+              box-sizing: border-box;
+              padding: rem(22) rem(20);
+              line-height: 1.8;
+              font-size: rem(24);
+              overflow-x: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

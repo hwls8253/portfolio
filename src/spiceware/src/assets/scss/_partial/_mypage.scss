@@ -1,0 +1,546 @@
+.mypage {
+  width: rem(800);
+  margin: 0 auto;
+  .tab-wrap {
+    .tab-btns {
+      display: table;
+      width: 100%;
+      max-width: rem(800);
+      margin: 0 auto;
+      text-align: center;
+      li {
+        display: table-cell;
+        border: rem(1) solid $border-color;
+        border-radius: 0;
+        background: #f9f9f9;
+        color: $title-color;
+        padding: rem(18) 0 rem(16);
+        a {
+          display: block;
+          font-size: rem(20);
+          word-break: keep-all;
+        }
+        &.on {
+          position: relative;
+          background: $primary-color-lighten;
+          color: #fff;
+          font-weight: 500;
+          &:after {
+            content: '';
+            @include position-center-left;
+            bottom: rem(-10);
+            width: rem(12);
+            box-sizing: border-box;
+            border-top: solid rem(10) $primary-color-lighten;
+            border-left: solid rem(6) transparent;
+            border-right: solid rem(6) transparent;
+            z-index: 1;
+          }
+        }
+        &:first-child {
+          border-radius: rem(60) 0 0 rem(60);
+        }
+        &:nth-child(2) {
+          border-right: 0;
+          border-left: 0;
+        }
+        &:last-child {
+          border-radius: 0 rem(60) rem(60) 0;
+        }
+      }
+    }
+    .tab-con {
+      max-width: rem(1260);
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0 rem(30) rem(80);
+      .con {
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        text-align: left;
+        font-size: rem(18);
+        color: $default-color-lighten;
+        &.on {
+          visibility: visible;
+          height: auto;
+          opacity: 1;
+        }
+        h3 {
+          padding: rem(60) 0 rem(50);
+        }
+      }
+    }
+  }
+  .form-list {
+    >li {
+      margin-top: rem(30);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .row {
+      >div {
+        display: inline-block;
+        vertical-align: top;
+        &.th {
+          width: rem(160);
+          height: 100%;
+          vertical-align: top;
+          padding-top: rem(15);
+          font-size: rem(18);
+          &.star {
+            &:after {
+              content: '*';
+              color: #ed1651;
+            }
+          }
+        }
+        &.td {
+          width: calc(100% - #{rem(170)});
+        }
+      }
+    }
+    .info-txt {
+      font-size: rem(14);
+      line-height: rem(22);
+      color: $default-color-lighten;
+      margin-top: rem(10);
+    }
+    .input-text,
+    .input-file {
+      height: rem(50);
+      position: relative;
+      .btn-in-input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 0 rem(27);
+        background-color: #999999;
+        color: #ffffff;
+      }
+    }
+  }
+  .table-list {
+    .top-border-gradient {
+      height: rem(5);
+      background-image: $gradient-bg-color;
+    }
+    table {
+      width: 100%;
+      table-layout: fixed;
+      th,
+      td {
+        &:nth-of-type(1),
+        &:nth-of-type(3),
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          width: rem(100);
+        }
+      }
+      thead {
+        tr {
+          border-bottom: 2px solid $border-color;
+          th {
+            font-size: rem(18);
+            font-weight: 500;
+            color: $title-color;
+            text-align: center;
+            padding: rem(36) 0;
+          }
+        }
+      }
+      tbody {
+        td {
+          font-size: rem(16);
+          color: $default-color-lighten;
+          text-align: center;
+          padding: rem(20) 0;
+          border-bottom: 1px solid $border-color;
+          &.title {
+            font-size: rem(18);
+            color: $title-color;
+            >div {
+              text-align: left;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+          .btn {
+            vertical-align: middle;
+            &.btn-default {
+              width: rem(80);
+              padding: rem(8) 0;
+              font-size: rem(14);
+              font-weight: 400;
+            }
+            &.btn-not-answer {
+              background-color: #aaaaaa;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.my-info {
+  .bottom-btn-wrap {
+    margin-top: rem(50);
+  }
+}
+
+.my-question {
+  .top-border-gradient {
+    height: rem(5);
+    background-image: $gradient-bg-color;
+  }
+  .bottom-btn-wrap {
+    padding: rem(50) 0;
+    .my-question-more {
+      width: rem(210);
+      font-size: rem(20);
+      font-weight: 500;
+      .btn-line-inner {
+        padding: rem(17);
+      }
+    }
+  }
+}
+
+.license {
+  .bottom-btn-wrap {
+    padding: rem(100) 0 rem(40);
+  }
+  .btn-wrap {
+    padding: rem(40) 0 rem(50);
+  }
+  .box-wrap {
+    position: relative;
+    padding: 0 0 rem(35);
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    .box {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: rem(4);
+      padding: rem(30);
+      border: 1px solid $border-color;
+      word-break: break-all;
+      color: $default-color-lighten;
+      font-size: rem(16);
+      line-height: 2;
+      h4 {
+        font-size: rem(18);
+        font-weight: 500;
+        color: $default-color;
+        padding: 0 0 rem(36);
+      }
+    }
+    .button-warp {
+      text-align: right;
+      .btn {
+        width: rem(150);
+        margin-top: rem(20);
+        font-size: rem(16);
+        .btn-line-inner {
+          padding: rem(11) 0;
+        }
+        &.btn-primary {
+          padding: rem(14) 0;
+        }
+      }
+      .btn+.btn {
+        margin-left: rem(10);
+      }
+    }
+  }
+  .radio-wrap {
+    display: inline-block;
+    margin: rem(15) rem(25) rem(10) 0;
+    span {
+      vertical-align: middle;
+    }
+  }
+  .select-wrap.small {
+    width: rem(180);
+  }
+}
+
+.pop-license {
+  .form-list .row .td.large {
+    width: 100%;
+    padding-top: rem(16);
+    .gray-box {
+      padding: rem(30) rem(24);
+      height: rem(200);
+      overflow-y: auto;
+      background: #f9f9f9;
+      border: 1px solid $border-color;
+      box-sizing: border-box;
+      color: $default-color-lighten;
+      line-height: 1.4;
+    }
+  }
+}
+
+input,
+textarea {
+  font-size: $input-txt;
+}
+
+@media screen and (max-width: 992px) {
+  .mypage {
+    width: auto;
+    .tab-wrap {
+      padding: $mobile-content-padding;
+      margin-top: rem(-60);
+      .tab-btns {
+        max-width: none;
+        li {
+          border: rem(2) solid $border-color;
+          padding: rem(20) rem(20);
+          vertical-align: middle;
+          line-height: 1.4;
+          a {
+            font-size: rem(24);
+          }
+          &.on {
+            &:after {
+              bottom: rem(-18);
+              width: rem(24);
+              border-top: solid rem(20) $primary-color-lighten;
+              border-left: solid rem(12) transparent;
+              border-right: solid rem(12) transparent;
+            }
+          }
+        }
+      }
+      .tab-con {
+        padding: 0;
+        .con {
+          font-size: rem(30);
+          h3 {
+            padding: rem(45) 0;
+          }
+          .txt-box {
+            padding-top: rem(50);
+            h4 {
+              font-size: rem(32);
+              padding-bottom: rem(30);
+              &+.txt-box {
+                padding-top: rem(24);
+              }
+            }
+            h5 {
+              font-size: rem(30);
+              padding-bottom: rem(20);
+            }
+            img {
+              padding: rem(30) 0;
+            }
+            ul {
+              padding: rem(30) rem(26);
+              line-height: 1.6;
+              font-size: rem(28);
+              .str {
+                padding-bottom: rem(32);
+              }
+            }
+            .table-box {
+              width: 100%;
+              margin: rem(30) 0 rem(45);
+              table.half {
+                width: 100%;
+              }
+              &.scroll {
+                overflow-x: scroll;
+                table {
+                  width: auto;
+                }
+              }
+              th {
+                border-left: rem(2) solid $border-color;
+                font-size: rem(28);
+                padding: rem(20) 0;
+                vertical-align: middle;
+              }
+              td {
+                border: rem(2) solid $border-color;
+                font-size: rem(24);
+                padding: rem(20);
+                &.al-left {
+                  text-align: left;
+                }
+              }
+            }
+            .gray-box {
+              width: 100%;
+              background: #f9f9f9;
+              border: rem(2) solid $border-color;
+              margin: rem(16) 0 rem(30);
+              box-sizing: border-box;
+              padding: rem(22) rem(20);
+              line-height: 1.8;
+              font-size: rem(24);
+              overflow-x: auto;
+            }
+          }
+        }
+      }
+    }
+    .form-list {
+      >li {
+        margin-top: rem(28);
+      }
+      .row {
+        >div {
+          display: block;
+          &.th,
+          &.td {
+            width: 100%;
+          }
+          &.th {
+            margin-bottom: rem(20);
+            font-size: $m-input-label;
+            font-weight: 500;
+            padding-top: 0;
+          }
+        }
+      }
+      .info-txt {
+        font-size: rem(22);
+        line-height: rem(32);
+        color: $default-color-lighten;
+        margin-top: rem(15);
+      }
+      .input-text,
+      .input-file {
+        height: rem(70);
+      }
+    }
+    .table-list {
+      table {
+        table-layout: fixed;
+        th,
+        td {
+          &:nth-of-type(1) {
+            display: none;
+          }
+          &:nth-of-type(3),
+          &:nth-of-type(4),
+          &:nth-of-type(5) {
+            width: rem(120);
+          }
+        }
+        thead {
+          tr {
+            th {
+              font-size: $m-input-txt;
+            }
+          }
+        }
+        tbody {
+          td {
+            font-size: rem(22);
+            &.title {
+              >div {
+                width: 100%;
+                text-align: left;
+                a {
+                  font-size: $m-input-txt;
+                }
+              }
+            }
+            .btn {
+              vertical-align: middle;
+              &.btn-default {
+                width: rem(100);
+                padding: rem(11) 0;
+                font-size: rem(20);
+                font-weight: 400;
+              }
+              &.btn-not-answer {
+                background-color: #aaaaaa;
+                color: #ffffff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottom-btn-wrap {
+      // margin-top: rem(100);
+      .my-question-more {
+        width: rem(290);
+        font-size: rem(26);
+        font-weight: 500;
+        .btn-line-inner {
+          padding: rem(24);
+        }
+      }
+    }
+    input,
+    textarea {
+      font-size: $m-input-txt;
+    }
+    .license {
+      .bottom-btn-wrap {
+        padding: rem(50) 0 rem(50);
+      }
+      .btn-wrap {
+        padding: rem(20) 0 rem(50);
+      }
+      .box-wrap {
+        padding: 0 0 rem(35);
+        .box {
+          border-radius: rem(8);
+          padding: rem(30);
+          font-size: rem(28);
+          line-height: 1.6;
+          h4 {
+            font-size: rem(32);
+            padding: 0 0 rem(30);
+          }
+        }
+        .button-warp {
+          text-align: right;
+          .btn {
+            display: inline-block;
+            width: rem(300);
+            margin-top: rem(20);
+            font-size: rem(26);
+            max-width: calc(50% - #{rem(20)});
+            .btn-line-inner {
+              padding: rem(22) 0;
+            }
+            &.btn-primary {
+              padding: rem(28) 0;
+            }
+          }
+          .btn+.btn {
+            margin: rem(20) 0 0 rem(10);
+          }
+        }
+      }
+    }
+  }
+  .pop-license {
+    .form-list .row .td.large {
+      .gray-box {
+        height: rem(400);
+        font-size: rem(24);
+      }
+    }
+  }
+}

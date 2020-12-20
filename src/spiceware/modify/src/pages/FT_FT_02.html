@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+  <title>Spiceware</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/js/owl.carousel/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/js/owl.carousel/css/owl.theme.default.min.css">
+
+  <!-- Javascript -->
+  <script src="../assets/js/jquery/jquery-1.12.4.min.js"></script>
+  <script src="../assets/js/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="iframe-wrap">
+    <div class="f-wrap">
+      <div class="user-box">
+        <div class="head">
+          <span class="icon-user"></span>
+          <strong>User</strong>
+        </div>
+        <div class="form-box">
+          <label for="">입력값</label>
+          <div class="input-text"><input type="text" placeholder="입력값을 넣으세요."></div>
+          <label for="">출력값</label>
+          <div class="input-text"><input type="text" disabled readonly></div>
+        </div>
+        <div class="arrow-wrap">
+          <span class="arrow-l">입력</span>
+          <span class="arrow-r">출력</span>
+        </div>
+      </div>
+      <div class="filter-box fir">
+        <strong>HTTP 필터</strong>
+        <div class="txt">
+          RequestURL:<br>http://spiceware.io?personal=
+          <div class="input-text"><input type="text"></div><br>Request Method: POST<br>X-Requested-With: XMLHttpReuest
+        </div>
+      </div>
+      <div class="was-box">
+        <div class="head">
+          <span class="icon-"></span>
+          <strong>WAS</strong>
+        </div>
+        <div class="form-box">
+          <div class="input-text w100"><input type="text" disabled readonly></div>
+        </div>
+        <div class="arrow-wrap">
+          <span class="arrow-l">입력</span>
+          <span class="arrow-r">출력</span>
+        </div>
+      </div>
+      <div class="filter-box sec">
+        <strong>SQL 필터</strong>
+        <div class="txt">
+          Insert into tb_user<br> values(‘
+          <div class="input-text"><input type="text"></div>
+          ‘)
+        </div>
+      </div>
+      <div class="db-box">
+        <div class="was-box">
+          <div class="head">
+            <span class="icon-db"></span>
+            <strong>DB</strong>
+          </div>
+          <div class="form-box">
+            <div class="input-text w100"><input type="text" disabled readonly></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con">
+      <h4 class="title-bar">암호화 설정</h4>
+      <ul class="f-wrap disc-list">
+        <li class="left">
+          <h5>필터</h5>
+          <div class="chk-wrap">
+            <input type="checkbox" id="chk01">
+            <span class="icon-chk"></span>
+            <label for="chk01">HTTP 필터</label>
+          </div>
+          <div class="chk-wrap">
+            <input type="checkbox" id="chk02">
+            <span class="icon-chk"></span>
+            <label for="chk02">SQL 필터</label>
+          </div>
+        </li>
+        <li class="left">
+          <h5>부분암호화</h5>
+          <div class="radio-wrap">
+            <input type="radio" id="use1" name="use">
+            <span class="icon-radio"></span>
+            <label for="use1">사용</label>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="use2" name="use">
+            <span class="icon-radio"></span>
+            <label for="use2">미사용</label>
+          </div>
+          <div class="str-box">
+            <strong class="str">범위</strong>
+            <div class="input-text small">
+              <input type="text">
+            </div>
+            ~
+            <div class="input-text small">
+              <input type="text">
+            </div>
+          </div>
+        </li>
+        <li class="left">
+          <h5>양방향 / 단방향</h5>
+          <div class="radio-wrap">
+            <input type="radio" id="radio01" name="radio">
+            <span class="icon-radio"></span>
+            <label for="radio01">OARIA</label>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="radio02" name="radio">
+            <span class="icon-radio"></span>
+            <label for="radio02">SEED</label>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="radio03" name="radio">
+            <span class="icon-radio"></span>
+            <label for="radio03">AES</label>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="radio04" name="radio">
+            <span class="icon-radio"></span>
+            <label for="radio04">FPE</label>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" id="radio05" name="radio">
+            <span class="icon-radio"></span>
+            <label for="radio05">SHA</label>
+          </div>
+        </li>
+        <li class="left">
+          <h5>마스킹</h5>
+          <div class="select-wrap">
+            <select>
+              <option value="이름">이름</option>
+            </select>
+          </div>
+          <div class="bottom-btn-wrap">
+            <a href="" class="btn btn-line btn-round news-more btn-icon">
+              <div class="btn-line-inner">실행</div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    chkClick();
+    radioClick();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="Shortcut Icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="../../css/parsley.css">
+	<title>관리자-계정관리</title>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/jquery.ezmark.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-filestyle.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../../js/websiteUtils.js?v=20190808"></script>
+	<script type="text/javascript" src="../../js/admin.js"></script>
+</head>
+<body>
+    <div class="headerWarp">
+         <div class="headerInner">
+            <div class="primaryHead">
+                <h1 class="logo"><a href="/admin/index.do"><img src="../../images/common/logo.png"></a></h1>
+                <p class="personalInfo"> <span>admin</span> 님</p>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">비밀번호변경</button>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">로그아웃</button>
+            </div>
+            <!-- GNB -->
+            <div class="gnb">
+                <ul class="depth1">
+                    <li class="active"><a href="/admin/client/list.do" id="menu1">CLIENT</a></li>
+                    <li><a href="/admin/account/list.do" id="menu2">USER</a></li>
+                    <li><a href="/admin/contents/quiz/list.do" id="menu3">MANAGEMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="warp"> 
+        <!--Lnb-->
+        <!-- Sub Gnb -->
+        <div class="subGnb">
+            <div class="depth2">	
+                <div class="depth2Inner">
+                    <ul>
+                        <!-- 제품관리 -->
+                        <li class="active"><a class="menu2" href="/admin/client/list.do">고객</a></li>
+                        <li><a class="menu2" href="/admin/prospect/list.do">잠재고객</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--//Lnb-->
+        
+        <div class="contWarp">
+            <div class="contents noTab">
+                <!-- contents  -->
+                <div class="stepWrap">
+                    <ul>
+                        <li class="on">
+                            <span>
+                                가망<br>
+                                고객수집
+                            </span>
+                        </li>
+                        <li><span>고객 방문</span></li>
+                        <li><span>PoC</span></li>
+                        <li><span>고객미팅</span></li>
+                        <li><span>견적</span></li>
+                        <li><span>계약</span></li>
+                        <li><span>설치 지원 및<br>결과</span></li>
+                        <li><span>운영<br>교육</span></li>
+                        <li><span>유지보수</span></li>
+                        <li><span>제품 만족도<br>조사</span></li>
+                        <li><span>재계약</span></li>
+                    </ul>
+                </div>
+                <div class="conditionSearch">
+                    <div class="conditions">
+                        <h2 class="headingLevel2">고객 기본 정보</h2>
+                        <dl>
+                            <dt>회사명 :</dt>
+                            <dd class="txt">
+                                나이키
+                            </dd>
+                            <dt>부서 :</dt>
+                            <dd class="txt">
+                                Tech
+                            </dd>
+                            <dt>아이디 :</dt>
+                            <dd class="txt">
+                                daesung.han@nike.com
+                            </dd>
+                            <dt>유입채널 :</dt>
+                            <dd class="txt">
+                                영업
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>이름 :</dt>
+                            <dd class="txt">
+                                한대성
+                            </dd>
+                            <dt>직함 :</dt>
+                            <dd class="txt">
+                                과장
+                            </dd>
+                            <dt>연락처 :</dt>
+                            <dd class="txt">
+                                010-4029-4333
+                            </dd>
+                            <dt>참고사항 :</dt>
+                            <dd class="txt">
+                                사이트 담당자
+                            </dd>
+                        </dl>
+
+                    </div>
+                    <div class="searchBtns">
+                        <button type="button" onclick="go_search();" class="btnSearchLarge">수정</button>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <ul>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>가망고객수집 (1) - 방문의뢰서(설명회,PoC), 홈페이지, 이메일을 통해 : 시스템</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>고객 방문 (2) - 고객 특이사항 수집 : 영업, 기술영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>PoC  (0) - 스터디 라이선스 발급 : 기술영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>고객 미팅  (0) - 실무자,의사결정자와 미팅결과, 고객 특이사항 수집 : 영업, 기술영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>견적   (0)  - 구매담당자 : 영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>계약   (0) - 구매담당자 : 영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>설치 지원 및 결과   (0) - 실무자 : 기술영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <span class="icon-arrow"></span>
+                                <strong>운영 교육   (0) -  솔루션 운영에 필요한 교육 : 기술영업</strong>
+                            </div>
+                            <div class="contents">
+                                <div><a href="#">20170201 나이키 설치 환경 확인</a></div>
+                                <div><a href="#">20170202 나이키 2차 환경 확인</a></div>
+                            </div>
+                            <a href="#" class="btn-plus"><span class="icon-plus">등록</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 상세 팝업 -->
+    <div class="assignController">
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">고객 방문 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:121px;">
+                        <col>
+                        <col style="width:100px;">
+                        <col style="width:180px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>참석자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>일시</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>장소</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="3">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+							<th>파일 첨부</th>
+							<td colspan="3">
+								<input type="file">
+							</td>
+						</tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">PoC 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:100px;">
+                        <col style="width:180px;">
+                        <col style="width:121px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>요청자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>요청서 첨부</th>
+							<td>
+                                <input type="file">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>담당자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>확인서 첨부</th>
+							<td>
+                                <input type="file">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="3">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">고객 미팅 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:121px;">
+                        <col>
+                        <col style="width:100px;">
+                        <col style="width:180px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>참석자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>일시</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>장소</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="3">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+							<th>파일 첨부</th>
+							<td colspan="3">
+								<input type="file">
+							</td>
+						</tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">고객 미팅 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:121px;">
+                        <col>
+                        <col style="width:121px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>견적명</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>발행일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>상품명</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>유지보수</th>
+							<td>
+                                <input type="text">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>고객담당자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>영업 담당자</th>
+							<td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="">선택1</option> 
+                                    <option value="">선택2</option>
+                                    <option value="">선택3</option>
+                                </select>
+							</td>
+                        </tr>
+                        <tr>
+							<th>금액</th>
+							<td>
+								<input type="text">
+							</td>
+							<th>파일 첨부</th>
+							<td>
+								<input type="file">
+							</td>
+						</tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="3">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop large hidden">
+            <h1 class="headingLevel1">계약 내용 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:120px;">
+                        <col>
+                        <col style="width:120px;">
+                        <col>
+                        <col style="width:120px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>계약명</th>
+                            <td colspan="5">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>법인명</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th>사업자번호</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>체결일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>상품명</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="starter">starter</option> 
+                                    <option value="core">core</option>
+                                    <option value="pro">pro</option>
+                                    <option value="prime">prime</option>
+                                    <option value="site">site</option>
+                                </select>
+                            </td>
+                            <th>유지보수</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="cs-core">cs-core</option> 
+                                    <option value="cs-pro">cs-pro</option>
+                                    <option value="cs-prime">cs-prime</option>
+                                </select>
+                            </td>
+							<th>시작일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>계약진행</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="온라인">온라인</option> 
+                                    <option value="오프라인">오프라인</option>
+                                </select>
+                            </td>
+                            <th>결재단위</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="매년">매년</option> 
+                                    <option value="매반기">매반기</option>
+                                    <option value="매분기">매분기</option>
+                                    <option value="매월">매월</option>
+                                </select>
+                            </td>
+							<th>만료일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>결재유형</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="법인카드">법인카드</option> 
+                                    <option value="전자세금계산서">전자세금계산서</option>
+                                </select>
+                            </td>
+                            <th>계좌/카드번호</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>예금주/유효일자</th>
+							<td>
+                                <input type="text">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>고객 담당자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th>영업 담당자</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="선택1">선택1</option> 
+                                    <option value="선택2">선택2</option>
+                                </select>
+                            </td>
+							<th>할인적용</th>
+							<td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="선택1">선택1</option> 
+                                    <option value="선택2">선택2</option>
+                                </select>
+							</td>
+                        </tr>
+                        <tr>
+                            <th>금액</th>
+                            <td>
+                                <input type="text" class="price">
+                                원
+                            </td>
+							<th>참고자료</th>
+							<td colspan="3">
+                                <input type="file">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>메모</th>
+                            <td colspan="5">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">설치 지원 및 결과 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:121px;">
+                        <col>
+                        <col style="width:100px;">
+                        <col style="width:180px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수행자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>일시</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>장소</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="3">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+							<th>파일 첨부</th>
+							<td colspan="3">
+								<input type="file">
+							</td>
+						</tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">운영 교육 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:120px;">
+                        <col>
+                        <col style="width:80px;">
+                        <col>
+                        <col style="width:80px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td colspan="5">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수행자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th>참석자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>일시</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>장소</th>
+                            <td colspan="5">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="5">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>파일 첨부</th>
+                            <td colspan="5">
+                                <input type="file">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">유지보수 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:120px;">
+                        <col>
+                        <col style="width:80px;">
+                        <col>
+                        <col style="width:80px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td colspan="5">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수행자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th class="center">담당자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th class="center">일시</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>장소</th>
+                            <td colspan="5">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td colspan="5">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>파일 첨부</th>
+                            <td colspan="5">
+                                <input type="file">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop hidden">
+            <h1 class="headingLevel1">제품 만족도 조사 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:120px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>파일 첨부</th>
+                            <td>
+                                <input type="file">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>설문지 링크</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="assignWrap pop large">
+            <h1 class="headingLevel1">재계약 내용 등록</h1>
+            <div class="domesticPromotion">
+                <table class="tableSt_02">
+                    <colgroup>
+                        <col style="width:120px;">
+                        <col>
+                        <col style="width:120px;">
+                        <col>
+                        <col style="width:120px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>계약명</th>
+                            <td colspan="5">
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>법인명</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th>사업자번호</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>체결일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>상품명</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="starter">starter</option> 
+                                    <option value="core">core</option>
+                                    <option value="pro">pro</option>
+                                    <option value="prime">prime</option>
+                                    <option value="site">site</option>
+                                </select>
+                            </td>
+                            <th>유지보수</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="cs-core">cs-core</option> 
+                                    <option value="cs-pro">cs-pro</option>
+                                    <option value="cs-prime">cs-prime</option>
+                                </select>
+                            </td>
+							<th>시작일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>계약진행</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="온라인">온라인</option> 
+                                    <option value="오프라인">오프라인</option>
+                                </select>
+                            </td>
+                            <th>결재단위</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="매년">매년</option> 
+                                    <option value="매반기">매반기</option>
+                                    <option value="매분기">매분기</option>
+                                    <option value="매월">매월</option>
+                                </select>
+                            </td>
+							<th>만료일</th>
+							<td>
+                                <input type="text" class="dateImg w100" />
+							</td>
+                        </tr>
+                        <tr>
+                            <th>결재유형</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="법인카드">법인카드</option> 
+                                    <option value="전자세금계산서">전자세금계산서</option>
+                                </select>
+                            </td>
+                            <th>계좌/카드번호</th>
+                            <td>
+                                <input type="text">
+                            </td>
+							<th>예금주/유효일자</th>
+							<td>
+                                <input type="text">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>고객 담당자</th>
+                            <td>
+                                <input type="text">
+                            </td>
+                            <th>영업 담당자</th>
+                            <td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="선택1">선택1</option> 
+                                    <option value="선택2">선택2</option>
+                                </select>
+                            </td>
+							<th>할인적용</th>
+							<td>
+                                <select> 
+                                    <option value="">선택하세요</option> 
+                                    <option value="선택1">선택1</option> 
+                                    <option value="선택2">선택2</option>
+                                </select>
+							</td>
+                        </tr>
+                        <tr>
+                            <th>금액</th>
+                            <td>
+                                <input type="text" class="price">
+                                원
+                            </td>
+							<th>참고자료</th>
+							<td colspan="3">
+                                <input type="file">
+							</td>
+                        </tr>
+                        <tr>
+                            <th>메모</th>
+                            <td colspan="5">
+                                <textarea></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnSec">
+                    <button type="button" class="btn type_02 leftBtn">닫기</button>
+                    <button type="button" class="btn type_01 rightBtn">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="ajax_load_indicator"></div>
+        
+    <div class="footerWarp">
+        <div class="footerInner">
+            <p class="copySection" style="text-align: center;">Copyright © Spiceware Co, Ltd. All right reserved.</p>
+        </div>
+    </div>
+    
+    <script>
+        $('.accordion .title').click(function(){
+            $(this).parent('li').toggleClass('on').siblings('li').removeClass('on');
+        });
+    </script>
+    
+    </body>
+</html>

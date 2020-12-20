@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="Shortcut Icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="../../css/parsley.css">
+	<title>관리자-계정관리</title>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/jquery.ezmark.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-filestyle.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../../js/websiteUtils.js?v=20190808"></script>
+	<script type="text/javascript" src="../../js/admin.js"></script>
+	<script type="text/javascript" src="../../js/parsley.js"></script>
+	
+    <script type="text/javascript" src="../../js/core.min.js"></script>
+    <script type="text/javascript" src="../../js/sha256.min.js"></script>			
+</head>
+<body>
+    <div class="headerWarp">
+         <div class="headerInner">
+            <div class="primaryHead">
+                <h1 class="logo"><a href="/admin/index.do"><img src="../../images/common/logo.png"></a></h1>
+                
+                <p class="personalInfo"> <span>admin</span> 님</p>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">비밀번호변경</button>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">로그아웃</button>
+            </div>
+            <!-- GNB -->
+            <div class="gnb">
+                <ul class="depth1">
+                    <li class="active"><a href="/admin/client/list.do" id="menu1">CLIENT</a></li>
+                    <li><a href="/admin/account/list.do" id="menu2">USER</a></li>
+                    <li><a href="/admin/contents/quiz/list.do" id="menu3">MANAGEMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="warp"> 
+        <!--Lnb-->
+        <!-- Sub Gnb -->
+        <div class="subGnb">
+            <div class="depth2">	
+                <div class="depth2Inner">
+                    <ul>
+                        <!-- 제품관리 -->
+                        <li class="active"><a class="menu2" href="/admin/client/list.do">고객</a></li>
+                        <li><a class="menu2" href="/admin/prospect/list.do">잠재고객</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--//Lnb-->
+        
+        <div class="contWarp">
+            <div class="contents noTab">
+                <!-- contents  -->
+                <form>
+                    <div class="conditionSearch">
+                        <div class="conditions">
+                            <dl>
+                                <dt>회사명 </dt>
+                                <dd>
+                                    <input type="text" name="searchName" style="width:180px;" value="">
+                                </dd>
+                                <dt>담당자 </dt>
+                                <dd>
+                                    <input type="text" name="searchName" style="width:180px;" value="">
+                                </dd>
+                                <dt>상품</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option>starter</option>
+                                        <option>core</option>
+                                        <option>pro</option>
+                                        <option>prime</option>
+                                        <option>site</option>
+                                    </select>
+                                </dd>
+                                <dt>유지보수</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option>전체</option>
+                                        <option>cs-core</option>
+                                        <option>cs-pro</option>
+                                        <option>cs-prime</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>만료일자</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option>전체</option>
+                                        <option>1달전</option>
+                                        <option>3개월전</option>
+                                    </select>
+                                </dd>
+                                <dt>유입채널</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option>전체</option>
+                                        <option>인터넷</option>
+                                        <option>영업</option>
+                                    </select>
+                                </dd>
+                                <dt>상태</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option>전체</option>
+                                        <option>가입</option>
+                                        <option>탈퇴</option>
+                                    </select>
+                                </dd>
+                            </dl>
+
+                        </div>
+                        <div class="searchBtns">
+                            <button type="button" onclick="go_search();" class="btnSearchLarge">조회</button>
+                        </div>
+                    </div>			
+                    
+                    <div class="tableToolBar">
+                        <div class="toolLeft"></div>
+                        <div class="toolRgt">
+                            <!-- <a href="" class="btnType1 btnColr1"><img src="/images/ico/ico_excel.png" alt="" /> Download</a> -->
+                            <select name="listsize" class="selectType1" onchange="go_search();">
+                                <option value="">10 개씩 보기</option>
+                                <option value="20">20 개씩 보기</option>
+                                <option value="50">50 개씩 보기</option>
+                                <option value="100">100 개씩 보기</option>
+                            </select>					
+                        </div>
+                    </div>			
+                    
+                    <table class="tableSt_01">
+                        <colgroup>
+                            <col style="width:50px;">
+                            <col>
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:100px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>						
+                                <th>회사명</th>						
+                                <th>담당자</th>						
+                                <th>상품</th>
+                                <th>유지보수</th>
+                                <th>만료일자</th>
+                                <th>유입채널</th>
+                                <th>상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr class="mainNotice">
+                                    <td>7</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        심화전자
+                                    </td>
+                                    <td>이인표</td>
+                                    <td>PRIME</td>
+                                    <td>CS-PRO</td>
+                                    <td class="red">2019-06-01</td>
+                                    <td>인터넷</td>
+                                    <td>가입</td>
+                                </tr>
+                                <tr class="mainNotice">
+                                    <td>6</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        글로벌체인
+                                    </td>
+                                    <td>이수현</td>
+                                    <td>PRO</td>
+                                    <td>CS-PRIME</td>
+                                    <td class="red">2018-07-01</td>
+                                    <td>영업</td>
+                                    <td>가입</td>
+                                </tr>      
+                                <tr class="mainNotice">
+                                    <td>5</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        클로바
+                                    </td>
+                                    <td>안준혁</td>
+                                    <td>CORE</td>
+                                    <td>-</td>
+                                    <td>2018-07-01</td>
+                                    <td>인터넷</td>
+                                    <td>가입</td>
+                                </tr>
+                                <tr class="mainNotice">
+                                    <td>4</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        스파이스웨어
+                                    </td>
+                                    <td>김근진</td>
+                                    <td>PRIME</td>
+                                    <td>-</td>
+                                    <td class="red">2018-07-01</td>
+                                    <td>영업</td>
+                                    <td>가입</td>
+                                </tr>      
+                                <tr class="mainNotice">
+                                    <td>3</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        나이키
+                                    </td>
+                                    <td>한대성</td>
+                                    <td>PRO</td>
+                                    <td>CS-CORE</td>
+                                    <td>2018-07-01</td>
+                                    <td>영업</td>
+                                    <td>가입</td>
+                                </tr>
+                                <tr class="mainNotice">
+                                    <td>2</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        정시스템
+                                    </td>
+                                    <td>Admin An</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td class="red">-</td>
+                                    <td>인터넷</td>
+                                    <td>가입</td>
+                                </tr>      
+                                <tr class="mainNotice">
+                                    <td>1</td>
+                                    <td onclick="" style="cursor:pointer">
+                                        사이언스
+                                    </td>
+                                    <td>송동혁</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>인터넷</td>
+                                    <td>탈퇴</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <div class="pageSection">
+                        <div class="pagenation">
+                            <span class="page-arrow"><a href="#" class="arrow first btn-icon m-icon" onclick="go_paging(1)">first</a>
+                            <a href="#" class="arrow prev btn-icon m-icon">prev</a>
+                            </span><ul class="page-num"><li class="on"><a href="#" class="on">1</a></li>
+                            </ul><span class="page-arrow"><a href="#" class="arrow next btn-icon m-icon">next</a>
+                            <a href="#" class="arrow end btn-icon m-icon" onclick="go_paging(1)">end</a>
+                            </span>
+                        </div>
+                        <div class="btnSec">
+                            <button type="button" class="btn type_01 rightBtn">고객 등록</button>
+                        </div>	
+                                
+                    </div>			
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="ajax_load_indicator"></div>
+        
+    <div class="footerWarp">
+        <div class="footerInner">
+            <p class="copySection" style="text-align: center;">Copyright © Spiceware Co, Ltd. All right reserved.</p>
+        </div>
+    </div>
+    
+    
+    </body>
+</html>

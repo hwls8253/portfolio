@@ -1,0 +1,139 @@
+// 글자 생략
+@mixin ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// menu bar
+@mixin menubar {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: rem(2);
+    height: rem(16);
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background: rgba(255, 255, 255, 0.4);
+  }
+  &:last-child:after {
+    display: none;
+  }
+}
+
+// position 정 가운데
+@mixin position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// position 세로 기준 가운데
+@mixin position-center-top {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+// position 가로 기준 가운데
+@mixin position-center-left {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+// background 이미지 기본
+@mixin bg-img-basic {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+}
+
+// arrow 
+@mixin arrow-prev {
+  overflow: hidden;
+  display: inline-block;
+  width: rem(10);
+  height: rem(10);
+  border-top: rem(2) solid $default-color;
+  border-left: rem(2) solid $default-color;
+  transform: rotate(-45deg);
+}
+
+@mixin arrow-next {
+  overflow: hidden;
+  display: inline-block;
+  width: rem(10);
+  height: rem(10);
+  border-top: rem(2) solid $default-color;
+  border-right: rem(2) solid $default-color;
+  transform: rotate(45deg);
+}
+
+@mixin arrow-d {
+  overflow: hidden;
+  display: inline-block;
+  width: rem(10);
+  height: rem(10);
+  border-top: rem(2) solid $default-color;
+  border-left: rem(2) solid $default-color;
+  transform: rotate(225deg);
+}
+
+@mixin arrow-u {
+  overflow: hidden;
+  display: inline-block;
+  width: rem(10);
+  height: rem(10);
+  border-top: rem(2) solid $default-color;
+  border-left: rem(2) solid $default-color;
+  transform: rotate(45deg);
+}
+
+// disc 
+@mixin disc-list {
+  width: rem(3);
+  height: rem(3);
+  border-radius: 100%;
+  background: $primary-color;
+  position: absolute;
+  top: rem(10);
+  left: 0;
+}
+
+@mixin disc-list-m {
+  width: rem(6);
+  height: rem(6);
+  border-radius: 100%;
+  background: $primary-color;
+  position: absolute;
+  top: rem(15);
+  left: 0;
+}
+
+// text hidden
+@mixin txt-hide {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+//flex
+@mixin display-flex {
+  display: flex;
+  display: -webkit-flex;
+  /* safari */
+  display: -ms-flexbox;
+  /* IE */
+}
+
+@mixin gradient-bg-color {
+  background-image: $gradient-bg-color;
+  -ms-background-image: $gradient-bg-color;
+  -o-background-image: $gradient-bg-color;
+  -webkit-background-image: $gradient-bg-color;
+  background-color: #490097;
+}

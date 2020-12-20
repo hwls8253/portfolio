@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title> pagelist</title>
+  <style>
+    /* Reset */
+    
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+    
+    body {
+      line-height: 1;
+      -ms-overflow-style: none;
+      font-size: 14px;
+      color: #333;
+      font-family: "NoTo Sans KR", sans-serif;
+    }
+    
+    ol,
+    ul {
+      list-style: none;
+    }
+    
+    blockquote,
+    q {
+      quotes: none;
+    }
+    
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: '';
+      content: none;
+    }
+    
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 0;
+    }
+    
+    img {
+      width: 100%;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    /* pagelist */
+    
+    .header {
+      background: #333;
+      position: relative;
+    }
+    
+    .header h1 {
+      text-align: center;
+      padding: 20px 0;
+      margin: 0 auto;
+      width: 160px;
+    }
+    
+    .header .link {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+    
+    .header .link a {
+      color: #ccc;
+    }
+    
+    .header .link a.current {
+      color: #fff;
+      text-decoration: underline;
+    }
+    
+    .tab-con {
+      display: none;
+    }
+    
+    .tab-con.current {
+      display: block;
+    }
+    
+    .header .link li {
+      display: inline-block;
+      margin: 0 0 0 10px;
+    }
+    
+    .table-wrap {
+      color: #666;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .table-wrap th,
+    .table-wrap td {
+      padding: 15px 20px;
+      font-weight: 400;
+      text-align: center;
+    }
+    
+    .table-wrap tr:hover {
+      background-color: #f1f1f1f1
+    }
+    
+    .table-wrap th {
+      background: #f8faff
+    }
+    
+    .table-wrap tbody {
+      border-top: 1px solid #e8e9ef;
+      border-bottom: 1px solid #e8e9ef;
+    }
+    
+    .table-wrap td {
+      border-left: 1px solid #e8e9ef;
+      border-right: 1px solid #e8e9ef;
+    }
+    
+    .table-wrap td.align-left {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header" id="top">
+    <h1><img src="images/common/logo.png" alt=""></h1>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <colgroup>
+        <col width="10%" />
+        <col width="15%" />
+        <col width="10%" />
+        <col width="15%" />
+        <col width="25%" />
+        <col width="*" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>1depth</th>
+          <th>2depth</th>
+          <th>3depth</th>
+          <th>4depth</th>
+          <th>파일명</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="depth1">admin</td>
+          <td>Client</td>
+          <td>고객</td>
+          <td>리스트</td>
+          <td class="align-left"><a href="admin/client/list.html" target="_blank">/client/index.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>등록</td>
+          <td class="align-left"><a href="admin/client/write.html" target="_blank">/client/write.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>상세 리스트(관리자모드)</td>
+          <td class="align-left"><a href="admin/client/view.html" target="_blank">/client/view.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>상세 리스트(기술영업)</td>
+          <td class="align-left"><a href="admin/client/view_tech.html" target="_blank">/client/view_tech.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>상세 리스트(영업)</td>
+          <td class="align-left"><a href="admin/client/view_sales.html" target="_blank">/client/view_sales.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>상세 리스트(마케팅)</td>
+          <td class="align-left"><a href="admin/client/view_marketing.html" target="_blank">/client/view_marketing.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>상세 리스트 - 고객 기본 정보 수정</td>
+          <td class="align-left"><a href="admin/client/view_info_modify.html" target="_blank">/client/view_info_modify.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>상세 리스트 - 등록</td>
+          <td class="align-left"><a href="admin/client/view_registe.html" target="_blank">/client/view_registe.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td>잠재고객</td>
+          <td>리스트</td>
+          <td class="align-left"><a href="admin/prospect/list.html" target="_blank">/prospect/list.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>등록</td>
+          <td class="align-left"><a href="admin/prospect/write.html" target="_blank">/prospect/write.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>수정</td>
+          <td class="align-left"><a href="admin/prospect/modify.html" target="_blank">/prospect/modify.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>이메일 발송</td>
+          <td class="align-left"><a href="admin/prospect/send_email.html" target="_blank">/prospect/send_email.html</a></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="depth1"></td>
+          <td>MANAGEMENT</td>
+          <td>홈페이지</td>
+          <td>메인</td>
+          <td class="align-left"><a href="admin/homepage/main.html" target="_blank">/homepage/main.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>메인- PC 배너 등록</td>
+          <td class="align-left"><a href="admin/homepage/main_write.html" target="_blank">/homepage/main_write.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>메인- Mobile 배너 등록</td>
+          <td class="align-left"><a href="admin/homepage/main_write2.html" target="_blank">/homepage/main_write2.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>company</td>
+          <td class="align-left"><a href="admin/homepage/company.html" target="_blank">/homepage/company.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>company-등록</td>
+          <td class="align-left"><a href="admin/homepage/company_write.html" target="_blank">/homepage/company_write.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>product</td>
+          <td class="align-left"><a href="admin/homepage/product.html" target="_blank">/homepage/product.html</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="depth1"></td>
+          <td></td>
+          <td></td>
+          <td>product-등록</td>
+          <td class="align-left"><a href="admin/homepage/product_write.html" target="_blank">/homepage/product_write.html</a></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>sitemap</title>
+  <link rel="stylesheet" href="src/assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sitemap-menu {
+      position: absolute;
+      display: inline-block;
+      overflow-y: scroll;
+      padding-top: 58px;
+      width: 270px;
+      box-sizing: border-box;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .sitemap-menu::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    .sitemap-menu::-webkit-scrollbar-thumb {
+      background-color: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .sitemap-menu.mobile {
+      display: none;
+    }
+    
+    .viewersize {
+      position: fixed;
+      padding: 10px 0px;
+      background: #3f6b9d;
+      border-radius: 5px;
+      width: 230px;
+      margin: 10px;
+      left: 0;
+      top: 0;
+      color: #fff;
+      z-index: 10;
+      cursor: pointer;
+    }
+    
+    .sitemap-menu .tabs-btn {
+      padding: 0 10px 10px;
+      ;
+    }
+    
+    .sitemap-menu .tabs-btn li {
+      display: inline-block;
+      margin: 0 5px 5px 0;
+      text-align: center;
+      padding: 5px 10px;
+      background: #aaa;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 13px;
+    }
+    
+    .sitemap-menu .tabs-btn li:last-child {
+      margin-right: 0;
+    }
+    
+    .sitemap-menu .tabs-btn li.on {
+      background: #328ff6;
+    }
+    
+    .sitemap-menu .tabs-btn li a {
+      display: block;
+    }
+    
+    .range-wrap {
+      display: none;
+    }
+    
+    .range-wrap.on {
+      display: block;
+    }
+    
+    .range-wrap .range {
+      margin-bottom: 20px;
+    }
+    
+    .range-wrap .range h4 {
+      padding: 10px;
+      font-size: 15px;
+      padding: 10px 10px 20px;
+      color: #6363ab;
+    }
+    
+    .range-wrap .range>ul {
+      border-top: 1px solid #ddd;
+      background: #eeffff;
+      margin-bottom: 20px;
+    }
+    
+    .range-wrap:nth-of-type(2) .range>ul {
+      background: #fff2f2
+    }
+    
+    .range-wrap:nth-of-type(3) .range>ul {
+      background: #f4efff;
+    }
+    
+    .range-wrap .range li {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .range-wrap .range li:after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+    
+    .range-wrap .range li .sub-title {
+      display: block;
+    }
+    
+    .range-wrap .range li .btn-wrap {
+      float: right;
+      padding-top: 10px;
+    }
+    
+    .range-wrap .range li .btn-wrap .new-win {
+      display: inline-block;
+      border: 1px solid #666;
+      padding: 3px;
+      font-size: 11px;
+    }
+    
+    .range-wrap .range li .btn-wrap a.on {
+      color: #f00;
+    }
+    
+    iframe {
+      width: calc(100% - 270px);
+      position: absolute;
+      left: 270px;
+      top: 0;
+      height: 100%;
+      box-sizing: border-box;
+      display: inline-block;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    iframe.mobile {
+      width: 392px;
+      height: 667px;
+      padding: 0;
+      overflow: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sitemap-menu">
+    <button class="viewersize">모바일size보기</button>
+    <ul class="tabs-btn">
+      <li class="on"><a href="javascript:void(0)">Web</a></li>
+    </ul>
+    <div class="range-wrap on">
+      <div class="range">
+        <ul>
+          <li>
+            <span class="sub-title">메인</span>
+            <div class="btn-wrap">
+              <a href="src/pages/main.html" target="viewer">main.html</a>
+              <a href="src/pages/main.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">메인 - 문의하기 팝업</span>
+            <div class="btn-wrap">
+              <a href="src/pages/main_p1.html" target="viewer">main_p1.html</a>
+              <a href="src/pages/main_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="range">
+        <h4>로그인</h4>
+        <ul>
+          <li>
+            <span class="sub-title">로그인</span>
+            <div class="btn-wrap">
+              <a href="src/pages/LO_LO_01.html" target="viewer">LO_LO_01.html</a>
+              <a href="src/pages/LO_LO_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">로그인 - 아이디찾기</span>
+            <div class="btn-wrap">
+              <a href="src/pages/LO_LO_01_p1.html" target="viewer">LO_LO_01_p1.html</a>
+              <a href="src/pages/LO_LO_01_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">로그인 - 아이디찾기 결과</span>
+            <div class="btn-wrap">
+              <a href="src/pages/LO_LO_01_p2.html" target="viewer">LO_LO_01_p2.html</a>
+              <a href="src/pages/LO_LO_01_p2.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">로그인 - 비밀번호찾기</span>
+            <div class="btn-wrap">
+              <a href="src/pages/LO_LO_01_p3.html" target="viewer">LO_LO_01_p3.html</a>
+              <a href="src/pages/LO_LO_01_p3.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">로그인 - 비밀번호찾기 결과</span>
+            <div class="btn-wrap">
+              <a href="src/pages/LO_LO_01_p4.html" target="viewer">LO_LO_01_p4.html</a>
+              <a href="src/pages/LO_LO_01_p4.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="range">
+        <h4>회원가입</h4>
+        <ul>
+          <li>
+            <span class="sub-title">회원가입 - 이용약관</span>
+            <div class="btn-wrap">
+              <a href="src/pages/JO_JO_01.html" target="viewer">JO_JO_01.html</a>
+              <a href="src/pages/JO_JO_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">회원가입 - 정보입력</span>
+            <div class="btn-wrap">
+              <a href="src/pages/JO_JO_02.html" target="viewer">JO_JO_02.html</a>
+              <a href="src/pages/JO_JO_02.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">회원가입 - 메일중복확인</span>
+            <div class="btn-wrap">
+              <a href="src/pages/JO_JO_02_p1.html" target="viewer">JO_JO_02_p1.html</a>
+              <a href="src/pages/JO_JO_02_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">회원가입 - 인증</span>
+            <div class="btn-wrap">
+              <a href="src/pages/JO_JO_02_p2.html" target="viewer">JO_JO_02_p2.html</a>
+              <a href="src/pages/JO_JO_02_p2.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="range">
+        <h4>마이페이지</h4>
+        <ul>
+          <li>
+            <span class="sub-title">마이페이지</span>
+            <div class="btn-wrap">
+              <a href="src/pages/MY_MY_01.html" target="viewer">MY_MY_01.html</a>
+              <a href="src/pages/MY_MY_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">마이페이지 - 비밀번호 변경</span>
+            <div class="btn-wrap">
+              <a href="src/pages/MY_MY_01_p1.html" target="viewer">MY_MY_01_p1.html</a>
+              <a href="src/pages/MY_MY_01_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">마이페이지 - 비밀번호 변경 결과</span>
+            <div class="btn-wrap">
+              <a href="src/pages/MY_MY_01_p2.html" target="viewer">MY_MY_01_p2.html</a>
+              <a href="src/pages/MY_MY_01_p2.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">마이페이지 - 정보수정 변경 결과</span>
+            <div class="btn-wrap">
+              <a href="src/pages/MY_MY_01_p3.html" target="viewer">MY_MY_01_p3.html</a>
+              <a href="src/pages/MY_MY_01_p3.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">마이페이지 > 나의문의 상세보기</span>
+            <div class="btn-wrap">
+              <a href="src/pages/MY_MY_02.html" target="viewer">MY_MY_02.html</a>
+              <a href="src/pages/MY_MY_02.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">마이페이지 > 라이선스 Purchase license Key</span>
+            <div class="btn-wrap">
+              <a href="src/pages/MY_MY_03.html" target="viewer">MY_MY_03.html</a>
+              <a href="src/pages/MY_MY_03.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="range">
+        <h4>서브</h4>
+        <ul>
+          <li>
+            <span class="sub-title">company</span>
+            <div class="btn-wrap">
+              <a href="src/pages/CP_CP_01.html" target="viewer">CP_CP_01.html</a>
+              <a href="src/pages/CP_CP_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">product</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PR_PR_01.html" target="viewer">PR_PR_01.html</a>
+              <a href="src/pages/PR_PR_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">product - 브로셔전송(최초정보입력)</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PR_PR_01_p1.html" target="viewer">PR_PR_01_p1.html</a>
+              <a href="src/pages/PR_PR_01_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">product - 브로셔전송(재정보입력)</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PR_PR_01_p2.html" target="viewer">PR_PR_01_p2.html</a>
+              <a href="src/pages/PR_PR_01_p2.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">product - 타사와 제품 비교</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PR_PR_01_p3.html" target="viewer">PR_PR_01_p3.html</a>
+              <a href="src/pages/PR_PR_01_p3.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">product - ISMS지원 사항</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PR_PR_01_p4.html" target="viewer">PR_PR_01_p4.html</a>
+              <a href="src/pages/PR_PR_01_p4.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">FEATURE - 특징</span>
+            <div class="btn-wrap">
+              <a href="src/pages/FT_FT_01.html" target="viewer">FT_FT_01.html</a>
+              <a href="src/pages/FT_FT_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">FEATURE - 제품데모신청</span>
+            <div class="btn-wrap">
+              <a href="src/pages/FT_FT_01_p1.html" target="viewer">FT_FT_01_p1.html</a>
+              <a href="src/pages/FT_FT_01_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">FEATURE - iframe영역</span>
+            <div class="btn-wrap">
+              <a href="src/pages/FT_FT_02.html" target="viewer">FT_FT_02.html</a>
+              <a href="src/pages/FT_FT_02.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">pricing - 가격</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PC_PC_01.html" target="viewer">PC_PC_01.html</a>
+              <a href="src/pages/PC_PC_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">pricing - 상품구매문의</span>
+            <div class="btn-wrap">
+              <a href="src/pages/PC_PC_01_p1.html" target="viewer">PC_PC_01_p1.html</a>
+              <a href="src/pages/PC_PC_01_p1.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">support - 문의사항</span>
+            <div class="btn-wrap">
+              <a href="src/pages/SP_AN_01.html" target="viewer">SP_AN_01.html</a>
+              <a href="src/pages/SP_AN_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">support - 매뉴얼</span>
+            <div class="btn-wrap">
+              <a href="src/pages/SP_MN_01.html" target="viewer">SP_MN_01.html</a>
+              <a href="src/pages/SP_MN_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">support - FAQ</span>
+            <div class="btn-wrap">
+              <a href="src/pages/SP_FQ_01.html" target="viewer">SP_FQ_01.html</a>
+              <a href="src/pages/SP_FQ_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">NEWS</span>
+            <div class="btn-wrap">
+              <a href="src/pages/NS_NS_01.html" target="viewer">NS_NS_01.html</a>
+              <a href="src/pages/NS_NS_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="range">
+        <h4>Footer</h4>
+        <ul>
+          <li>
+            <span class="sub-title">이용약관</span>
+            <div class="btn-wrap">
+              <a href="src/pages/FO_PR_01.html" target="viewer">FO_PR_01.html</a>
+              <a href="src/pages/FO_PR_01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">개인정보처리방침</span>
+            <div class="btn-wrap">
+              <a href="src/pages/FO_PR_02.html" target="viewer">FO_PR_02.html</a>
+              <a href="src/pages/FO_PR_02.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="range">
+        <h4>메일</h4>
+        <ul>
+          <li>
+            <span class="sub-title">답변메일</span>
+            <div class="btn-wrap">
+              <a href="src/pages/mail01.html" target="viewer">mail01.html</a>
+              <a href="src/pages/mail01.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">답변메일_팝업</span>
+            <div class="btn-wrap">
+              <a href="src/pages/mail02.html" target="viewer">mail02.html</a>
+              <a href="src/pages/mail02.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">상품구매문의</span>
+            <div class="btn-wrap">
+              <a href="src/pages/mail03.html" target="viewer">mail03.html</a>
+              <a href="src/pages/mail03.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">임시비밀번호</span>
+            <div class="btn-wrap">
+              <a href="src/pages/mail04.html" target="viewer">mail04.html</a>
+              <a href="src/pages/mail04.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">회원가입인증</span>
+            <div class="btn-wrap">
+              <a href="src/pages/mail05.html" target="viewer">mail05.html</a>
+              <a href="src/pages/mail05.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+          <li>
+            <span class="sub-title">브로셔신청</span>
+            <div class="btn-wrap">
+              <a href="src/pages/mail06.html" target="viewer">mail06.html</a>
+              <a href="src/pages/mail06.html" target="_blank" class="new-win">새창</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <iframe src="" name="viewer" class="" style="overflow:hidden;"></iframe>
+
+  <script>
+    // link
+    var links = $('.range a');
+    for (i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function() {
+        for (i = 0; i < links.length; i++) {
+          links[i].classList.remove('on');
+
+        }
+        this.classList.add('on');
+      })
+
+    }
+    // tab
+    $('.tabs-btn a').click(function() {
+      $(this).parent('li').addClass('on').siblings().removeClass('on');
+      var index = $(this).parent('li').index();
+      $('.range-wrap').eq(index).addClass('on').siblings().removeClass('on');;
+    });
+
+    $('.viewersize').click(function() {
+
+      $('iframe').toggleClass('mobile');
+    });
+
+
+    $('.title.lg').click(function() {
+      $(this).toggleClass('on');
+      $(this).next("div.range").slideToggle();
+    });
+    $('.title.lg').click();
+  </script>
+</body>
+
+</html>

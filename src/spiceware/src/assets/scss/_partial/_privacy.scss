@@ -1,0 +1,34 @@
+.privacy {
+  .con {
+    width: 100%;
+    max-width: rem(1200);
+    margin: 0 auto;
+    padding: rem(50) 0;
+    .txt-box {
+      padding-bottom: rem(30);
+      font-size: rem(16);
+      color: $default-color-lighten;
+      line-height: 1.6;
+      h4 {
+        font-weight: 500;
+        color: $default-color;
+        padding-bottom: rem(10);
+      }
+      .s-list {
+        padding: 0 rem(10);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .privacy {
+    .con {
+      box-sizing: border-box;
+      padding: rem(50) rem(30);
+      .txt-box {
+        font-size: rem(24);
+      }
+    }
+  }
+}

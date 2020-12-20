@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="Shortcut Icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="../../css/parsley.css">
+	<title>관리자-계정관리</title>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/jquery.ezmark.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-filestyle.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../../js/websiteUtils.js?v=20190808"></script>
+	<script type="text/javascript" src="../../js/admin.js"></script>
+	<script type="text/javascript" src="../../js/parsley.js"></script>
+	
+    <script type="text/javascript" src="../../js/core.min.js"></script>
+    <script type="text/javascript" src="../../js/sha256.min.js"></script>			
+</head>
+<body>
+    <div class="headerWarp">
+         <div class="headerInner">
+            <div class="primaryHead">
+                <h1 class="logo"><a href="/admin/index.do"><img src="../../images/common/logo.png"></a></h1>
+                
+                <p class="personalInfo"> <span>admin</span> 님</p>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">비밀번호변경</button>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">로그아웃</button>
+            </div>
+            <!-- GNB -->
+            <div class="gnb">
+                <ul class="depth1">
+                    <li class="active"><a href="/admin/client/list.do" id="menu1">CLIENT</a></li>
+                    <li><a href="/admin/account/list.do" id="menu2">USER</a></li>
+                    <li><a href="/admin/contents/quiz/list.do" id="menu3">MANAGEMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="warp"> 
+        <!--Lnb-->
+        <!-- Sub Gnb -->
+        <div class="subGnb">
+            <div class="depth2">	
+                <div class="depth2Inner">
+                    <ul>
+                        <!-- 제품관리 -->            
+                        <li><a class="menu2" href="/admin/client/list.do">고객</a></li>
+                        <li class="active"><a class="menu2" href="/admin/prospect/list.do">잠재고객</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--//Lnb-->
+        <div class="contWarp">
+            <div class="contents">
+                <h1 class="headingLevel1">채널영업 수정</h1>
+                <!-- contents  -->
+                <form>
+                    <div class="write">
+                        <table class="tableSt_02">
+                            <colgroup>
+                                <col width="121px">
+                                <col >
+                                <col width="121px">
+                                <col >
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>이메일</th>
+                                    <td>
+                                        <input type="text" value="Daniel.han@naver.com">
+                                    </td>
+                                    <th>구분</th>
+                                    <td>
+                                        <select>
+                                            <option value="채널영업">채널영업</option>
+                                            <option value="데모/컨텐츠">데모/컨텐츠</option>
+                                        </select>
+                                    </td>			
+                                </tr>
+                                <tr>
+                                    <th>성함</th>
+                                    <td>
+                                        <input type="text" value="한대성">
+                                    </td>
+                                    <th>직함</th>
+                                    <td>
+                                        <input type="text" value="과장">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>연락처</th>
+                                    <td>
+                                        <input type="text" value="010-0000-0000">
+                                    </td>
+                                    <th>회사명</th>
+                                    <td>
+                                        <input type="text" value="나이키">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>산업군</th>
+                                    <td>
+                                        <select>
+                                            <option value="">-선텍하세요-</option>
+                                            <option value="자동차">자동차</option>
+                                            <option value="디지털 마케팅">디지털 마케팅</option>
+                                            <option value="교육">교육</option>
+                                            <option value="금융 서비스" selected>금융 서비스</option>
+                                            <option value="게임">게임</option>
+                                            <option value="정부 기관">정부 기관</option>
+                                            <option value="의료 서비스 및 생명 과학">의료 서비스 및 생명 과학</option>
+                                            <option value="제조">제조</option>
+                                            <option value="미디어 및 엔터테인먼트">미디어 및 엔터테인먼트</option>
+                                            <option value="비영리 조직">비영리 조직</option>
+                                            <option value="석유 및 가스">석유 및 가스</option>
+                                            <option value="전기 및 공공">전기 및 공공</option>
+                                            <option value="소매">소매</option>
+                                            <option value="통신">통신</option>
+                                        </select>
+                                    </td>
+                                    <th>유입채널</th>
+                                    <td>
+                                        <input type="text" value="데모" disabled>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>참고사항</th>
+                                    <td colspan="3">
+                                        <textarea>영문 브로셔를 요청함</textarea>
+                                    </td>
+                                </tr>         
+                            </tbody>
+                        </table>
+                        <div class="btnSec">
+                            <div class="leftBtn">
+                                <button type="button" class="btn type_02">취소</button>
+                            </div>
+                            <div class="rightBtn">
+                                <button type="button" class="btn type_01 active">수정</button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- //contents  -->
+                </form>              
+            </div>
+        </div>
+    </div>
+
+    <div id="ajax_load_indicator"></div>
+        
+    <div class="footerWarp">
+        <div class="footerInner">
+            <p class="copySection" style="text-align: center;">Copyright © Spiceware Co, Ltd. All right reserved.</p>
+        </div>
+    </div>
+    
+    
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body>
+
+</html>

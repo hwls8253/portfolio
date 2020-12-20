@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="Shortcut Icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="../../css/parsley.css">
+	<title>관리자-계정관리</title>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/jquery.ezmark.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-filestyle.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../../js/websiteUtils.js?v=20190808"></script>
+	<script type="text/javascript" src="../../js/admin.js"></script>
+	<script type="text/javascript" src="../../js/parsley.js"></script>
+	
+    <script type="text/javascript" src="../../js/core.min.js"></script>
+    <script type="text/javascript" src="../../js/sha256.min.js"></script>			
+</head>
+<body>
+    <div class="headerWarp">
+         <div class="headerInner">
+            <div class="primaryHead">
+                <h1 class="logo"><a href="/admin/index.do"><img src="../../images/common/logo.png"></a></h1>
+                
+                <p class="personalInfo"> <span>admin</span> 님</p>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">비밀번호변경</button>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">로그아웃</button>
+            </div>
+            <!-- GNB -->
+            <div class="gnb">
+                <ul class="depth1">
+                    <li class="active"><a href="/admin/client/list.do" id="menu1">CLIENT</a></li>
+                    <li><a href="/admin/account/list.do" id="menu2">USER</a></li>
+                    <li><a href="/admin/contents/quiz/list.do" id="menu3">MANAGEMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="warp"> 
+        <!--Lnb-->
+        <!-- Sub Gnb -->
+        <div class="subGnb">
+            <div class="depth2">	
+                <div class="depth2Inner">
+                    <ul>
+                        <!-- 제품관리 -->            
+                        <li><a class="menu2" href="/admin/client/list.do">고객</a></li>
+                        <li class="active"><a class="menu2" href="/admin/prospect/list.do">잠재고객</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--//Lnb-->
+        <div class="contWarp">
+            <div class="contents">
+                <h1 class="headingLevel1">이메일 발송</h1>
+                <!-- contents  -->
+                <form>
+                    <div class="write">
+                        <table class="tableSt_02">
+                            <colgroup>
+                                <col width="121px">
+                                <col >
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>보내는 이</th>
+                                    <td>
+                                        <input type="text" value="spiceware@spiceware.co.kr">
+                                    </td>	
+                                </tr>
+                                <tr>
+                                    <th>받는 이</th>
+                                    <td>
+                                        <textarea class="mail-box">Daniel.han@naver.com , Daniel.han@naver.com , Daniel.han@naver.com</textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>내용</th>
+                                    <td>
+                                        <textarea>
+안녕하세요
+
+클라우드의 신세계의 보안 프로그램
+스파이스웨어를 찾아주신 여러분께 감사드립니다.
+요청하신 브로셔를 첨부해 드리오니 많은 관심 부탁드립니다.
+
+감사합니다.
+                                        </textarea>
+                                    </td>
+                                </tr>
+                                <tr>   
+                                    <th>회사서명</th>
+                                    <td>
+                                        <input type="file">
+                                    </td>
+                                </tr>
+                                <tr>   
+                                    <th>파일 첨부</th>
+                                    <td>
+                                        <input type="file">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btnSec">
+                            <div class="leftBtn">
+                                <button type="button" class="btn type_02">취소</button>
+                            </div>
+                            <div class="rightBtn">
+                                <button type="button" class="btn type_01 active">전송</button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- //contents  -->
+                </form>              
+            </div>
+        </div>
+    </div>
+
+    <div id="ajax_load_indicator"></div>
+        
+    <div class="footerWarp">
+        <div class="footerInner">
+            <p class="copySection" style="text-align: center;">Copyright © Spiceware Co, Ltd. All right reserved.</p>
+        </div>
+    </div>
+    
+    
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body>
+
+</html>

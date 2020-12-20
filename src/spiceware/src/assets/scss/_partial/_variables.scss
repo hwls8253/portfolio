@@ -1,0 +1,36 @@
+// 기본 폰트사이즈
+$rem: 16;
+// grid
+$pc-content-width: rem(1200);
+// 폰트 사이즈
+$basic-txt: rem(16);
+$title-txt: rem(18);
+$contents-txt :rem(15);
+$head-txt: rem(40);
+$head2-txt: rem(36);
+$sub-head: rem(22);
+$small-txt: rem(12);
+$view-title-txt: rem(24);
+$sub-head2-txt: rem(50);
+$sub-head3-txt: rem(36);
+$m-sub-head2-txt: rem(34);
+$m-sub-head3-txt: rem(32);
+$input-txt: rem(18);
+$m-input-txt: rem(24);
+$m-input-label: rem(26);
+// default-color
+$default-color:#333;
+$title-color:#222;
+$default-color-lighten:#787878;
+$default-color-light:#999;
+$border-color:#d5d5d5;
+$primary-color:#490097;
+$primary-color-lighten:#9e0a96;
+$secondary-color: #ed1651;
+$empty-area-bg-color: darken($border-color, 10%);
+$placeholder-color:#999999;
+$gradient-bg-color: linear-gradient(to right, #490097, #9e0a96);
+// box-shadow blur type
+$box-shadow-blur: rem(15) rem(15) rem(20) rgba(0, 0, 0, .15);
+//padding
+$mobile-content-padding: rem(30);

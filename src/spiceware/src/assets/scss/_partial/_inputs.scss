@@ -1,0 +1,190 @@
+input,
+textarea,
+button,
+select {
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.025em;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input:disabled {
+  background: #f9f9f9;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $placeholder-color;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+input::-webkit-input-placeholder {
+  color: $placeholder-color;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+input:-ms-input-placeholder {
+  color: $placeholder-color;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+textarea::-webkit-input-placeholder {
+  color: $placeholder-color;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+textarea:-ms-input-placeholder {
+  color: $placeholder-color;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.input-text {
+  border: 1px solid $border-color;
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: rem(15) rem(20);
+    color: $default-color;
+    box-sizing: border-box;
+  }
+  &.has-btn {
+    position: relative;
+    padding-right: rem(150);
+    button {
+      position: absolute;
+      height: 100%;
+      width: rem(150);
+      right: 0;
+      top: 0;
+      padding: rem(15);
+      color: #ffffff;
+      background-color: #999999;
+    }
+  }
+}
+
+.input-textarea {
+  border: 1px solid $border-color;
+  textarea {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: rem(15) rem(20);
+    color: $default-color;
+    border: 0;
+    box-sizing: border-box;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-y: auto;
+  }
+}
+
+.input-file {
+  border: 1px solid $border-color;
+  .dumy-input {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: rem(15) rem(20);
+    box-sizing: border-box;
+    button {
+      position: absolute;
+      height: 100%;
+      width: rem(150);
+      right: 0;
+      top: 0;
+      padding: rem(15);
+      color: #ffffff;
+      background-color: #999999;
+    }
+  }
+  input[type="file"] {
+    position: absolute;
+    font-size: 0;
+    height: 0;
+    width: 0;
+  }
+}
+
+.chk-wrap {
+  margin: rem(20) 0;
+  input[type="checkbox"] {
+    display: none;
+  }
+  label,
+  .icon-chk {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 rem(5);
+    cursor: pointer;
+  }
+  label {
+    display: inline;
+  }
+}
+
+.radio-wrap {
+  input[type="radio"] {
+    display: none;
+  }
+  label,
+  .icon-chk {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 rem(5);
+    cursor: pointer;
+  }
+  label {
+    display: inline;
+  }
+}
+
+.select-wrap {
+  position: relative;
+  border: 1px solid $border-color;
+  select {
+    width: 100%;
+    // padding: rem(11) rem(20);
+    height: rem(49);
+    padding-left: rem(20);
+    font-size: $input-txt;
+    background-color: #fff;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  &:after {
+    content: '';
+    @include arrow-d;
+    position: absolute;
+    top: rem(15);
+    right: rem(15);
+    border-color: $border-color;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .chk-wrap {
+    margin: rem(30) 0;
+    label {
+      font-size: rem(24);
+    }
+  }
+  .select-wrap {
+    select {
+      width: 100%;
+      text-indent: rem(20);
+      line-height: rem(70);
+      font-size: $m-input-txt;
+    }
+    &:after {
+      top: rem(25);
+      right: rem(20);
+      border-width: rem(3);
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.answer {
+  width: rem(800);
+  margin: 0 auto;
+  .form-list {
+    margin-top: rem(105);
+    >li {
+      margin-top: rem(30);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .row {
+      >div {
+        display: inline-block;
+        vertical-align: top;
+        &.th {
+          width: rem(160);
+          height: 100%;
+          vertical-align: top;
+          padding-top: rem(15);
+          font-size: rem(18);
+          &.star {
+            &:after {
+              content: '*';
+              color: #ed1651;
+            }
+          }
+        }
+        &.td {
+          width: calc(100% - #{rem(170)});
+        }
+      }
+    }
+    .info-txt {
+      font-size: rem(16);
+      line-height: rem(22);
+      color: $default-color-lighten;
+      margin-top: rem(10);
+    }
+    .input-text,
+    .input-file {
+      height: rem(50);
+    }
+  }
+  .bottom-btn-wrap {
+    margin-top: rem(100);
+  }
+  input,
+  textarea {
+    font-size: $input-txt;
+  }
+  .emphasis {
+    text-align: left;
+    color: $secondary-color;
+    font-size: rem(14);
+    padding: rem(12) 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .answer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 $mobile-content-padding;
+    .form-list {
+      margin-top: rem(55);
+      >li {
+        margin-top: rem(28);
+      }
+      .row {
+        >div {
+          display: block;
+          &.th,
+          &.td {
+            width: 100%;
+          }
+          &.th {
+            margin-bottom: rem(20);
+            font-size: $m-input-label;
+            font-weight: 500;
+            padding-top: 0;
+          }
+        }
+      }
+      .info-txt {
+        font-size: rem(22);
+        line-height: rem(32);
+        color: $default-color-lighten;
+        margin-top: rem(15);
+      }
+      .input-text,
+      .input-file {
+        height: rem(70);
+      }
+    }
+    .bottom-btn-wrap {
+      margin-top: rem(100);
+    }
+    input,
+    textarea {
+      font-size: $m-input-txt;
+    }
+    .emphasis {
+      text-align: left;
+      color: $secondary-color;
+      font-size: rem(24);
+      padding: rem(12) 0;
+    }
+  }
+}

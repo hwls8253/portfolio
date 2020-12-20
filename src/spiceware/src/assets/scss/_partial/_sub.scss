@@ -1,0 +1,118 @@
+.sub-wrap {
+  position: relative;
+  .topper {
+    position: relative;
+    height: rem(350);
+    background-image: url(../images/sub_top_bg.jpg);
+    background-size: cover;
+    h2 {
+      font-family: 'Open Sans', sans-serif;
+      padding-top: rem(200);
+      text-align: center;
+      font-size: $sub-head2-txt;
+      color: #ffffff;
+    }
+    .img {
+      position: absolute;
+      top: rem(100);
+      right: 50%;
+      margin-right: rem(-700)
+    }
+  }
+  .contents {
+    min-height: rem(300);
+    padding-top: rem(170);
+    padding-bottom: rem(100);
+    background-image: url(../images/sub_bg.png);
+    background-size: 100%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    &.no-bg {
+      background: none;
+    }
+    &.no-bottom-pad {
+      padding-bottom: 0;
+    }
+    h3 {
+      font-size: $sub-head3-txt;
+      font-weight: 700;
+      color: $default-color;
+      text-align: center;
+      .title-bullet {
+        position: relative;
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: rem(-27);
+          top: rem(5);
+          width: rem(20);
+          height: rem(23);
+          background-image: url(../images/icon_bullet.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .title-bar {
+      display: inline-block;
+      vertical-align: text-top;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: rem(6);
+        height: rem(20);
+        background: $primary-color;
+        border-radius: rem(6);
+        margin-right: rem(10);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .sub-wrap {
+    .topper {
+      .img {
+        right: rem(0);
+        margin-right: rem(0)
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sub-wrap {
+    .topper {
+      height: rem(200);
+      background-image: url(../images/sub_top_bg_mobile.jpg);
+      background-size: cover;
+      background-position: center right;
+      h2 {
+        padding-top: rem(140);
+        text-align: center;
+        font-size: $m-sub-head2-txt;
+        color: #ffffff;
+      }
+      .img {
+        display: none;
+      }
+    }
+    .contents {
+      padding-top: rem(100);
+      padding-bottom: rem(150);
+      background: none;
+      h3 {
+        font-size: $sub-head3-txt;
+      }
+      .title-bar {
+        &:before {
+          width: rem(8);
+          height: rem(24);
+          border-radius: rem(8);
+          margin-right: rem(16);
+        }
+      }
+    }
+  }
+}

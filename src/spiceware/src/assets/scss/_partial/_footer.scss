@@ -1,0 +1,149 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background: #2c2e35;
+  .f-nav {
+    max-width: rem(1640);
+    box-sizing: border-box;
+    padding: 0 rem(39);
+    margin: 0 auto;
+    color: #fff;
+    a {
+      display: inline-block;
+      padding: rem(12) rem(35) rem(10);
+      @include menubar;
+      &:nth-child(1) {
+        padding-left: 0;
+      }
+      &:nth-child(2) {
+        font-weight: 700;
+      }
+    }
+  }
+  .f-info {
+    width: 100%;
+    border-top: rem(1) solid #474952;
+    >.f-wrap {
+      width: rem(1640);
+      box-sizing: border-box;
+      max-width: 100%;
+      margin: 0 auto;
+      color: #fff;
+      padding: rem(10) rem(39) rem(5);
+      .left {
+        max-width: rem(720);
+        .f-info-txt {
+          p {
+            font-family: 'Open Sans', sans-serif;
+            padding: rem(5) 0;
+            &.copy {
+              opacity: 0.5;
+            }
+          }
+          .info {
+            font-size: $contents-txt;
+            margin-left: rem(-14);
+            span {
+              display: inline-block;
+              padding: 0 rem(14);
+              margin-bottom: rem(10);
+              @include menubar;
+            }
+          }
+        }
+      }
+      .right {
+        a {
+          display: inline-block;
+          padding-left: rem(30);
+          padding-top: rem(60);
+        }
+      }
+    }
+  }
+  .btn-top {
+    position: absolute;
+    z-index: 5;
+    width: rem(80);
+    height: rem(80);
+    top: rem(-40);
+    right: rem(30);
+    .arrow-u {
+      @include arrow-u;
+      position: relative;
+      width: rem(15);
+      height: rem(15);
+      border-width: rem(3);
+      text-indent: -9999px;
+      border-color: #fff;
+    }
+  }
+}
+
+.sub-wrap+.footer {
+  .btn-top {
+    position: fixed;
+    top: auto;
+    bottom: rem(40);
+    &.absol {
+      position: absolute;
+      top: rem(-40);
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .footer>div {
+    box-sizing: border-box;
+    &.f-info .right {
+      float: left;
+      a:nth-child(1) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer {
+    .f-nav {
+      display: none;
+    }
+    .f-info {
+      border-top: 0;
+      >.f-wrap {
+        padding: rem(50) rem(30) rem(100);
+        .left {
+          max-width: 100%;
+          .f-info-txt {
+            p {
+              font-size: rem(24);
+            }
+            .info:nth-child(2) {
+              padding-top: rem(30);
+              span {
+                display: block;
+                margin: 0 0 rem(20);
+                &:after {
+                  display: none;
+                }
+              }
+            }
+            .copy {
+              padding: rem(40) 0 rem(50);
+            }
+          }
+        }
+        .right {
+          padding: 0;
+          a {
+            padding: 0 1%;
+            width: 31%;
+            text-align: center;
+            ;
+          }
+        }
+      }
+    }
+  }
+}

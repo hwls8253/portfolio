@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="Shortcut Icon" href="../../images/favicon.ico">
+	<link rel="stylesheet" href="../../css/jquery-ui.css">
+	<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="../../css/parsley.css">
+	<title>관리자-계정관리</title>
+	<script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/jquery.ezmark.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-filestyle.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/json2.js"></script>
+	<script type="text/javascript" src="../../js/websiteUtils.js?v=20190808"></script>
+	<script type="text/javascript" src="../../js/admin.js"></script>
+	<script type="text/javascript" src="../../js/parsley.js"></script>
+	
+    <script type="text/javascript" src="../../js/core.min.js"></script>
+    <script type="text/javascript" src="../../js/sha256.min.js"></script>
+    			
+</head>
+<body>
+    <div class="headerWarp">
+         <div class="headerInner">
+            <div class="primaryHead">
+                <h1 class="logo"><a href="/admin/index.do"><img src="../../images/common/logo.png"></a></h1>
+                
+                <p class="personalInfo"> <span>admin</span> 님</p>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">비밀번호변경</button>
+                <button type="button" onclick="location.href='/admin/logout.do'" class="btnLogout">로그아웃</button>
+            </div>
+            <!-- GNB -->
+            <div class="gnb">
+                <ul class="depth1">
+                    <li class="active"><a href="/admin/client/list.do" id="menu1">CLIENT</a></li>
+                    <li><a href="/admin/account/list.do" id="menu2">USER</a></li>
+                    <li><a href="/admin/contents/quiz/list.do" id="menu3">MANAGEMENT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="warp"> 
+        <!--Lnb-->
+        <!-- Sub Gnb -->
+        <div class="subGnb">
+            <div class="depth2">	
+                <div class="depth2Inner">
+                    <ul>
+                        <!-- 제품관리 -->
+                        <li><a class="menu2" href="/admin/client/list.do">고객</a></li>
+                        <li class="active"><a class="menu2" href="/admin/prospect/list.do">잠재고객</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!--//Lnb-->
+        
+        <div class="contWarp">
+            <div class="contents noTab">
+                <!-- contents  -->
+                <form>
+                    <div class="conditionSearch">
+                        <div class="conditions">
+                            <dl>
+                                <dt>회사명 </dt>
+                                <dd>
+                                    <input type="text">
+                                </dd>
+                                <dt>산업군 </dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option value="">전체</option>
+                                        <option value="자동차">자동차</option>
+                                        <option value="디지털 마케팅">디지털 마케팅</option>
+                                        <option value="교육">교육</option>
+                                        <option value="금융 서비스">금융 서비스</option>
+                                        <option value="게임">게임</option>
+                                        <option value="정부 기관">정부 기관</option>
+                                        <option value="의료 서비스 및 생명 과학">의료 서비스 및 생명 과학</option>
+                                        <option value="제조">제조</option>
+                                        <option value="미디어 및 엔터테인먼트">미디어 및 엔터테인먼트</option>
+                                        <option value="비영리 조직">비영리 조직</option>
+                                        <option value="석유 및 가스">석유 및 가스</option>
+                                        <option value="전기 및 공공">전기 및 공공</option>
+                                        <option value="소매">소매</option>
+                                        <option value="통신">통신</option>
+                                    </select>
+                                </dd>
+                                <dt>유입경로</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option value="">전체</option>
+                                        <option value="파트너사">파트너사</option>
+                                        <option value="설명서">설명서</option>
+                                        <option value="지인소개">지인소개</option>
+                                        <option value="동영상">동영상</option>
+                                        <option value="데모">데모</option>
+                                    </select>
+                                </dd>
+                                <dt>수신</dt>
+                                <dd>
+                                    <select class="selectType1">
+                                        <option value="">전체</option>
+                                        <option value="요청">요청</option>
+                                        <option value="거부">거부</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="searchBtns">
+                            <button type="button" onclick="go_search();" class="btnSearchLarge">조회</button>
+                        </div>
+                    </div>			
+                    
+                    <div class="tableToolBar">
+                        <div class="toolLeft"></div>
+                        <div class="toolRgt">
+                            <select name="listsize" class="selectType1" onchange="go_search();">
+                                <option value="">10 개씩 보기</option>
+                                <option value="20">20 개씩 보기</option>
+                                <option value="50">50 개씩 보기</option>
+                                <option value="100">100 개씩 보기</option>
+                            </select>					
+                        </div>
+                    </div>			
+                    
+                    <table class="tableSt_01">
+                        <colgroup>
+                            <col style="width:50px;">
+                            <col style="width:50px;">
+                            <col>
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:150px;">
+                            <col style="width:100px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="allChk"></th>
+                                <th>번호</th>
+                                <th>구분</th>
+                                <th>회사명</th>						
+                                <th>담당자</th>						
+                                <th>직함</th>
+                                <th>산업군</th>
+                                <th>유입경로</th>
+                                <th>발송횟수</th>
+                                <th>수신</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>7</td>
+                                <td>채널영업</td>
+                                <td onclick="" style="cursor:pointer">
+                                    심화전자
+                                </td>
+                                <td>이인표</td>
+                                <td>과장</td>
+                                <td>자동차</td>
+                                <td>파트너사</td>
+                                <td>0</td>
+                                <td>요청</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>6</td>
+                                <td>데모/컨텐츠</td>
+                                <td onclick="" style="cursor:pointer">
+                                    글로벌체인
+                                </td>
+                                <td>이수현</td>
+                                <td>차장</td>
+                                <td>교육</td>
+                                <td>설명서</td>
+                                <td>1</td>
+                                <td>요청</td>
+                            </tr>      
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>5</td>
+                                <td>채널영업</td>
+                                <td onclick="" style="cursor:pointer">
+                                    클로바
+                                </td>
+                                <td>안준혁</td>
+                                <td>사원</td>
+                                <td>금융 서비스</td>
+                                <td>지인소개</td>
+                                <td>1</td>
+                                <td>요청</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>4</td>
+                                <td>데모/컨텐츠</td>
+                                <td onclick="" style="cursor:pointer">
+                                    스파이스웨어
+                                </td>
+                                <td>김근진</td>
+                                <td>사장</td>
+                                <td>게임</td>
+                                <td>동영상</td>
+                                <td>2</td>
+                                <td>요청</td>
+                            </tr>      
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>3</td>
+                                <td>데모/컨텐츠</td>
+                                <td onclick="" style="cursor:pointer">
+                                    나이키
+                                </td>
+                                <td>한대성</td>
+                                <td>과장</td>
+                                <td>금융 서비스</td>
+                                <td>데모</td>
+                                <td>5</td>
+                                <td>요청</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>2</td>
+                                <td>채널영업</td>
+                                <td onclick="" style="cursor:pointer">
+                                    정시스템
+                                </td>
+                                <td>Admin An</td>
+                                <td>부장</td>
+                                <td>의료 서비스 및 생명과학</td>
+                                <td>데모데이</td>
+                                <td>10</td>
+                                <td>요청</td>
+                            </tr>      
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                                <td>데모/컨텐츠</td>
+                                <td onclick="" style="cursor:pointer">
+                                    사이언스
+                                </td>
+                                <td>송동혁</td>
+                                <td>대리</td>
+                                <td>의료 서비스 및 생명과학</td>
+                                <td>데모데이</td>
+                                <td>10</td>
+                                <td>요청</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pageSection">
+                        <div class="pagenation">
+                            <span class="page-arrow"><a href="#" class="arrow first btn-icon m-icon" onclick="go_paging(1)">first</a>
+                            <a href="#" class="arrow prev btn-icon m-icon">prev</a>
+                            </span><ul class="page-num"><li class="on"><a href="#" class="on">1</a></li>
+                            </ul><span class="page-arrow"><a href="#" class="arrow next btn-icon m-icon">next</a>
+                            <a href="#" class="arrow end btn-icon m-icon" onclick="go_paging(1)">end</a>
+                            </span>
+                        </div>
+                        <div class="btnSec">
+                            <div class="rightBtn">
+                                <button type="button" class="btn type_01 leftBtn">등록</button>
+                                <button type="button" class="btn type_03 leftBtn">메일전송</button>
+                                <button type="button" class="btn type_04 leftBtn">수신거부</button>
+                            </div>
+                        </div>	
+                    </div>			
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="ajax_load_indicator"></div>
+        
+    <div class="footerWarp">
+        <div class="footerInner">
+            <p class="copySection" style="text-align: center;">Copyright © Spiceware Co, Ltd. All right reserved.</p>
+        </div>
+    </div>
+    
+    </body>
+</html>

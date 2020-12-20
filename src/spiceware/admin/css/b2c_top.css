@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+html,body{width:100%; height:100%; min-width:1400px;}
+html{overflow-y:scroll;}
+ html, body {height: 100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0;padding:0;}
+body,h1,h2,h3,h4,input,button{ font-weight:normal; font-family: "나눔고딕",NanumGothic, ng, "Malgun Gothic",dotum, "고딕", gulim, "굴림"; font-size:12px; color:#333;}
+body{background-color:#fff; text-align:center;}
+strong{font-weight:bold;}
+img,fieldset,iframe{border:0 none;}
+li{list-style:none;}
+input,select,button{vertical-align:middle; margin:0; padding:0;}
+img{vertical-align:top;}
+i,em,address{font-style:normal;}
+label,button{cursor:pointer;}
+button{margin:0;padding:0;}
+a{color:#2f3743; text-decoration:none;}
+a:hover{color:#390; text-decoration:underline;}
+button *{position:relative;}
+button img{left:-3px;}
+html:first-child select{height:20px;padding-right:6px;}
+option{padding-right:6px;}
+table{/* border-collapse:collapse;table-layout:fixed; */border-collapse:separate;border-spacing:0;}
+img	{vertical-align:middle;}
+
+input[type=text], input[type=password]{height:18px;line-height:18px;padding:0 8px;border:1px solid #bababa;border-bottom:1px solid #dadada;color:#606060;}
+input[type=radio]   {margin:0; padding:0;}
+
+body {
+	width:100%;
+	height:100%;
+    font-size: 9pt;
+    line-height: 1.4;
+	margin:0;
+	padding:0;
+}
+
+a {
+	text-decoration:none;
+	/*color:#555;*/
+}
+*a:link   {color:#ffffff;}
+a:visited {color:#777;}
+a:hover   {color:#f01d88;}
+
+img {
+    vertical-align: middle;
+	border:0;
+	color:#FFF;
+}
+
+select{font-family:Tahoma,'Dotum',Arial,sans-serif;display:inline-block;font-size:12px;height:21px;line-height:21px;border:1px solid #d1d1d1;color:#666;padding:1px;}
+
+.clearfix:after, .clearfix:before{clear:both; content:"."; display:block; font-size:0; height:0; line-height:0; visibility:hidden}
+.clearfix{zoom: 1; margin-bottom:0px;}
+.fr {float:right;}
+
+
+#wrapper{position: relative; overflow: hidden; width: 100%; height: 100%;}
+.logo{ width: 1180px; margin: 0 auto; overflow: hidden;}
+.logo h2{float: left; width: 228px; height: 60px; background: url(http://www.tour2000.co.kr/Images/navi_logo02.png) 0 50% no-repeat; text-indent: -999em; display: block; margin-top: 1px;}
+.logo h2 a{display: block; width: 228px; height: 60px;}
+
+.top_right_navi{ overflow: hidden; z-index: 10; position: absolute; right: 20px; top:35px;}
+	.top_right_navi ul{}
+.top_right_navi li{width: 120px; float: left; border-right: 1px solid #999; font-size: 1.1em; }
+.top_right_navi li a{color: #333; display: block;}
+
+.top_navi_main{background-color: #464646; height: 55px; width: 100%;}
+.top_navi_main ul{margin: 0 auto; width: 1180px; display: block; overflow: hidden;}
+
+.top_navi_main ul{background: url(http://www.tour2000.co.kr/Common_Omega/img_b2c/bar_navi.png) no-repeat 0%;}
+.top_navi_main li{float: left; height: 55px; background: url(http://www.tour2000.co.kr/Common_Omega/img_b2c/bar_navi.png) no-repeat 100%;}
+.top_navi_main li a{display: block; padding-top: 18px; font-size: 1.3em; font-weight: 600; color: #fff;}
+.top_navi_main li.home{ width: 150px;}
+.top_navi_main li.navi_menu{width: 515px;}
+.top_navi_main li.on{background-color: #094c85; height: 55px;}
+
+.top_navi_sub{background-color: #fdfdfd; height: 35px; border-bottom: 1px solid #d5d5d5; position: relative; margin-bottom: 50px;}
+.top_navi_sub ul#menu01{padding-left: 300px;}
+.top_navi_sub ul#menu02{padding-left: 1050px;}
+.top_navi_sub li{float: left; margin-top: 8px; padding: 0 15px; font-size: 1em; color: #666; border-right: 1px solid #999; }
+.top_navi_sub li a{color: #666; display: block;}
+
+.footer{width: 100%; position: relative; bottom: 0; margin-top: 40px; overflow: hidden; }
+.footer .banner_down{overflow: hidden;}
+.footer .navi_footer{border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; margin-bottom: 50px;}
+.footer .navi_footer ul{width: 1180px; margin:0 auto; overflow: hidden; }
+.footer .navi_footer li{display: inline-block; padding: 10px 0; width: 12%;}
+.footer .info{width: 1180px; margin:0 auto; overflow: hidden;}
+.footer .info h2{float: left; width: 165px; height: 100px; background: url(http://www.tour2000.co.kr/Common_Omega/img_b2c/logo_bottom.jpg) 0 50% no-repeat; text-indent: -1000em;}
+.footer .info p{float: left; line-height: 2em; text-align: left; color: #999;}
+.footer .info .ico{float: left; margin-left: 80px;}
+.footer .copy{width: 100%; background-color: #e3e3e3; border-top: 1px solid #bfbfbf; margin-top: 40px; padding: 12px 0; }
+.footer .copy span{color: #333; font-size: 0.9em; font-family: verdana , tahoma;}
+
+/*left_mypage*/
+.left_mypage{float: left; width: 220px;}
+.left_mypage h2{padding:20px 0; padding-left: 20px; background-color: #464646; color: #fff; font-size: 1.8em; text-align: left;}
+.left_mypage .depth1{background-color: #e4e4e4;}
+.left_mypage .depth1 li{border-bottom: 1px solid #cbcbcb; padding: 8px 0; text-align: left;}
+.left_mypage .depth1 li a{padding-left: 20px; font-size: 1.2em; color: #333;}
+.left_mypage .depth1 li a.on{font-weight: 700;}
+.left_mypage .depth2 {background-color: #f7f7f7; }
+.left_mypage .depth2 li{padding: 5px 0; padding-left: 30px; border-bottom:1px solid #e3e3e3;}
+.left_mypage .depth2 li a{color: #666; font-size: 1em;}
+.left_mypage .depth2 li a.on{color: #1184f0; font-weight:normal;}

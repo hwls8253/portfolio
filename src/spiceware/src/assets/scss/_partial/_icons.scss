@@ -1,0 +1,174 @@
+[class*="icon-"] {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include txt-hide;
+}
+
+.icon-menu {
+  width: rem(40);
+  height: rem(30);
+  background-image: url(../images/icon_menu.png);
+}
+
+.icon-close {
+  width: rem(30);
+  height: rem(30);
+  background-image: url(../images/icon_close.png);
+}
+
+.icon-arrow {
+  width: rem(19);
+  height: rem(13);
+  background-image: url(../images/icon_arrow.png);
+}
+
+.icon-mail {
+  width: rem(36);
+  height: rem(27);
+  background-image: url(../images/icon_mail.png);
+}
+
+.icon-play {
+  width: rem(25);
+  height: rem(29);
+  background-image: url(../images/icon_play.png);
+}
+
+.icon-plus {
+  width: rem(16);
+  height: rem(16);
+  background-image: url(../images/icon_plus.png);
+}
+
+.icon-chk {
+  width: rem(24);
+  height: rem(24);
+  background-image: url(../images/icon_chk.png);
+  background-position: 0 0;
+  background-size: rem(48);
+  background-color: #cccccc;
+  border-radius: 100%;
+}
+
+input:checked+.icon-chk {
+  background-position: rem(-24) 0;
+  background-color: #9e0a96;
+}
+
+.icon-radio {
+  width: rem(24);
+  height: rem(24);
+  background-image: url(../images/icon_radio.png);
+  background-position: 0 0;
+}
+
+input:checked+.icon-radio {
+  background-position: rem(-24) 0;
+}
+
+.icon-check {
+  width: rem(16);
+  height: rem(13);
+  background-image: url(../images/icon_check.png);
+  background-position: 0 0;
+}
+
+.icon-x {
+  width: rem(25);
+  height: rem(25);
+  background-image: url(../images/icon_x.png);
+}
+
+.icon-download {
+  width: rem(20);
+  height: rem(20);
+  background-image: url(../images/icon_download.png);
+}
+
+.icon-history {
+  width: rem(40);
+  height: rem(40);
+  background-image: url(../images/icon_history.png);
+}
+
+.icon-q {
+  width: rem(30);
+  height: rem(26);
+  background-image: url(../images/icon-q.png);
+}
+
+.icon-a {
+  width: rem(28);
+  height: rem(21);
+  background-image: url(../images/icon-a.png);
+}
+
+.icon-user {
+  width: rem(54);
+  height: rem(54);
+  background-image: url(../images/icon_user.png);
+  background-size: 100%;
+}
+
+.icon-db {
+  width: rem(57);
+  height: rem(59);
+  background-image: url(../images/icon_db.png);
+  background-size: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .icon-arrow {
+    width: rem(25);
+    height: rem(17);
+  }
+  .icon-mail {
+    width: rem(50);
+    height: rem(37);
+  }
+  .icon-chk {
+    width: rem(40);
+    height: rem(40);
+    background-image: url(../images/icon_chk.png);
+    background-size: rem(80);
+    background-position: 0 0;
+  }
+  input:checked+.icon-chk {
+    background-position: rem(-40) 0;
+  }
+  .icon-radio {
+    width: rem(40);
+    height: rem(40);
+    background-image: url(../images/icon_radio.png);
+    background-size: rem(80);
+    background-position: 0 0;
+  }
+  input:checked+.icon-radio {
+    background-position: rem(-40) 0;
+  }
+  .icon-x {
+    width: rem(35);
+    height: rem(35);
+    background-image: url(../images/icon_x.png);
+    background-size: rem(35);
+  }
+  .icon-download {
+    width: rem(24);
+    height: rem(24);
+    background-image: url(../images/icon_download.png);
+    background-size: rem(24);
+  }
+  .icon-user {
+    width: rem(79);
+    height: rem(79);
+    background-image: url(../images/icon_user.png);
+    background-size: rem(79);
+  }
+  .icon-db {
+    width: rem(87);
+    height: rem(85);
+    background-image: url(../images/icon_db.png);
+    background-size: rem(85);
+  }
+}

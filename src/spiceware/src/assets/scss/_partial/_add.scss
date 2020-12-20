@@ -1,0 +1,205 @@
+/* add css */
+
+.contents-wrap .sec02 .f-wrap .video {
+  width: rem(750);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+
+.contents-wrap .sec02 .f-wrap .news {
+  margin: rem(50) auto rem(90);
+}
+
+.contents-wrap .sec02 .f-wrap .news h3 {
+  text-align: center;
+  padding-bottom: rem(70);
+}
+
+.contents-wrap .sec02 .news h3+.btn-plus {
+  top: auto;
+  bottom: rem(-40);
+  right: 50%;
+  margin-right: rem(-20);
+}
+
+.contents-wrap .sec02 .news .news-wrap .count-nav,
+.contents-wrap .sec02 .news .news-wrap .owl-dots {
+  right: rem(-50);
+}
+
+.header:hover .pc .menu>li.on .depth2,
+.header.on .pc .menu>li.on .depth2 {
+  z-index: 1;
+}
+
+.header .pc .menu>li .depth2 {
+  z-index: 2;
+}
+
+.isms.modal-wrap .modal .con.txt-wrap {
+  position: relative;
+  .img-box:not(.po-r0) {
+    bottom: 0;
+    right: 0;
+  }
+  .po-top {
+    bottom: auto;
+    top: 0;
+    img {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.isms.modal-wrap .modal .con+.title {
+  padding-top: rem(50);
+  border-top: rem(10) solid #aaa;
+  margin-top: rem(60);
+}
+
+.isms.modal-wrap .modal .title.menubar span {
+  padding: 0 8px;
+  @include menubar;
+  &:after {
+    background: #d5d5d5;
+    height: rem(16);
+  }
+  &:nth-child(1) {
+    padding-left: 0;
+  }
+}
+
+.isms .con .disc-list li .img-wrap2 {
+  padding: rem(40) rem(50) 0;
+  color: #333;
+  font-weight: 500;
+  h5 {
+    padding-bottom: rem(20);
+  }
+}
+
+.isms .con .disc-list li {
+  margin-left: rem(20);
+}
+
+@media screen and (max-width: 1400px) {
+  .header .pc .menu>li .depth2 {
+    top: rem(53);
+  }
+  .contents-wrap .sec02 .f-wrap .video {
+    width: rem(750);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+  .contents-wrap .sec02 .f-wrap .news {
+    width: rem(650);
+    max-width: 100%;
+    margin-top: rem(50);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contents-wrap .sec02 .f-wrap .news h3 {
+    text-align: center;
+    padding-bottom: rem(70);
+  }
+  .contents-wrap .sec02 .news h3+.btn-plus {
+    top: auto;
+    bottom: rem(-40);
+    right: 50%;
+    margin-right: rem(-20);
+  }
+  .contents-wrap .sec02 .news .news-wrap .count-nav,
+  .contents-wrap .sec02 .news .news-wrap .owl-dots {
+    right: rem(-50);
+  }
+}
+
+#company_7 {
+  padding-bottom: rem(0);
+}
+
+.company .greetings .catch-phrase {
+  margin-top: rem(50);
+}
+
+@media screen and (max-width: 992px) {
+  .contents-wrap .sec02 .f-wrap .video {
+    width: 90%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+  .contents-wrap .sec02 .f-wrap .news {
+    width: 90%;
+    max-width: 100%;
+    margin-top: rem(50);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contents-wrap .sec02 .news h3+.btn-plus {
+    margin-right: rem(-25);
+  }
+  .company .greetings .signiture {
+    margin: 0;
+  }
+}
+
+.contents-wrap .sec02 .news.faq {
+  margin-bottom: rem(100);
+  h3 {
+    margin-bottom: 0;
+    padding-bottom: rem(40);
+  }
+  .faq-list {
+    padding: 0 0 rem(50);
+    li {
+      background: #fff;
+      margin: 0 0 rem(10);
+      border-radius: rem(8);
+      a {
+        display: block;
+        line-height: rem(90);
+        box-sizing: border-box;
+        padding: 0 rem(30);
+        >span {
+          display: inline-block;
+          vertical-align: middle;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 90%;
+          font-size: rem(18);
+          font-weight: 500;
+          .catagory {
+            color: #490097;
+            padding: 0 rem(23);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contents-wrap .sec02 .news.faq {
+    .faq-list {
+      padding: 0 0 rem(50);
+      li {
+        a {
+          >span {
+            font-size: rem(26);
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-wrap .modal .con.answer .add-txt {
+  font-size: rem(14);
+  padding-top: rem(30);
+}
